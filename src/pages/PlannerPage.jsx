@@ -2,7 +2,6 @@ import { useTranslation } from "react-i18next";
 import CourseSearch from "../components/course/CourseSearch";
 import SelectedCoursesPanel from "../components/course/SelectedCoursesPanel";
 import GenerateButton from "../components/planner/GenerateButton";
-import SchedulesList from "../components/planner/SchedulesList";
 import ScheduleControls from "../components/planner/ScheduleControls";
 import ScheduleGrid from "../components/planner/ScheduleGrid";
 import ScheduleHeader from "../components/schedule/ScheduleHeader";
@@ -26,7 +25,6 @@ export default function PlannerPage() {
         </h2>
         <SelectedCoursesPanel />
         <GenerateButton />
-        {/* <SchedulesList /> */}
         <ScheduleHeader />
         <ScheduleControls />
         <ScheduleGrid />
