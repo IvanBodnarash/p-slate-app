@@ -1,0 +1,358 @@
+{
+  "config": {
+    "pricePerCredit": 800,
+    "defaultScholarshipPct": 0
+  },
+  "courses": [
+    {
+      "code": "CS101",
+      "name": "Introduction to Computer Science",
+      "credits": 3,
+      "sections": [
+        {
+          "sectionNumber": "CS101-01",
+          "instructor": "Dr. Ahmed Al-Farhan",
+          "meetings": [
+            { "day": "Sun", "start": "09:00", "end": "10:15", "room": "B-201" },
+            { "day": "Tue", "start": "09:00", "end": "10:15", "room": "B-201" }
+          ]
+        },
+        {
+          "sectionNumber": "CS101-02",
+          "instructor": "Dr. Nora Al-Otaibi",
+          "meetings": [
+            { "day": "Mon", "start": "11:00", "end": "12:15", "room": "C-105" },
+            { "day": "Wed", "start": "11:00", "end": "12:15", "room": "C-105" }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CS102",
+      "name": "Programming I (JavaScript)",
+      "credits": 4,
+      "sections": [
+        {
+          "sectionNumber": "CS102-01",
+          "instructor": "Eng. Faisal Al-Qahtani",
+          "meetings": [
+            { "day": "Sun", "start": "10:30", "end": "11:45", "room": "Lab-1" },
+            { "day": "Tue", "start": "10:30", "end": "11:45", "room": "Lab-1" },
+            { "day": "Thu", "start": "09:00", "end": "10:00", "room": "Lab-1" }
+          ]
+        },
+        {
+          "sectionNumber": "CS102-02",
+          "instructor": "Ms. Reem Al-Zahrani",
+          "meetings": [
+            { "day": "Mon", "start": "14:00", "end": "15:15", "room": "Lab-2" },
+            { "day": "Wed", "start": "14:00", "end": "15:15", "room": "Lab-2" },
+            { "day": "Thu", "start": "12:00", "end": "13:00", "room": "Lab-2" }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MATH101",
+      "name": "Calculus I",
+      "credits": 4,
+      "sections": [
+        {
+          "sectionNumber": "MATH101-01",
+          "instructor": "Dr. Samir Khaled",
+          "meetings": [
+            { "day": "Sun", "start": "08:00", "end": "09:15", "room": "A-110" },
+            { "day": "Tue", "start": "08:00", "end": "09:15", "room": "A-110" },
+            { "day": "Thu", "start": "08:00", "end": "09:00", "room": "A-110" }
+          ]
+        },
+        {
+          "sectionNumber": "MATH101-02",
+          "instructor": "Dr. Amal Al-Harbi",
+          "meetings": [
+            { "day": "Mon", "start": "12:30", "end": "13:45", "room": "A-210" },
+            { "day": "Wed", "start": "12:30", "end": "13:45", "room": "A-210" },
+            { "day": "Thu", "start": "10:15", "end": "11:15", "room": "A-210" }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MATH201",
+      "name": "Calculus II",
+      "credits": 4,
+      "sections": [
+        {
+          "sectionNumber": "MATH201-01",
+          "instructor": "Dr. Rana Al-Salem",
+          "meetings": [
+            { "day": "Sun", "start": "13:00", "end": "14:15", "room": "A-305" },
+            { "day": "Tue", "start": "13:00", "end": "14:15", "room": "A-305" },
+            { "day": "Thu", "start": "13:00", "end": "14:00", "room": "A-305" }
+          ]
+        },
+        {
+          "sectionNumber": "MATH201-02",
+          "instructor": "Dr. Tariq Al-Mutairi",
+          "meetings": [
+            { "day": "Mon", "start": "09:30", "end": "10:45", "room": "A-108" },
+            { "day": "Wed", "start": "09:30", "end": "10:45", "room": "A-108" },
+            { "day": "Thu", "start": "11:30", "end": "12:30", "room": "A-108" }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PHYS101",
+      "name": "General Physics I",
+      "credits": 4,
+      "sections": [
+        {
+          "sectionNumber": "PHYS101-01",
+          "instructor": "Dr. Yasser Al-Najjar",
+          "meetings": [
+            { "day": "Sun", "start": "11:00", "end": "12:15", "room": "D-120" },
+            { "day": "Tue", "start": "11:00", "end": "12:15", "room": "D-120" },
+            {
+              "day": "Thu",
+              "start": "09:00",
+              "end": "10:00",
+              "room": "Phys-Lab"
+            }
+          ]
+        },
+        {
+          "sectionNumber": "PHYS101-02",
+          "instructor": "Dr. Maha Al-Saif",
+          "meetings": [
+            { "day": "Mon", "start": "08:00", "end": "09:15", "room": "D-118" },
+            { "day": "Wed", "start": "08:00", "end": "09:15", "room": "D-118" },
+            {
+              "day": "Thu",
+              "start": "12:30",
+              "end": "13:30",
+              "room": "Phys-Lab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CHEM101",
+      "name": "General Chemistry",
+      "credits": 4,
+      "sections": [
+        {
+          "sectionNumber": "CHEM101-01",
+          "instructor": "Dr. Iman Al-Ghamdi",
+          "meetings": [
+            { "day": "Sun", "start": "14:30", "end": "15:45", "room": "E-220" },
+            { "day": "Tue", "start": "14:30", "end": "15:45", "room": "E-220" },
+            {
+              "day": "Thu",
+              "start": "15:00",
+              "end": "16:00",
+              "room": "Chem-Lab"
+            }
+          ]
+        },
+        {
+          "sectionNumber": "CHEM101-02",
+          "instructor": "Dr. Hessa Al-Jaber",
+          "meetings": [
+            { "day": "Mon", "start": "10:30", "end": "11:45", "room": "E-118" },
+            { "day": "Wed", "start": "10:30", "end": "11:45", "room": "E-118" },
+            {
+              "day": "Thu",
+              "start": "11:00",
+              "end": "12:00",
+              "room": "Chem-Lab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENG101",
+      "name": "Academic Writing",
+      "credits": 3,
+      "sections": [
+        {
+          "sectionNumber": "ENG101-01",
+          "instructor": "Mr. James Carter",
+          "meetings": [
+            { "day": "Sun", "start": "12:30", "end": "13:45", "room": "F-101" },
+            { "day": "Tue", "start": "12:30", "end": "13:45", "room": "F-101" }
+          ]
+        },
+        {
+          "sectionNumber": "ENG101-02",
+          "instructor": "Ms. Sarah Khalil",
+          "meetings": [
+            { "day": "Mon", "start": "15:00", "end": "16:15", "room": "F-203" },
+            { "day": "Wed", "start": "15:00", "end": "16:15", "room": "F-203" }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARB101",
+      "name": "Arabic Language Skills",
+      "credits": 3,
+      "sections": [
+        {
+          "sectionNumber": "ARB101-01",
+          "instructor": "Dr. Abdullah Al-Shehri",
+          "meetings": [
+            { "day": "Sun", "start": "16:00", "end": "17:15", "room": "G-110" },
+            { "day": "Tue", "start": "16:00", "end": "17:15", "room": "G-110" }
+          ]
+        },
+        {
+          "sectionNumber": "ARB101-02",
+          "instructor": "Dr. Laila Al-Hassan",
+          "meetings": [
+            { "day": "Mon", "start": "13:30", "end": "14:45", "room": "G-204" },
+            { "day": "Wed", "start": "13:30", "end": "14:45", "room": "G-204" }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ISL101",
+      "name": "Islamic Culture",
+      "credits": 2,
+      "sections": [
+        {
+          "sectionNumber": "ISL101-01",
+          "instructor": "Dr. Saad Al-Omari",
+          "meetings": [
+            { "day": "Mon", "start": "08:00", "end": "09:40", "room": "H-102" }
+          ]
+        },
+        {
+          "sectionNumber": "ISL101-02",
+          "instructor": "Dr. Mona Al-Mutlaq",
+          "meetings": [
+            { "day": "Wed", "start": "12:30", "end": "14:10", "room": "H-102" }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "STAT201",
+      "name": "Probability and Statistics",
+      "credits": 3,
+      "sections": [
+        {
+          "sectionNumber": "STAT201-01",
+          "instructor": "Dr. Rashed Al-Shammari",
+          "meetings": [
+            { "day": "Sun", "start": "15:00", "end": "16:15", "room": "A-112" },
+            { "day": "Tue", "start": "15:00", "end": "16:15", "room": "A-112" }
+          ]
+        },
+        {
+          "sectionNumber": "STAT201-02",
+          "instructor": "Dr. Dana Al-Madi",
+          "meetings": [
+            { "day": "Mon", "start": "10:00", "end": "11:15", "room": "A-114" },
+            { "day": "Wed", "start": "10:00", "end": "11:15", "room": "A-114" }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON101",
+      "name": "Principles of Economics",
+      "credits": 3,
+      "sections": [
+        {
+          "sectionNumber": "ECON101-01",
+          "instructor": "Dr. Khaled Al-Hazmi",
+          "meetings": [
+            { "day": "Sun", "start": "08:00", "end": "09:15", "room": "B-115" },
+            { "day": "Tue", "start": "08:00", "end": "09:15", "room": "B-115" }
+          ]
+        },
+        {
+          "sectionNumber": "ECON101-02",
+          "instructor": "Dr. Nada Al-Fadel",
+          "meetings": [
+            { "day": "Mon", "start": "16:00", "end": "17:15", "room": "B-118" },
+            { "day": "Wed", "start": "16:00", "end": "17:15", "room": "B-118" }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "IT201",
+      "name": "Data Structures",
+      "credits": 3,
+      "sections": [
+        {
+          "sectionNumber": "IT201-01",
+          "instructor": "Dr. Maryam Al-Saadi",
+          "meetings": [
+            { "day": "Sun", "start": "12:30", "end": "13:45", "room": "Lab-3" },
+            { "day": "Tue", "start": "12:30", "end": "13:45", "room": "Lab-3" }
+          ]
+        },
+        {
+          "sectionNumber": "IT201-02",
+          "instructor": "Dr. Omar Al-Rasheed",
+          "meetings": [
+            { "day": "Mon", "start": "09:00", "end": "10:15", "room": "Lab-4" },
+            { "day": "Wed", "start": "09:00", "end": "10:15", "room": "Lab-4" }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SWE301",
+      "name": "Software Engineering",
+      "credits": 3,
+      "sections": [
+        {
+          "sectionNumber": "SWE301-01",
+          "instructor": "Dr. Basim Al-Sharif",
+          "meetings": [
+            { "day": "Sun", "start": "13:45", "end": "15:00", "room": "C-310" },
+            { "day": "Tue", "start": "13:45", "end": "15:00", "room": "C-310" }
+          ]
+        },
+        {
+          "sectionNumber": "SWE301-02",
+          "instructor": "Dr. Rania Al-Sultan",
+          "meetings": [
+            { "day": "Mon", "start": "11:30", "end": "12:45", "room": "C-312" },
+            { "day": "Wed", "start": "11:30", "end": "12:45", "room": "C-312" }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DS301",
+      "name": "Introduction to Data Science",
+      "credits": 3,
+      "sections": [
+        {
+          "sectionNumber": "DS301-01",
+          "instructor": "Dr. Hadi Al-Subaie",
+          "meetings": [
+            { "day": "Sun", "start": "10:00", "end": "11:15", "room": "D-220" },
+            { "day": "Tue", "start": "10:00", "end": "11:15", "room": "D-220" }
+          ]
+        },
+        {
+          "sectionNumber": "DS301-02",
+          "instructor": "Dr. Wafa Al-Marzouq",
+          "meetings": [
+            { "day": "Mon", "start": "13:00", "end": "14:15", "room": "D-222" },
+            { "day": "Wed", "start": "13:00", "end": "14:15", "room": "D-222" }
+          ]
+        }
+      ]
+    }
+  ]
+}
