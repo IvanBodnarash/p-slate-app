@@ -13,11 +13,11 @@ export default function ScheduleControls() {
   const current = schedules[idx];
 
   return (
-    <div className="flex flex-wrap items-center gap-3 md:gap-6">
+    <div className="flex flex-wrap justify-between items-center gap-3 md:gap-6">
       <div className="flex items-center gap-2">
         <button
           onClick={prev}
-          className="px-3 py-1 border text-slate-800 border-slate-300 shadow rounded hover:bg-slate-100 cursor-pointer"
+          className="px-3 py-1 border text-slate-800 border-slate-700 rounded hover:opacity-60 cursor-pointer"
         >
           ‹
         </button>
@@ -26,12 +26,12 @@ export default function ScheduleControls() {
         </span>
         <button
           onClick={next}
-          className="px-3 py-1 border text-slate-800 border-slate-300 shadow rounded hover:bg-slate-100 cursor-pointer"
+          className="px-3 py-1 border text-slate-800 border-slate-700 rounded hover:opacity-60 cursor-pointer"
         >
           ›
         </button>
         <select
-          className="border text-slate-800 border-slate-300 shadow rounded hover:bg-slate-100 cursor-pointer outline-0 px-2 py-1"
+          className="border text-slate-800 border-slate-700 rounded hover:opacity-60 cursor-pointer outline-0 px-2 py-1"
           value={idx}
           onChange={(e) => setIdx(Number(e.target.value))}
         >
@@ -43,16 +43,18 @@ export default function ScheduleControls() {
         </select>
       </div>
 
-      <div className="text-white bg-orange-bee px-2 md:px-3 py-1 rounded">
-        {t("totalCredits", { defaultValue: "Total credits" })}:{" "}
-        {current.totalCredits}
-      </div>
+      <div className="flex gap-4 md:gap-8">
+        <div className="border-b px-1 md:px-2 py-1">
+          {t("totalCredits", { defaultValue: "Total credits" })}:{" "}
+          {current.totalCredits}
+        </div>
 
-      <div className="text-white bg-orange-bee px-2 md:px-3 py-1 rounded">
-        {t("compatibility", {
-          score: current.score ?? 0,
-          defaultValue: "Compatibility score: {{score}}%",
-        })}
+        <div className="border-b px-1 md:px-2 py-1">
+          {t("compatibility", {
+            score: current.score ?? 0,
+            defaultValue: "Compatibility score: {{score}}%",
+          })}
+        </div>
       </div>
     </div>
   );

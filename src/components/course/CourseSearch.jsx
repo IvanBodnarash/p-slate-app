@@ -3,8 +3,18 @@ import { useTranslation } from "react-i18next";
 import { useCoursesSearch } from "../../hooks/useCoursesSearch";
 import { usePlannerStore } from "../../store/usePlannerStore";
 
+import { BsSearch } from "react-icons/bs";
+import { IoAdd } from "react-icons/io5";
+import { FiFilter } from "react-icons/fi";
+import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowUp } from "react-icons/io";
+
+import PlannerOptions from "../planner/PlannerOptions";
+import CourseFilter from "../planner/CourseFilter";
+
 export default function CourseSearch() {
   const [q, setQ] = useState("");
+  const [isOpenFilterSection, setIsOpenFilterSection] = useState(false);
   const { results, loading } = useCoursesSearch(q);
   const addCourse = usePlannerStore((s) => s.addCourse);
   const { t } = useTranslation("planner");
@@ -12,17 +22,35 @@ export default function CourseSearch() {
   return (
     <section className="space-y-3">
       <label className="block">
-        <span className="block mb-1">
-          {t("searchLabel", { defaultValue: "Search courses" })}
+        <span className="block text-xl md:text-2xl mb-2">
+          {t("searchLabel", { defaultValue: "Search for courses" })}
         </span>
-        <input
-          value={q}
-          onChange={(e) => setQ(e.target.value)}
-          placeholder={t("searchPlaceholder", {
-            defaultValue: "By code or name (e.g., CS101, Calculus)",
-          })}
-          className="w-full border border-slate-300 shadow outline-slate-300 rounded p-1 md:p-2 bg-white text-slate-800"
-        />
+        <div className="flex flex-row items-center gap-2">
+          <BsSearch className="size-6" />
+          <input
+            value={q}
+            onChange={(e) => setQ(e.target.value)}
+            placeholder={t("searchPlaceholder", {
+              defaultValue: "By code or name (e.g., CS101, Calculus)",
+            })}
+            className="w-full border-b-2 outline-0 py-1 text-slate-800"
+            autoFocus={false}
+          />
+        </div>
+        <button
+          className="px-3 py-1 mt-4 border flex items-center gap-2 rounded text-slate-800 hover:opacity-80 border-slate-700 cursor-pointer"
+          onClick={() => setIsOpenFilterSection((prev) => !prev)}
+        >
+          <FiFilter />
+          <p>{t("filter", { defaultValue: "Filter" })}</p>
+          {isOpenFilterSection ? <IoIosArrowUp /> : <IoIosArrowDown />}
+        </button>
+        {isOpenFilterSection && (
+          <>
+            <PlannerOptions />
+            <CourseFilter />
+          </>
+        )}
       </label>
 
       {loading && (
@@ -36,22 +64,23 @@ export default function CourseSearch() {
           {t("noResults", { defaultValue: "No results" })}
         </div>
       ) : (
-        <ul className="space-y-2 border shadow-md border-blue-dark-ocean/10 rounded p-1 md:p-3 overflow-y-auto max-h-64 md:max-h-110">
+        <ul className="space-y-2 rounded">
           {results.map((c) => (
             <li
               key={c.code}
-              className="flex items-center justify-between border-t border-slate-700/30 p-1 md:p-2 text-slate-900"
+              className="flex items-center justify-between border-b border-slate-700/80 p-1 md:p-2 text-slate-900"
             >
               <div>
                 <div className="font-semibold">{c.code}</div>
                 <div className="text-sm opacity-80">{c.name}</div>
               </div>
               <button
-                className="px-2 md:px-3 md:py-1 rounded bg-blue-deep-sea/90 text-white hover:opacity-70 cursor-pointer"
+                className="px-2 md:px-3 md:py-1 rounded text-slate-700 hover:opacity-70 cursor-pointer"
                 onClick={() => addCourse(c.code)}
                 title={t("addCourse", { defaultValue: "Add course" })}
               >
-                {t("add", { defaultValue: "Add" })}
+                <IoAdd className="size-6" />
+                {/* {t("add", { defaultValue: "Add" })} */}
               </button>
             </li>
           ))}

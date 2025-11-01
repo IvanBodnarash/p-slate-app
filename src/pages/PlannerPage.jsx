@@ -12,15 +12,15 @@ export default function PlannerPage() {
 
   return (
     <div className="flex flex-col md:flex-row gap-6">
-      <div className="space-y-2 md:space-y-6 md:w-2/5">
-        <h2 className="text-2xl font-bold">
+      <div className="space-y-2 md:space-y-6 md:w-3/8">
+        {/* <h2 className="text-2xl font-bold">
           {t("courseSearch", { defaultValue: "Course Search" })}
-        </h2>
+        </h2> */}
         <CourseSearch />
       </div>
 
-      <div className="space-y-2 md:space-y-6 md:w-3/5">
-        <h2 className="text-2xl font-bold">
+      <div className="space-y-2 md:space-y-6 md:w-5/8">
+        <h2 className="text-xl md:text-2xl">
           {t("selected", { defaultValue: "Selected" })}
         </h2>
         <SelectedCoursesPanel />

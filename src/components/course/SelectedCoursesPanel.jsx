@@ -4,6 +4,8 @@ import { useTranslation } from "react-i18next";
 import { getCourseByCode } from "../../data/repo";
 
 import { RiDeleteBin2Fill } from "react-icons/ri";
+import { RxCross1 } from "react-icons/rx";
+import GenerateButton from "../planner/GenerateButton";
 
 export default function SelectedCoursesPanel() {
   const selected = usePlannerStore((s) => s.selectedCourses);
@@ -35,24 +37,25 @@ export default function SelectedCoursesPanel() {
   }
 
   return (
-    <section className="mt-4 md:mt-13 max-h-105 border rounded border-slate-200 inset-shadow-lg p-1 md:p-2 gap-2 overflow-y-auto">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1 md:gap-3">
+    <section className="mt-10 max-h-105 gap-2 overflow-y-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
         {courses.map((course) => (
           <div
             key={course.code}
-            className="flex flex-col justify-between border border-slate-300 shadow rounded p-2 md:p-3 min-w-0 bg-white text-slate-900"
+            className="flex flex-col justify-between border-t border-slate-600 p-2 md:p-3 min-w-0 min-h-28 text-slate-900"
           >
-            <div className="flex items-start justify-between mb-2">
+            <div className="flex items-start justify-between gap-2 mb-2">
               <div className="font-semibold text-sm">
                 {course.code} — {course.name}
               </div>
               <button
-                className="bg-red-600/70 rounded text-white p-1 cursor-pointer hover:opacity-70"
+                className="cursor-pointer hover:opacity-70"
                 onClick={() => removeCourse(course.code)}
                 title={t("remove", { defaultValue: "Remove" })}
               >
                 {/* {t("remove", { defaultValue: "Remove" })} */}
-                <RiDeleteBin2Fill className="md:size-5" />
+                {/* <RiDeleteBin2Fill className="md:size-5" /> */}
+                <RxCross1 />
               </button>
             </div>
 
@@ -68,7 +71,7 @@ export default function SelectedCoursesPanel() {
                     className={`px-2 py-1 text-xs md:text-sm border rounded hover:bg-slate-400/60 cursor-pointer ${
                       active
                         ? "bg-blue-deep-sea/20 border-blue-dark-ocean/50"
-                        : "border-slate-300"
+                        : "border-slate-600"
                     }`}
                     title={`${sec.instructor} • ${sec.meetings
                       .map((m) => `${m.day} ${m.start}-${m.end}`)

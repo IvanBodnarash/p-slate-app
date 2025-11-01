@@ -1,4 +1,4 @@
-import logo from "../../assets/p-slate-logo.png";
+import logo from "../../assets/PSU-slate-logo.png";
 
 export default function Logo() {
   return (

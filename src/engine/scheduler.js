@@ -20,6 +20,7 @@ function makeBlocks(courseCode, section) {
     endMin: toMin(m.end),
     room: m.room,
     timeLabel: `${m.start}–${m.end}`,
+    instructor: section.instructor,
   }));
 }
 
@@ -51,16 +52,56 @@ function placeBlocks(sectionBlocks, placed) {
 }
 
 export function generateConflictFreeSchedules(courses, opts = {}) {
-  const hardSelected = opts.hardSelected || {};
-  const maxSchedules = opts.maxSchedules ?? 200;
+  // const hardSelected = opts.hardSelected || {};
+  // const maxSchedules = opts.maxSchedules ?? 200;
+  const {
+    hardSelected = {},
+    maxSchedules = 200,
+    offDays = [],
+    earliestTime = "00:00",
+    latestTime = "23:59",
+    includeInstructors = [],
+    excludeInstructors = [],
+  } = opts;
+
+  const minEarliest = toMin(earliestTime);
+  const minLatest = toMin(latestTime);
+
+  // Checking the section for compliance with filters
+  const sectionPasses = (sec) => {
+    // Instructors
+    if (includeInstructors.length > 0) {
+      const ok = includeInstructors.some((name) =>
+        (sec.instructor || "").toLowerCase().includes(name.toLowerCase())
+      );
+      if (!ok) return false;
+    }
+    if (excludeInstructors.length > 0) {
+      const banned = excludeInstructors.some((name) =>
+        (sec.instructor || "").toLowerCase().includes(name.toLowerCase())
+      );
+      if (banned) return false;
+    }
+
+    // Days/time
+    return sec.meetings.every((m) => {
+      if (offDays.includes(m.day)) return false;
+      const s = toMin(m.start);
+      const e = toMin(m.end);
+      return s >= minEarliest && e <= minLatest;
+    });
+  };
 
   // Preliminarily: if there is hardSelected for the course – narrow its sections
   const normalized = courses
     .map((c) => {
       const forced = hardSelected[c.code];
-      const sections = forced
+      let sections = forced
         ? c.sections.filter((s) => s.sectionNumber === forced)
         : c.sections;
+
+      sections = sections.filter(sectionPasses);
+
       return { ...c, sections };
     })
     .filter((c) => c.sections.length > 0); // If the filtering left 0 — the rate will drop

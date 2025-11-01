@@ -23,7 +23,7 @@ export default function LanguageToggle() {
   return (
     <button
       onClick={onToggle}
-      className="text-white bg-blue-dark-ocean p-1 rounded-full size-8 md:size-12 md:text-2xl hover:text-sky-500 cursor-pointer"
+      className="text-white bg-[#272f33] p-1 rounded-full size-8 md:size-12 md:text-2xl hover:text-sky-500 cursor-pointer"
       title={lang === "en" ? "Switch to Arabic" : "التبديل إلى الإنجليزية"}
     >
       {t("toggleLabel")}

@@ -1,39 +1,69 @@
 import { useTranslation } from "react-i18next";
 import { usePlannerStore } from "../../store/usePlannerStore";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { getCourseByCode } from "../../data/repo";
 import { generateConflictFreeSchedules } from "../../engine/scheduler";
 import { scoreSchedule } from "../../engine/scoring";
+import { useFilterStore } from "../../store/useFilterStore";
 
 export default function GenerateButton() {
   const { t } = useTranslation("planner");
+
   const selected = usePlannerStore((s) => s.selectedCourses);
   const hardSelected = usePlannerStore((s) => s.sectionByCourse);
   const setGenerated = usePlannerStore((s) => s.setGenerated);
   const clearGenerated = usePlannerStore((s) => s.clearGenerated);
+
   const [loading, setLoading] = useState(false);
   const [lastCount, setLastCount] = useState(null);
 
+  // We only clear the results when the list has actually changed
+  const selectedKey = useMemo(
+    () => selected.slice().sort().join("|"),
+    [selected]
+  );
+  const prevKeyRef = useRef(selectedKey);
+
   useEffect(() => {
     // When the course set changes — we clear old results
-    clearGenerated();
-    setLastCount(null);
-  }, [selected, clearGenerated]);
+    if (prevKeyRef.current !== selectedKey) {
+      prevKeyRef.current = selectedKey;
+      clearGenerated();
+      setLastCount(null);
+    }
+  }, [selectedKey, clearGenerated]);
 
   const onGenerate = async () => {
     setLoading(true);
     try {
+      // we get the freshest filters right here
+      const {
+        offDays,
+        earliestTime,
+        latestTime,
+        includeInstructors,
+        excludeInstructors,
+      } = useFilterStore.getState();
+
       const full = (await Promise.all(selected.map(getCourseByCode))).filter(
         Boolean
       );
       const schedules = generateConflictFreeSchedules(full, {
         hardSelected,
-        maxSchedules: 1000, // 200
+        maxSchedules: 1000,
+        offDays,
+        earliestTime,
+        latestTime,
+        includeInstructors,
+        excludeInstructors,
       })
         .map((s) => ({ ...s, score: scoreSchedule(s) }))
         .sort((a, b) => b.score - a.score); // bests on the top
+
       setGenerated(schedules);
       setLastCount(schedules.length);
+    } catch (e) {
+      console.error("Generate failed:", e);
     } finally {
       setLoading(false);
     }
@@ -46,11 +76,11 @@ export default function GenerateButton() {
       <button
         onClick={onGenerate}
         disabled={disabled}
-        className={`px-3 md:px-4 py-1 md:py-2 rounded bg-blue-deep-sea ${
+        className={`px-2 md:px-3 py-1 border rounded border-slate-600 ${
           disabled
-            ? "opacity-70 cursor-not-allowed"
-            : "hover:opacity-90 cursor-pointer"
-        } text-white`}
+            ? "opacity-50 cursor-not-allowed"
+            : "hover:opacity-70 hover:shadow-md cursor-pointer"
+        }`}
       >
         {loading
           ? t("generating", { defaultValue: "Generating schedules…" })

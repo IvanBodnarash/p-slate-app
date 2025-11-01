@@ -27,7 +27,7 @@ i18n
     },
     interpolation: { escapeValue: false },
     react: { useSuspense: false },
-    debug: true, // Temporary
+    // debug: true, // Temporary
   });
 
 export default i18n;

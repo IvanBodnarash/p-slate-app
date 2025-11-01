@@ -63,12 +63,12 @@ export default function TuitionCalculator() {
   );
 
   return (
-    <section className="mt-8 border border-slate-300 rounded shadow-md">
-      <div className="px-4 py-3 border-b border-slate-300 font-semibold">
+    <section className="">
+      <div className="py-3 text-xl md:text-2xl border-slate-700">
         {t("tuitionTitle", { defaultValue: "Tuition Calculator" })}
       </div>
 
-      <div className="p-2 md:p-4 space-y-4">
+      <div className="space-y-4">
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
           <label className="block">
             <span className="block text-sm mb-1">
@@ -77,7 +77,7 @@ export default function TuitionCalculator() {
             <input
               value={credits}
               disabled
-              className="w-full border border-slate-400 rounded p-1 md:p-2 bg-slate-100"
+              className="w-full border border-slate-700 rounded p-1 md:p-2"
             />
           </label>
 
@@ -91,7 +91,7 @@ export default function TuitionCalculator() {
               step="1"
               value={pricePerCredit}
               onChange={(e) => setPricePerCredit(e.target.value)}
-              className="w-full border border-slate-400 rounded p-1 md:p-2"
+              className="w-full border border-slate-700 rounded p-1 md:p-2"
             />
           </label>
 
@@ -106,26 +106,26 @@ export default function TuitionCalculator() {
               step="1"
               value={scholarshipPct}
               onChange={(e) => setScholarshipPct(e.target.value)}
-              className="w-full border border-slate-400 rounded p-1 md:p-2"
+              className="w-full border border-slate-700 rounded p-1 md:p-2"
             />
           </label>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 md:gap-4 text-sm">
-          <div className="p-2 md:p-3 border border-slate-400 rounded bg-slate-50">
+          <div className="p-2 md:p-3 border border-slate-700 rounded">
             <div className="opacity-70 mb-1">
               {t("pricePerCredit", { defaultValue: "Price per credit" })} ×{" "}
               {t("totalCredits", { defaultValue: "Total credits" })}
             </div>
             <div className="font-semibold">{nf.format(subtotal)}</div>
           </div>
-          <div className="p-2 md:p-3 border border-slate-400 rounded bg-slate-50">
+          <div className="p-2 md:p-3 border border-slate-700 rounded">
             <div className="opacity-70 mb-1">
               {t("scholarship", { defaultValue: "Scholarship (%)" })}
             </div>
             <div className="font-semibold">− {nf.format(discount)}</div>
           </div>
-          <div className="p-2 md:p-3 border border-slate-400 rounded bg-slate-50">
+          <div className="p-2 md:p-3 border border-slate-700 rounded">
             <div className="opacity-70 mb-1">
               {t("tuitionTotal", { defaultValue: "Total tuition" })}
             </div>

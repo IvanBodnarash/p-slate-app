@@ -1,8 +1,8 @@
 {
   "pageTitle": "مخطط المقررات",
   "courseSearch": "بحث الدورة",
-  "selected": "مختارة",
-  "searchLabel": "ابحث عن المقررات",
+  "selected": "دورات مختارة",
+  "searchLabel": "ابحث عن مقرر",
   "searchPlaceholder": "برمز أو اسم المقرر (مثلاً: CS101, Calculus)",
   "searching": "جارٍ البحث…",
   "noCourses": "لا توجد دورات لهذا اليوم",
@@ -32,11 +32,20 @@
   "tue": "الثلاثاء",
   "wed": "الأربعاء",
   "thu": "الخميس",
+  "daysOff": "اختر أيام إجازتك",
   "gridTitle": "الجدول الأسبوعي",
   "instructor": "المدرس",
   "room": "القاعة",
   "loading": "جارٍ تحميل البيانات…",
   "backToSearch": "العودة إلى البحث",
   "addAnotherCourse": "إضافة مقرر آخر",
-  "selectSection": "اختر الشعبة"
+  "selectSection": "اختر الشعبة",
+  "filter": "فلتر",
+  "earliestTime": "أقرب وقت للدرس:",
+  "latestTime": "آخر وقت للدرس:",
+  "filterMajor": "تصفية حسب التخصص:",
+  "filterInstructors": "تصفية حسب المدرسين",
+  "icludeIns": "تضمين المدرسين",
+  "excludeIns": "استبعاد المدرسين",
+  "allMajors": "جميع التخصصات"
 }

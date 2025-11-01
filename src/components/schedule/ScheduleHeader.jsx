@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { usePlannerStore } from "../../store/usePlannerStore";
 
+import { MdOutlineCopyAll } from "react-icons/md";
+
 export default function ScheduleHeader() {
   const { t } = useTranslation("planner");
   const schedules = usePlannerStore((s) => s.generatedSchedules);
@@ -33,16 +35,17 @@ export default function ScheduleHeader() {
   };
 
   return (
-    <div className="flex items-center justify-between mb-4 mt-8">
-      <h3 className="text-xl font-semibold">
+    <div className="flex items-center justify-between gap-4 mb-4 mt-8">
+      <h3 className="text-xl md:text-2xl">
         {t("gridTitle", { defaultValue: "Weekly Schedule" })}
       </h3>
 
       <button
         onClick={onCopy}
-        className="ml-auto px-2 md:px-3 py-0.5 md:py-1 rounded border border-black/50 hover:shadow-md text-black/60 cursor-pointer hover:opacity-90"
+        className="ml-auto flex items-center px-2 md:px-3 py-0.5 md:py-1 rounded border border-black/50 hover:shadow text-black/60 cursor-pointer hover:opacity-90"
         title={t("copySection", { defaultValue: "Copy section numbers" })}
       >
+        <MdOutlineCopyAll />
         {copied
           ? t("copied", { defaultValue: "Copied!" })
           : t("copySection", { defaultValue: "Copy section numbers" })}
