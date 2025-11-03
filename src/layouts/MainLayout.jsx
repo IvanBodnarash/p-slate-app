@@ -15,7 +15,7 @@ export default function MainLayout() {
   }, [lang, i18n]);
 
   return (
-    <div className="font-tajawal bg-linear-to-br from-[#9bb0cc] to-[#405675] min-h-screen">
+    <div className="font-tajawal bg-[linear-gradient(135deg,#3E506D,#A9BBD6)] min-h-screen">
       <Header />
       <main
         className="px-6 md:px-14 lg:px-28 py-6"

@@ -34,7 +34,7 @@ export default function PlannerOptions() {
             key={d}
             onClick={() => toggleDay(d)}
             className={`px-2 py-1 cursor-pointer hover:text-slate-600 transition-all ${
-              offDays.includes(d) ? "line-through" : ""
+              offDays.includes(d) ? "line-through opacity-50" : ""
             }`}
           >
             {t(DAY_LABEL_KEY[d], { defaultValue: d })}
