@@ -7,3 +7,8 @@
     --color-blue-dark-ocean: #0d2237;
     --color-orange-bee: #f9a01b;
 }
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #7d899d #303e54;
+}

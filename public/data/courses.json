@@ -27,12 +27,22 @@
             { "day": "Mon", "start": "11:00", "end": "12:15", "room": "C-105" },
             { "day": "Wed", "start": "11:00", "end": "12:15", "room": "C-105" }
           ]
+        },
+        {
+          "sectionNumber": "CS101-03",
+          "instructor": "Ms. Reem Al-Zahrani",
+          "gender": "F",
+          "meetings": [
+            { "day": "Mon", "start": "14:00", "end": "15:15", "room": "C-307" },
+            { "day": "Wed", "start": "14:00", "end": "15:15", "room": "C-307" },
+            { "day": "Thu", "start": "12:00", "end": "13:00", "room": "C-307" }
+          ]
         }
       ]
     },
     {
       "code": "CS102",
-      "name": "Programming I (JavaScript)",
+      "name": "Programming I (Java)",
       "major": "Software Engineering",
       "credits": 4,
       "sections": [
@@ -208,6 +218,7 @@
         {
           "sectionNumber": "ENG101-02",
           "instructor": "Ms. Sarah Khalil",
+          "gender": "F",
           "meetings": [
             { "day": "Mon", "start": "15:00", "end": "16:15", "room": "F-203" },
             { "day": "Wed", "start": "15:00", "end": "16:15", "room": "F-203" }

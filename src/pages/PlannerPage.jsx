@@ -13,9 +13,6 @@ export default function PlannerPage() {
   return (
     <div className="flex flex-col md:flex-row gap-6">
       <div className="space-y-2 md:space-y-6 md:w-3/8">
-        {/* <h2 className="text-2xl font-bold">
-          {t("courseSearch", { defaultValue: "Course Search" })}
-        </h2> */}
         <CourseSearch />
       </div>
 

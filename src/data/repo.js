@@ -13,46 +13,26 @@ const toMin = (t) => {
   return h * 60 + (m || 0);
 };
 
-export async function searchCourses(queryOrParams) {
-  await ensureLoaded();
-
-  let q = "";
-  let major = "";
-  let offDays = [];
-  let earliestTime = "00:00";
-  let latestTime = "23:59";
-  let instructor = "";
-  let includeInstructors = [];
-  let excludeInstructors = [];
-
-  if (typeof queryOrParams === "string") {
-    q = queryOrParams.toLowerCase().trim();
-  } else if (queryOrParams && typeof queryOrParams === "object") {
-    q = (queryOrParams.q || "").toLowerCase().trim();
-    major = (queryOrParams.major || "").toLowerCase().trim();
-    offDays = Array.isArray(queryOrParams.offDays) ? queryOrParams.offDays : [];
-    earliestTime = queryOrParams.earliestTime || "00:00";
-    latestTime = queryOrParams.latestTime || "23:59";
-    instructor = (queryOrParams.instructor || "").toLowerCase().trim();
-    includeInstructors = Array.isArray(queryOrParams.includeInstructors)
-      ? queryOrParams.includeInstructors
-      : [];
-    excludeInstructors = Array.isArray(queryOrParams.excludeInstructors)
-      ? queryOrParams.excludeInstructors
-      : [];
-  }
+function makeSectionPasses(params = {}) {
+  const {
+    offDays = [],
+    earliestTime = "00:00",
+    latestTime = "23:59",
+    instructor = "",
+    includeInstructors = [],
+    excludeInstructors = [],
+    instructorsGender = "",
+  } = params;
 
   const minEarliest = toMin(earliestTime);
   const minLatest = toMin(latestTime);
 
-  // a section is valid if EACH of its classes:
-  // - does not fall on offDays
-  // - is completely within [earliest, latest]
-  const sectionPasses = (sec) => {
+  return function sectionPasses(sec) {
     const name = (sec.instructor || "").toLowerCase();
+    const instrGender = (sec.gender || "").toUpperCase();
 
     // instructor: single filter
-    if (instructor && !name.includes(instructor)) return false;
+    if (instructor && !name.includes(instructor.toLowerCase())) return false;
 
     // instructor: lists include/exclude
     if (includeInstructors.length > 0) {
@@ -66,6 +46,10 @@ export async function searchCourses(queryOrParams) {
       if (banned) return false;
     }
 
+    // Filter by instructor's gender
+    if (instructorsGender && instrGender !== instructorsGender.toUpperCase())
+      return false;
+
     // Days/time
     return sec.meetings.every((m) => {
       if (offDays.includes(m.day)) return false;
@@ -74,6 +58,28 @@ export async function searchCourses(queryOrParams) {
       return s >= minEarliest && e <= minLatest;
     });
   };
+}
+
+export async function searchCourses(queryOrParams) {
+  await ensureLoaded();
+
+  let q = "";
+  let major = "";
+
+  const pass = makeSectionPasses(
+    typeof queryOrParams === "object" ? queryOrParams : {}
+  );
+
+  if (typeof queryOrParams === "string") {
+    q = queryOrParams.toLowerCase().trim();
+  } else if (queryOrParams && typeof queryOrParams === "object") {
+    q = (queryOrParams.q || "").toLowerCase().trim();
+    major = (queryOrParams.major || "").toLowerCase().trim();
+  }
+
+  // a section is valid if EACH of its classes:
+  // - does not fall on offDays
+  // - is completely within [earliest, latest]
 
   let list = cache.courses;
 
@@ -93,14 +99,29 @@ export async function searchCourses(queryOrParams) {
   // filter sections by options;
   // if after that the course has no sections — do not show the course
   list = list
-    .map((c) => {
-      const filteredSections = (c.sections || []).filter(sectionPasses);
-      return { ...c, sections: filteredSections };
-    })
+    .map((c) => ({
+      ...c,
+      sections: (c.sections || []).filter(pass),
+    }))
     .filter((c) => c.sections.length > 0);
 
   // Return max 50 elms
   return list.slice(0, 50);
+}
+
+export async function getCourseByCodeFiltered(code, params = {}) {
+  await ensureLoaded();
+  const course =
+    cache.courses.find(
+      (c) => c.code.toLowerCase() === String(code).toLowerCase().trim()
+    ) || null;
+  if (!course) return null;
+
+  const pass = makeSectionPasses(params);
+  const filtered = (course.sections || []).filter(pass);
+  if (filtered.length === 0) return null;
+
+  return { ...course, sections: filtered };
 }
 
 export async function getCourseByCode(code) {
@@ -119,18 +140,40 @@ export async function getMajors() {
   return majors;
 }
 
-export async function getInstructors() {
+export async function getInstructors(params = {}) {
   await ensureLoaded();
+
+  const pass = makeSectionPasses(params);
+  const major = (params.major || "").toLowerCase().trim();
+
+  let pool = cache.courses;
+  if (major) {
+    pool = pool.filter((c) => (c.major || "").toLowerCase() === major);
+  }
 
   const instructors = Array.from(
     new Set(
-      (cache.courses || [])
-        .flatMap((c) => (c.sections || []).map((s) => s.instructor))
+      pool
+        .flatMap((c) => c.sections || [])
+        .filter(pass)
+        .map((s) => s.instructor)
         .filter(Boolean)
     )
   ).sort((a, b) => a.localeCompare(b));
 
   return instructors;
+}
+
+export async function getInstructorsGender() {
+  await ensureLoaded();
+
+  return Array.from(
+    new Set(
+      (cache.courses || [])
+        .flatMap((c) => (c.sections || []).map((s) => s.gender))
+        .filter(Boolean)
+    )
+  ).sort((a, b) => a.localeCompare(b));
 }
 
 export async function getConfig() {

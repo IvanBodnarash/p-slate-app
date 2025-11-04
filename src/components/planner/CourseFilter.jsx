@@ -1,6 +1,10 @@
 import { useTranslation } from "react-i18next";
 import { useFilterStore } from "../../store/useFilterStore";
-import { getInstructors, getMajors } from "../../data/repo";
+import {
+  getInstructors,
+  getInstructorsGender,
+  getMajors,
+} from "../../data/repo";
 import { useCallback, useEffect, useState } from "react";
 
 import { IoIosArrowDown } from "react-icons/io";
@@ -14,6 +18,8 @@ export default function CourseFilter() {
     setIncludeInstructors,
     excludeInstructors,
     setExcludeInstructors,
+    instructorsGender,
+    setInstructorsGender,
   } = useFilterStore();
 
   const { t } = useTranslation("planner");
@@ -22,19 +28,59 @@ export default function CourseFilter() {
   const [instructors, setInstructors] = useState([]);
   const [includeInstrSection, setIncludeInstrSection] = useState(false);
   const [excludeInstrSection, setExcludeInstrSection] = useState(false);
+  const [genders, setGenders] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  const [majorsSection, setMajorsSection] = useState(false);
+  const [instructorsSection, setInstructorsSection] = useState(false);
+
   useEffect(() => {
+    let cancelled = false;
+    setLoading(true);
     (async () => {
-      const [majorList, instructorList] = await Promise.all([
-        getMajors(),
-        getInstructors(),
-      ]);
-      setMajors(majorList);
-      setInstructors(instructorList);
-      setLoading(false);
+      try {
+        const params = {
+          major,
+          offDays: useFilterStore.getState().offDays,
+          earliestTime: useFilterStore.getState().earliestTime,
+          latestTime: useFilterStore.getState().latestTime,
+          instructorsGender,
+          includeInstructors,
+          excludeInstructors,
+        };
+        const [majorList, instructorList, gendersList] = await Promise.all([
+          getMajors(),
+          getInstructors(params),
+          getInstructorsGender(),
+        ]);
+        if (cancelled) return;
+        setMajors(majorList);
+        setInstructors(instructorList);
+        setGenders(gendersList);
+
+        const includeClean = includeInstructors.filter((n) =>
+          instructorList.includes(n)
+        );
+        if (includeClean.length !== includeInstructors.length) {
+          setIncludeInstructors(includeClean);
+        }
+        const excludeClean = excludeInstructors.filter((n) =>
+          instructorList.includes(n)
+        );
+        if (excludeClean.length !== excludeInstructors.length) {
+          setExcludeInstructors(excludeClean);
+        }
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
     })();
-  }, []);
+  }, [
+    major,
+    instructorsGender,
+    useFilterStore.getState().offDays.join("|"),
+    useFilterStore.getState().earliestTime,
+    useFilterStore.getState().latestTime,
+  ]);
 
   const readMulti = (e) =>
     Array.from(e.target.selectedOptions).map((o) => o.value);
@@ -83,116 +129,184 @@ export default function CourseFilter() {
   return (
     <section className="mb-4">
       {/* Major */}
-      <div className="">
-        <label className="block text-slate-700 mb-2">
-          {t("filterMajor", { defaultValue: "Filter by major" })}
-        </label>
-        <select
-          value={major}
-          onChange={(e) => setMajor(e.target.value)}
-          className="border rounded outline-0 p-1 border-slate-700 text-slate-800 cursor-pointer"
+      <div className="border-b border-slate-600 pb-2">
+        <button
+          className="flex items-center gap-4 cursor-pointer"
+          onClick={() => setMajorsSection((prev) => !prev)}
         >
-          <option value="">
-            {t("allMajors", { defaultValue: "All majors" })}
-          </option>
-          {majors.map((m) => (
-            <option key={m} value={m}>
-              {m}
+          <h3>{t("filterMajor", { defaultValue: "Filter by major" })}</h3>
+          {majorsSection ? <IoIosArrowUp /> : <IoIosArrowDown />}
+        </button>
+
+        {majorsSection && (
+          <select
+            value={major}
+            onChange={(e) => setMajor(e.target.value)}
+            className="border rounded outline-0 p-1 my-2 border-slate-700 text-slate-800 cursor-pointer"
+          >
+            <option value="" className="bg-[#808ea1] cursor-pointer">
+              {t("allMajors", { defaultValue: "All majors" })}
             </option>
-          ))}
-        </select>
+            {majors.map((m) => (
+              <option key={m} value={m} className="bg-[#808ea1] cursor-pointer">
+                {m}
+              </option>
+            ))}
+          </select>
+        )}
       </div>
 
-      <div>
-        <label className="block text-slate-700 mt-2">
-          {t("filterInstructors", { defaultValue: "Filter by instructors" })}
-        </label>
-      </div>
+      {/* Instructors */}
+      <div className="border-b py-2 border-slate-600">
+        <button
+          className="flex items-center gap-4 cursor-pointer"
+          onClick={() => setInstructorsSection((prev) => !prev)}
+        >
+          <h3>
+            {t("filterInstructors", { defaultValue: "Filter by instructors" })}
+          </h3>
+          {instructorsSection ? <IoIosArrowUp /> : <IoIosArrowDown />}
+        </button>
 
-      <div className="flex items-start gap-4">
-        {/* Include instructors */}
-        <div className="md:w-2/4">
-          <div className="flex items-center justify-between my-2">
-            <button
-              className="flex items-center gap-1 border rounded px-2 py-1 text-slate-700 cursor-pointer"
-              onClick={() => setIncludeInstrSection((prev) => !prev)}
-            >
-              <div>
-                {t("icludeIns", {
-                  defaultValue: "Include instructors",
-                })}
+        {instructorsSection && (
+          <div className="mb-2">
+            <div className="flex items-start gap-4">
+              {/* Include instructors */}
+              <div className="md:w-2/4">
+                <div className="flex items-center justify-between gap-2 my-2">
+                  <button
+                    className="flex items-center gap-1 border rounded px-2 py-1 text-slate-800 cursor-pointer"
+                    onClick={() => setIncludeInstrSection((prev) => !prev)}
+                  >
+                    <div className="line-clamp-1">
+                      {t("icludeIns", {
+                        defaultValue: "Include instructors",
+                      })}
+                    </div>
+                    {includeInstrSection ? (
+                      <IoIosArrowUp />
+                    ) : (
+                      <IoIosArrowDown />
+                    )}
+                  </button>
+                  {includeInstrSection && instructors.length !== 0 && (
+                    <button
+                      type="button"
+                      onClick={clearInclude}
+                      className="text-xs underline hover:opacity-70 cursor-pointer"
+                    >
+                      {t("clear", { defaultValue: "Clear" })}
+                    </button>
+                  )}
+                </div>
+
+                {includeInstrSection && (
+                  <select
+                    multiple
+                    size={8}
+                    value={includeInstructors}
+                    onChange={onIncludeChange}
+                    className={`w-full border rounded p-2 text-slate-800 outline-0 ${
+                      instructors.length === 0 ? "hidden" : ""
+                    }`}
+                  >
+                    {instructors.map((name) => (
+                      <option key={name} value={name}>
+                        {name}
+                      </option>
+                    ))}
+                  </select>
+                )}
+
+                {includeInstrSection && instructors.length === 0 && (
+                  <p className="mt-2 text-xs text-slate-700 italic">
+                    {t("noInstructors", {
+                      defaultValue: "No instructors match the current filters.",
+                    })}
+                  </p>
+                )}
               </div>
-              {includeInstrSection ? <IoIosArrowUp /> : <IoIosArrowDown />}
-            </button>
-            {includeInstrSection && (
-              <button
-                type="button"
-                onClick={clearInclude}
-                className="text-xs underline hover:opacity-70 cursor-pointer"
-              >
-                {t("clear", { defaultValue: "Clear" })}
-              </button>
-            )}
-          </div>
 
-          {includeInstrSection && (
-            <select
-              multiple
-              size={8}
-              value={includeInstructors}
-              onChange={onIncludeChange}
-              className="w-full border rounded p-2 text-slate-800 outline-0"
-            >
-              {instructors.map((name) => (
-                <option key={name} value={name}>
-                  {name}
-                </option>
-              ))}
-            </select>
-          )}
-        </div>
+              {/* Exclude instructors */}
+              <div className="md:w-2/4">
+                <div className="flex items-center justify-between gap-2 my-2">
+                  <button
+                    className="flex items-center gap-1 border rounded px-2 py-1 text-slate-800 cursor-pointer"
+                    onClick={() => setExcludeInstrSection((prev) => !prev)}
+                  >
+                    <div className="line-clamp-1">
+                      {t("excludeIns", {
+                        defaultValue: "Exclude instructors",
+                      })}
+                    </div>
+                    {excludeInstrSection ? (
+                      <IoIosArrowUp />
+                    ) : (
+                      <IoIosArrowDown />
+                    )}
+                  </button>
+                  {excludeInstrSection && instructors.length !== 0 && (
+                    <button
+                      type="button"
+                      onClick={clearExclude}
+                      className="text-xs underline hover:opacity-70 cursor-pointer"
+                    >
+                      {t("clear", { defaultValue: "Clear" })}
+                    </button>
+                  )}
+                </div>
 
-        {/* Exclude instructors */}
-        <div className="md:w-2/4">
-          <div className="flex items-center justify-between my-2">
-            <button
-              className="flex items-center gap-1 border rounded px-2 py-1 text-slate-700 cursor-pointer"
-              onClick={() => setExcludeInstrSection((prev) => !prev)}
-            >
-              <div>
-                {t("excludeIns", {
-                  defaultValue: "Exclude instructors",
-                })}
+                {excludeInstrSection && (
+                  <select
+                    multiple
+                    size={8}
+                    value={excludeInstructors}
+                    onChange={onExcludeChange}
+                    className={`w-full border rounded p-2 text-slate-800 outline-0 ${
+                      instructors.length === 0 ? "hidden" : ""
+                    }`}
+                  >
+                    {instructors.map((name) => (
+                      <option key={name} value={name}>
+                        {name}
+                      </option>
+                    ))}
+                  </select>
+                )}
+
+                {excludeInstrSection && instructors.length === 0 && (
+                  <p className="mt-2 text-xs text-slate-700 italic">
+                    {t("noInstructors", {
+                      defaultValue: "No instructors match the current filters.",
+                    })}
+                  </p>
+                )}
               </div>
-              {excludeInstrSection ? <IoIosArrowUp /> : <IoIosArrowDown />}
-            </button>
-            {excludeInstrSection && (
-              <button
-                type="button"
-                onClick={clearExclude}
-                className="text-xs underline hover:opacity-70 cursor-pointer"
-              >
-                {t("clear", { defaultValue: "Clear" })}
-              </button>
-            )}
-          </div>
+            </div>
 
-          {excludeInstrSection && (
-            <select
-              multiple
-              size={8}
-              value={excludeInstructors}
-              onChange={onExcludeChange}
-              className="w-full border rounded p-2 text-slate-800 outline-0"
-            >
-              {instructors.map((name) => (
-                <option key={name} value={name}>
-                  {name}
+            <div>
+              <p className="mb-2">
+                {t("gender", {
+                  defaultValue: "Gender:",
+                })}
+              </p>
+              <select
+                value={instructorsGender}
+                onChange={(e) => setInstructorsGender(e.target.value)}
+                className="border rounded p-1 text-slate-800 outline-0 cursor-pointer"
+              >
+                <option value="" className="bg-[#808ea1] cursor-pointer">
+                  {t("allGenders", { defaultValue: "All genders" })}
                 </option>
-              ))}
-            </select>
-          )}
-        </div>
+                {genders.map((g) => (
+                  <option key={g} value={g} className="bg-[#808ea1]">
+                    {g}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

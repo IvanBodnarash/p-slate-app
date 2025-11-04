@@ -1,35 +1,43 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { searchCourses } from "../data/repo";
 import { useFilterStore } from "../store/useFilterStore";
 
-export function useCoursesSearch(query) {
+export function useCoursesSearch(filters) {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
-  const debounced = useDebouncedValue(query, 200);
 
-  const major = useFilterStore((s) => s.major);
-  const offDays = useFilterStore((s) => s.offDays);
-  const earliestTime = useFilterStore((s) => s.earliestTime);
-  const latestTime = useFilterStore((s) => s.latestTime);
-  const instructor = useFilterStore((s) => s.instructor);
-  const includeInstructors = useFilterStore((s) => s.includeInstructors);
-  const excludeInstructors = useFilterStore((s) => s.excludeInstructors);
+  const debounced = useDebouncedValue(filters?.q ?? "", 200);
+
+  const params = useMemo(() => {
+    const {
+      major = "",
+      offDays = [],
+      earliestTime = "00:00",
+      latestTime = "23:59",
+      instructor = "",
+      includeInstructors = [],
+      excludeInstructors = [],
+      instructorsGender = "",
+    } = filters || {};
+    return {
+      q: debounced,
+      major,
+      offDays,
+      earliestTime,
+      latestTime,
+      instructor,
+      includeInstructors,
+      excludeInstructors,
+      instructorsGender,
+    };
+  }, [filters, debounced]);
 
   useEffect(() => {
     let cancelled = false;
     (async () => {
       setLoading(true);
       try {
-        const list = await searchCourses({
-          q: debounced,
-          major,
-          offDays,
-          earliestTime,
-          latestTime,
-          instructor,
-          includeInstructors,
-          excludeInstructors,
-        });
+        const list = await searchCourses(params);
         if (!cancelled) setResults(list);
       } finally {
         if (!cancelled) setLoading(false);
@@ -38,16 +46,7 @@ export function useCoursesSearch(query) {
     return () => {
       cancelled = true;
     };
-  }, [
-    debounced,
-    major,
-    offDays,
-    earliestTime,
-    latestTime,
-    instructor,
-    includeInstructors,
-    excludeInstructors,
-  ]);
+  }, [params]);
 
   return { results, loading };
 }

@@ -10,6 +10,8 @@ export const useFilterStore = create((set) => ({
   includeInstructors: [],
   excludeInstructors: [],
 
+  instructorsGender: "",
+
   setMajor: (major) => set({ major }),
   setOffDays: (days) => set({ offDays: days }),
   setTimeRange: (earliest, latest) =>
@@ -17,4 +19,5 @@ export const useFilterStore = create((set) => ({
   setInstructor: (instructor) => set({ instructor }),
   setIncludeInstructors: (list) => set({ includeInstructors: list }),
   setExcludeInstructors: (list) => set({ excludeInstructors: list }),
+  setInstructorsGender: (instructorsGender) => set({ instructorsGender }),
 }));

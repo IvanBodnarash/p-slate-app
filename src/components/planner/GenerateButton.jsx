@@ -10,7 +10,7 @@ export default function GenerateButton() {
   const { t } = useTranslation("planner");
 
   const selected = usePlannerStore((s) => s.selectedCourses);
-  const hardSelected = usePlannerStore((s) => s.sectionByCourse);
+  const hardSelected = usePlannerStore((s) => s.sectionsByCourse);
   const setGenerated = usePlannerStore((s) => s.setGenerated);
   const clearGenerated = usePlannerStore((s) => s.clearGenerated);
 
@@ -43,6 +43,7 @@ export default function GenerateButton() {
         latestTime,
         includeInstructors,
         excludeInstructors,
+        instructorsGender,
       } = useFilterStore.getState();
 
       const full = (await Promise.all(selected.map(getCourseByCode))).filter(
@@ -56,6 +57,7 @@ export default function GenerateButton() {
         latestTime,
         includeInstructors,
         excludeInstructors,
+        instructorsGender,
       })
         .map((s) => ({ ...s, score: scoreSchedule(s) }))
         .sort((a, b) => b.score - a.score); // bests on the top

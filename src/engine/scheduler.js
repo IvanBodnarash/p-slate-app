@@ -24,15 +24,6 @@ function makeBlocks(courseCode, section) {
   }));
 }
 
-// function meetingsToBlocks(section) {
-//   return section.meetings.map((m) => ({
-//     day: DAY_IDX[m.day],
-//     startMin: toMin(m.start),
-//     endMin: toMin(m.end),
-//     room: m.room,
-//   }));
-// }
-
 function sectionConflicts(sectionBlocks, placed) {
   // placed — an array of already arranged blocks by day
   for (const blk of sectionBlocks) {
@@ -62,6 +53,7 @@ export function generateConflictFreeSchedules(courses, opts = {}) {
     latestTime = "23:59",
     includeInstructors = [],
     excludeInstructors = [],
+    instructorsGender = "",
   } = opts;
 
   const minEarliest = toMin(earliestTime);
@@ -69,19 +61,24 @@ export function generateConflictFreeSchedules(courses, opts = {}) {
 
   // Checking the section for compliance with filters
   const sectionPasses = (sec) => {
+    const name = (sec.instructor || "").toLowerCase();
+    const g = (sec.gender || "").toUpperCase();
+
     // Instructors
     if (includeInstructors.length > 0) {
-      const ok = includeInstructors.some((name) =>
-        (sec.instructor || "").toLowerCase().includes(name.toLowerCase())
+      const ok = includeInstructors.some((n) =>
+        name.includes(String(n).toLowerCase())
       );
       if (!ok) return false;
     }
     if (excludeInstructors.length > 0) {
-      const banned = excludeInstructors.some((name) =>
-        (sec.instructor || "").toLowerCase().includes(name.toLowerCase())
+      const banned = excludeInstructors.some((n) =>
+        name.includes(String(n).toLowerCase())
       );
       if (banned) return false;
     }
+
+    if (instructorsGender && g !== instructorsGender) return false;
 
     // Days/time
     return sec.meetings.every((m) => {

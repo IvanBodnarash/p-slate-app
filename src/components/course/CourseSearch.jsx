@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useCoursesSearch } from "../../hooks/useCoursesSearch";
 import { usePlannerStore } from "../../store/usePlannerStore";
+import { useFilterStore } from "../../store/useFilterStore";
 
 import { BsSearch } from "react-icons/bs";
 import { IoAdd } from "react-icons/io5";
@@ -14,10 +15,48 @@ import CourseFilter from "../planner/CourseFilter";
 
 export default function CourseSearch() {
   const [q, setQ] = useState("");
-  const [isOpenFilterSection, setIsOpenFilterSection] = useState(false);
-  const { results, loading } = useCoursesSearch(q);
+
+  const {
+    major,
+    offDays,
+    earliestTime,
+    latestTime,
+    instructor,
+    includeInstructors,
+    excludeInstructors,
+    instructorsGender,
+  } = useFilterStore();
+
+  const filters = useMemo(
+    () => ({
+      q,
+      major,
+      offDays,
+      earliestTime,
+      latestTime,
+      instructor,
+      includeInstructors,
+      excludeInstructors,
+      instructorsGender,
+    }),
+    [
+      q,
+      major,
+      offDays,
+      earliestTime,
+      latestTime,
+      instructor,
+      includeInstructors,
+      excludeInstructors,
+      instructorsGender,
+    ]
+  );
+
+  const { results, loading } = useCoursesSearch(filters);
+
   const addCourse = usePlannerStore((s) => s.addCourse);
   const { t } = useTranslation("planner");
+  const [isOpenFilterSection, setIsOpenFilterSection] = useState(false);
 
   return (
     <section className="space-y-3">
@@ -64,7 +103,7 @@ export default function CourseSearch() {
           {t("noResults", { defaultValue: "No results" })}
         </div>
       ) : (
-        <ul className="space-y-2 rounded">
+        <ul className="space-y-2 rounded max-h-74 md:max-h-full overflow-auto">
           {results.map((c) => (
             <li
               key={c.code}
