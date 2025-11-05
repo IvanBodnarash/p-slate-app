@@ -186,10 +186,7 @@ The score is expressed as a percentage (0–100%) — the higher the number, the
 ### Formula example (simplified):
 
 ```bash
-score = 100
-  - earlyMorningPenalty
-  - gapPenalty
-  - unevenDayPenalty
+score = 100 - earlyMorningPenalty - gapPenalty - unevenDayPenalty
 ```
 
 ### Goal:
