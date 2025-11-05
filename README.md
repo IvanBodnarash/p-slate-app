@@ -4,15 +4,15 @@
 
 ### Front-End:
 
-- React + Vite – fast development and optimized build setup
+- **React + Vite** – fast development and optimized build setup
 
-- Tailwind CSS – responsive, modern UI styling
+- **Tailwind CSS** – responsive, modern UI styling
 
-- React Router – routing with multilingual (EN/AR) URL structure
+- **React Router** – routing with multilingual (EN/AR) URL structure
 
-- i18next – internationalization with English and Arabic (RTL) support
+- **i18next** – internationalization with English and Arabic (RTL) support
 
-- Zustand – lightweight global state management
+- **Zustand** – lightweight global state management
 
 ### Architecture & Code Quality:
 
