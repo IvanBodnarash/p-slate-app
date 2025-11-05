@@ -54,7 +54,7 @@ export function generateConflictFreeSchedules(courses, opts = {}) {
     latestTime = "23:59",
     includeInstructors = [],
     excludeInstructors = [],
-    instructorsGender = "",
+    studentGender = "",
   } = opts;
 
   const minEarliest = toMin(earliestTime);
@@ -79,7 +79,7 @@ export function generateConflictFreeSchedules(courses, opts = {}) {
       if (banned) return false;
     }
 
-    if (instructorsGender && g !== instructorsGender) return false;
+    if (studentGender && g !== studentGender) return false;
 
     // Days/time
     return sec.meetings.every((m) => {

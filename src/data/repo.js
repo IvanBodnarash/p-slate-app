@@ -21,7 +21,7 @@ function makeSectionPasses(params = {}) {
     instructor = "",
     includeInstructors = [],
     excludeInstructors = [],
-    instructorsGender = "",
+    studentGender = "",
   } = params;
 
   const minEarliest = toMin(earliestTime);
@@ -47,7 +47,7 @@ function makeSectionPasses(params = {}) {
     }
 
     // Filter by instructor's gender
-    if (instructorsGender && instrGender !== instructorsGender.toUpperCase())
+    if (studentGender && instrGender !== studentGender.toUpperCase())
       return false;
 
     // Days/time

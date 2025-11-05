@@ -1,12 +1,12 @@
 import { useLocation, useNavigate, useParams } from "react-router";
 import { useTranslation } from "react-i18next";
-import { useLocaleStore } from "../../store/useLocaleStore";
+import { useUserStore } from "../../store/useUserStore";
 
 export default function LanguageToggle() {
   const { lang = "en" } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
-  const setLang = useLocaleStore((s) => s.setLang);
+  const setLang = useUserStore((s) => s.setLang);
   const { t } = useTranslation();
 
   const next = lang === "en" ? "ar" : "en";

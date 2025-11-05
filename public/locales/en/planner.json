@@ -5,7 +5,7 @@
   "searchLabel": "Search for courses",
   "searchPlaceholder": "By code or name (e.g., CS101, Calculus)",
   "searching": "Searching…",
-  "noCourses": "No courses for this day",
+  "noCourses": "No lectures for this day",
   "add": "Add",
   "addCourse": "Add course",
   "noResults": "No results found",
@@ -46,7 +46,9 @@
   "icludeIns": "Include instructors",
   "excludeIns": "Exclude instructors",
   "allMajors": "All majors",
-  "gender": "Gender:",
+  "gender": "Gender",
+  "male": "Male",
+  "female": "Female",
   "allGenders": "All genders",
   "timeFilter": "Filter by time"
 }

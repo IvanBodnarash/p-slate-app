@@ -1,20 +1,17 @@
 import { useEffect, useState } from "react";
 import { usePlannerStore } from "../../store/usePlannerStore";
 import { useTranslation } from "react-i18next";
-import { getCourseByCode, getCourseByCodeFiltered } from "../../data/repo";
+import { getCourseByCodeFiltered } from "../../data/repo";
 
 import { RxCross1 } from "react-icons/rx";
 import { useFilterStore } from "../../store/useFilterStore";
+import { useUserStore } from "../../store/useUserStore";
 
 export default function SelectedCoursesPanel() {
   const selected = usePlannerStore((s) => s.selectedCourses);
   const removeCourse = usePlannerStore((s) => s.removeCourse);
-  // const chooseSection = usePlannerStore((s) => s.chooseSection);
-  // const toggleSection = usePlannerStore((s) => s.toggleSection);
-  // const chosen = usePlannerStore((s) => s.sectionsByCourse);
   const toggleExclude = usePlannerStore((s) => s.toggleExcludeSection);
   const excluded = usePlannerStore((s) => s.excludedByCourse);
-  console.log("excludedByCourse", excluded);
 
   const {
     offDays,
@@ -22,8 +19,9 @@ export default function SelectedCoursesPanel() {
     latestTime,
     includeInstructors,
     excludeInstructors,
-    instructorsGender,
   } = useFilterStore();
+
+  const { studentGender } = useUserStore();
 
   const [courses, setCourses] = useState([]);
   const { t } = useTranslation("planner");
@@ -37,7 +35,7 @@ export default function SelectedCoursesPanel() {
         latestTime,
         includeInstructors,
         excludeInstructors,
-        instructorsGender,
+        studentGender,
       };
       const full = await Promise.all(
         selected.map((code) => getCourseByCodeFiltered(code, filters))
@@ -54,7 +52,7 @@ export default function SelectedCoursesPanel() {
     latestTime,
     includeInstructors,
     excludeInstructors,
-    instructorsGender,
+    studentGender,
   ]);
 
   if (selected.length === 0) {

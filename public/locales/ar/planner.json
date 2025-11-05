@@ -5,7 +5,7 @@
   "searchLabel": "ابحث عن مقرر",
   "searchPlaceholder": "برمز أو اسم المقرر (مثلاً: CS101, Calculus)",
   "searching": "جارٍ البحث…",
-  "noCourses": "لا توجد دورات لهذا اليوم",
+  "noCourses": "لا توجد محاضرات لهذا اليوم",
   "add": "إضافة",
   "addCourse": "إضافة مقرر",
   "noResults": "لم يتم العثور على نتائج.",
@@ -46,7 +46,9 @@
   "icludeIns": "تضمين",
   "excludeIns": "استبعاد",
   "allMajors": "جميع التخصصات",
-  "gender": "الجنس:",
+  "gender": "الجنس",
+  "male": "ذكر",
+  "female": "أنثى",
   "allGenders": "جميع الأجناس",
   "timeFilter": "تصفية حسب الوقت"
 }

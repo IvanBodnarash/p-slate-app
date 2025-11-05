@@ -1,10 +1,11 @@
 import { useTranslation } from "react-i18next";
 import { usePlannerStore } from "../../store/usePlannerStore";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { getCourseByCode } from "../../data/repo";
+import { getCourseByCodeFiltered } from "../../data/repo";
 import { generateConflictFreeSchedules } from "../../engine/scheduler";
 import { scoreSchedule } from "../../engine/scoring";
 import { useFilterStore } from "../../store/useFilterStore";
+import { useUserStore } from "../../store/useUserStore";
 
 export default function GenerateButton() {
   const { t } = useTranslation("planner");
@@ -45,10 +46,11 @@ export default function GenerateButton() {
         latestTime,
         includeInstructors,
         excludeInstructors,
-        instructorsGender,
       } = useFilterStore.getState();
 
-      const full = (await Promise.all(selected.map(getCourseByCode))).filter(
+      const { studentGender } = useUserStore.getState();
+
+      const full = (await Promise.all(selected.map(getCourseByCodeFiltered))).filter(
         Boolean
       );
       const schedules = generateConflictFreeSchedules(full, {
@@ -60,7 +62,7 @@ export default function GenerateButton() {
         latestTime,
         includeInstructors,
         excludeInstructors,
-        instructorsGender,
+        studentGender,
       })
         .map((s) => ({ ...s, score: scoreSchedule(s) }))
         .sort((a, b) => b.score - a.score); // bests on the top

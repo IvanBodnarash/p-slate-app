@@ -12,6 +12,7 @@ import { IoIosArrowUp } from "react-icons/io";
 
 import PlannerOptions from "../planner/PlannerOptions";
 import CourseFilter from "../planner/CourseFilter";
+import { useUserStore } from "../../store/useUserStore";
 
 export default function CourseSearch() {
   const [q, setQ] = useState("");
@@ -24,8 +25,9 @@ export default function CourseSearch() {
     instructor,
     includeInstructors,
     excludeInstructors,
-    instructorsGender,
   } = useFilterStore();
+
+  const { studentGender } = useUserStore();
 
   const filters = useMemo(
     () => ({
@@ -37,7 +39,7 @@ export default function CourseSearch() {
       instructor,
       includeInstructors,
       excludeInstructors,
-      instructorsGender,
+      studentGender,
     }),
     [
       q,
@@ -48,7 +50,7 @@ export default function CourseSearch() {
       instructor,
       includeInstructors,
       excludeInstructors,
-      instructorsGender,
+      studentGender,
     ]
   );
 

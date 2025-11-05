@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { usePlannerStore } from "../../store/usePlannerStore";
-import { getConfig, getCourseByCode } from "../../data/repo";
+import { getConfig, getCourseByCodeFiltered } from "../../data/repo";
 
 function useSelectedCreditsFallback(selectedCourseCodes) {
   const [credits, setCredits] = useState(0);
@@ -9,7 +9,7 @@ function useSelectedCreditsFallback(selectedCourseCodes) {
     let cancelled = false;
     (async () => {
       const full = (
-        await Promise.all(selectedCourseCodes.map(getCourseByCode))
+        await Promise.all(selectedCourseCodes.map(getCourseByCodeFiltered))
       ).filter(Boolean);
       const sum = full.reduce((acc, c) => acc + (c.credits || 0), 0);
       if (!cancelled) setCredits(sum);

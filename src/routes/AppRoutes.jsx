@@ -7,7 +7,7 @@ import {
 } from "react-router";
 import { useEffect } from "react";
 
-import { SUPPORTED_LANGS, useLocaleStore } from "../store/useLocaleStore.js";
+import { SUPPORTED_LANGS, useUserStore } from "../store/useUserStore.js";
 
 import MainLayout from "../layouts/MainLayout.jsx";
 import HomePage from "../pages/HomePage.jsx";
@@ -15,7 +15,7 @@ import PlannerPage from "../pages/PlannerPage.jsx";
 
 function WithLocale() {
   const { lang } = useParams();
-  const setLang = useLocaleStore((s) => s.setLang);
+  const setLang = useUserStore((s) => s.setLang);
 
   useEffect(() => {
     if (SUPPORTED_LANGS.includes(lang)) setLang(lang);

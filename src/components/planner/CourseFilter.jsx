@@ -9,6 +9,7 @@ import { useCallback, useEffect, useState } from "react";
 
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
+import { useUserStore } from "../../store/useUserStore";
 
 export default function CourseFilter() {
   const {
@@ -18,9 +19,9 @@ export default function CourseFilter() {
     setIncludeInstructors,
     excludeInstructors,
     setExcludeInstructors,
-    instructorsGender,
-    setInstructorsGender,
   } = useFilterStore();
+  
+  const { studentGender } = useUserStore();
 
   const { t } = useTranslation("planner");
 
@@ -28,7 +29,7 @@ export default function CourseFilter() {
   const [instructors, setInstructors] = useState([]);
   const [includeInstrSection, setIncludeInstrSection] = useState(false);
   const [excludeInstrSection, setExcludeInstrSection] = useState(false);
-  const [genders, setGenders] = useState([]);
+  // const [genders, setGenders] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const [majorsSection, setMajorsSection] = useState(false);
@@ -44,11 +45,11 @@ export default function CourseFilter() {
           offDays: useFilterStore.getState().offDays,
           earliestTime: useFilterStore.getState().earliestTime,
           latestTime: useFilterStore.getState().latestTime,
-          instructorsGender,
+          studentGender,
           includeInstructors,
           excludeInstructors,
         };
-        const [majorList, instructorList, gendersList] = await Promise.all([
+        const [majorList, instructorList] = await Promise.all([
           getMajors(),
           getInstructors(params),
           getInstructorsGender(),
@@ -56,7 +57,7 @@ export default function CourseFilter() {
         if (cancelled) return;
         setMajors(majorList);
         setInstructors(instructorList);
-        setGenders(gendersList);
+        // setGenders(gendersList);
 
         const includeClean = includeInstructors.filter((n) =>
           instructorList.includes(n)
@@ -76,7 +77,7 @@ export default function CourseFilter() {
     })();
   }, [
     major,
-    instructorsGender,
+    studentGender,
     useFilterStore.getState().offDays.join("|"),
     useFilterStore.getState().earliestTime,
     useFilterStore.getState().latestTime,
@@ -284,7 +285,7 @@ export default function CourseFilter() {
               </div>
             </div>
 
-            <div>
+            {/* <div>
               <p className="mb-2">
                 {t("gender", {
                   defaultValue: "Gender:",
@@ -304,7 +305,7 @@ export default function CourseFilter() {
                   </option>
                 ))}
               </select>
-            </div>
+            </div> */}
           </div>
         )}
       </div>

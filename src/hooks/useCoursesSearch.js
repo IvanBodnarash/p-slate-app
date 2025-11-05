@@ -16,7 +16,7 @@ export function useCoursesSearch(filters) {
       instructor = "",
       includeInstructors = [],
       excludeInstructors = [],
-      instructorsGender = "",
+      studentGender = "",
     } = filters || {};
     return {
       q: debounced,
@@ -27,7 +27,7 @@ export function useCoursesSearch(filters) {
       instructor,
       includeInstructors,
       excludeInstructors,
-      instructorsGender,
+      studentGender,
     };
   }, [filters, debounced]);
 
