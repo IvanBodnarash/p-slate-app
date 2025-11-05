@@ -9,8 +9,12 @@ import { useFilterStore } from "../../store/useFilterStore";
 export default function SelectedCoursesPanel() {
   const selected = usePlannerStore((s) => s.selectedCourses);
   const removeCourse = usePlannerStore((s) => s.removeCourse);
-  const chooseSection = usePlannerStore((s) => s.chooseSection);
-  const chosen = usePlannerStore((s) => s.sectionsByCourse);
+  // const chooseSection = usePlannerStore((s) => s.chooseSection);
+  // const toggleSection = usePlannerStore((s) => s.toggleSection);
+  // const chosen = usePlannerStore((s) => s.sectionsByCourse);
+  const toggleExclude = usePlannerStore((s) => s.toggleExcludeSection);
+  const excluded = usePlannerStore((s) => s.excludedByCourse);
+  console.log("excludedByCourse", excluded);
 
   const {
     offDays,
@@ -86,7 +90,10 @@ export default function SelectedCoursesPanel() {
 
             <div className="flex flex-col flex-wrap gap-2">
               {course.sections.map((sec) => {
-                const active = chosen[course.code] === sec.sectionNumber;
+                // const active = chosen[course.code] === sec.sectionNumber;
+                const isExcluded = (excluded[course.code] || []).includes(
+                  sec.sectionNumber
+                );
                 return (
                   <div
                     key={sec.sectionNumber}
@@ -97,11 +104,11 @@ export default function SelectedCoursesPanel() {
                   >
                     <button
                       onClick={() =>
-                        chooseSection(course.code, sec.sectionNumber)
+                        toggleExclude(course.code, sec.sectionNumber)
                       }
                       className={`py-1 px-2 text-xs truncate border rounded hover:bg-slate-400/60 cursor-pointer ${
-                        active
-                          ? "bg-blue-deep-sea/20 border-blue-dark-ocean/50"
+                        isExcluded
+                          ? "bg-blue-deep-sea/20 line-through border-blue-dark-ocean/50"
                           : "border-slate-600"
                       }`}
                       // title={`${sec.instructor} • ${sec.meetings
@@ -110,7 +117,13 @@ export default function SelectedCoursesPanel() {
                     >
                       {sec.sectionNumber}
                     </button>
-                    <p className="text-xs truncate">{sec.instructor}</p>
+                    <p
+                      className={`text-xs truncate ${
+                        isExcluded ? "line-through opacity-60" : ""
+                      }`}
+                    >
+                      {sec.instructor}
+                    </p>
                   </div>
                 );
               })}

@@ -47,6 +47,7 @@ export function generateConflictFreeSchedules(courses, opts = {}) {
   // const maxSchedules = opts.maxSchedules ?? 200;
   const {
     hardSelected = {},
+    excludedByCourse = {},
     maxSchedules = 200,
     offDays = [],
     earliestTime = "00:00",
@@ -92,10 +93,16 @@ export function generateConflictFreeSchedules(courses, opts = {}) {
   // Preliminarily: if there is hardSelected for the course – narrow its sections
   const normalized = courses
     .map((c) => {
-      const forced = hardSelected[c.code];
-      let sections = forced
-        ? c.sections.filter((s) => s.sectionNumber === forced)
-        : c.sections;
+      let sections = c.sections;
+      if (hardSelected[c.code]) {
+        const forced = Array.isArray(hardSelected[c.code])
+          ? hardSelected[c.code]
+          : [hardSelected[c.code]];
+        sections = sections.filter((s) => forced.includes(s.sectionNumber));
+      }
+
+      const banned = new Set(excludedByCourse[c.code] || []);
+      sections = sections.filter((s) => !banned.has(s.sectionNumber));
 
       sections = sections.filter(sectionPasses);
 

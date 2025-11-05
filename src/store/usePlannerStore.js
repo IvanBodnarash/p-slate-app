@@ -5,7 +5,9 @@ export const usePlannerStore = create(
   persist(
     (set, get) => ({
       selectedCourses: [], // ["CS101", ...]
-      sectionsByCourse: {}, // { CS101: "CS101-01", ... }
+      // sectionsByCourse: {}, // { CS101: "CS101-01", ... }
+      excludedByCourse: {},
+
       generatedSchedules: [], // Array of valid schedules (sections combinations)
       generatedAt: null,
       currentScheduleIndex: 0,
@@ -18,21 +20,28 @@ export const usePlannerStore = create(
       removeCourse: (code) =>
         set((s) => ({
           selectedCourses: s.selectedCourses.filter((c) => c !== code),
-          sectionsByCourse: Object.fromEntries(
-            Object.entries(s.sectionsByCourse).filter(([k]) => k !== code)
+          excludedByCourse: Object.fromEntries(
+            Object.entries(s.excludedByCourse).filter(([k]) => k !== code)
           ),
           generatedSchedules: [],
           generatedAt: null,
           currentScheduleIndex: 0,
         })),
 
-      chooseSection: (courseCode, sectionNumber) =>
-        set((s) => ({
-          sectionsByCourse: {
-            ...s.sectionsByCourse,
-            [courseCode]: sectionNumber,
-          },
-        })),
+      toggleExcludeSection: (courseCode, sectionNumber) =>
+        set((s) => {
+          const prev = s.excludedByCourse[courseCode] || [];
+          const exists = prev.includes(sectionNumber);
+          const nextForCourse = exists
+            ? prev.filter((x) => x !== sectionNumber)
+            : [...prev, sectionNumber];
+          return {
+            excludedByCourse: {
+              ...s.excludedByCourse,
+              [courseCode]: nextForCourse,
+            },
+          };
+        }),
 
       clearGenerated: () =>
         set({

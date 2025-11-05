@@ -75,10 +75,19 @@ At the moment, all data (such as course lists and tuition configuration) is load
 The data-access layer lives in `src/data/repo.js` — every component in the app communicates with this layer instead of fetching data directly.
 
 ```js
-// Example (current)
+let cache = null;
+
+export async function ensureLoaded() {
+  if (!cache) {
+    const res = await fetch("/data/courses.json");
+    cache = await res.json(); // { config, courses: [...] }
+  }
+}
+
 export async function getCourseByCode(code) {
-  const data = await fetch("/data/courses.json").then((r) => r.json());
-  return data.courses.find((c) => c.code === code);
+  await ensureLoaded();
+  const q = (code || "").toLowerCase().trim();
+  return cache.courses.find((c) => c.code.toLowerCase() === q) || null;
 }
 ```
 
@@ -90,16 +99,12 @@ When a backend API becomes available, only the implementation inside `repo.js` n
 // Example (future)
 const API_URL = import.meta.env.VITE_API_URL;
 
-export async function getCourseByCode(code) {
-  const res = await fetch(`${API_URL}/courses/${code}`);
-  if (!res.ok) throw new Error("Failed to fetch course data");
-  return await res.json();
-}
-
-export async function getConfig() {
-  const res = await fetch(`${API_URL}/config`);
-  if (!res.ok) throw new Error("Failed to fetch config");
-  return await res.json();
+export async function ensureLoaded() {
+  if (!cache) {
+    const res = await fetch(`${API_URL}/courses/${code}`);
+    if (!res.ok) throw new Error("Failed to fetch course data");
+    cache = await res.json(); // { config, courses: [...] }
+  }
 }
 ```
 

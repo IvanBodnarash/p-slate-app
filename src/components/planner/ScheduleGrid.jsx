@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { usePlannerStore } from "../../store/usePlannerStore";
 import { DAY_ORDER } from "../../engine/scheduler";

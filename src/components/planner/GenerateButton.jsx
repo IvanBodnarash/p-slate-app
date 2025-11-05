@@ -10,7 +10,9 @@ export default function GenerateButton() {
   const { t } = useTranslation("planner");
 
   const selected = usePlannerStore((s) => s.selectedCourses);
-  const hardSelected = usePlannerStore((s) => s.sectionsByCourse);
+  // const hardSelected = usePlannerStore((s) => s.sectionsByCourse);
+  const hardSelected = {};
+  const excludedByCourse = usePlannerStore((s) => s.excludedByCourse);
   const setGenerated = usePlannerStore((s) => s.setGenerated);
   const clearGenerated = usePlannerStore((s) => s.clearGenerated);
 
@@ -51,6 +53,7 @@ export default function GenerateButton() {
       );
       const schedules = generateConflictFreeSchedules(full, {
         hardSelected,
+        excludedByCourse,
         maxSchedules: 1000,
         offDays,
         earliestTime,

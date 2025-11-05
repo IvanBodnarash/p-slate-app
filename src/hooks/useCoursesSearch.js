@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
 import { searchCourses } from "../data/repo";
-import { useFilterStore } from "../store/useFilterStore";
 
 export function useCoursesSearch(filters) {
   const [results, setResults] = useState([]);
