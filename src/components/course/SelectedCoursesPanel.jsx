@@ -116,7 +116,7 @@ export default function SelectedCoursesPanel() {
                       {sec.sectionNumber}
                     </button>
                     <p
-                      className={`text-xs truncate ${
+                      className={`text-xs line-clamp-1 ${
                         isExcluded ? "line-through opacity-60" : ""
                       }`}
                     >

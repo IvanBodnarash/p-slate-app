@@ -35,7 +35,7 @@ export default function ScheduleHeader() {
   };
 
   return (
-    <div className="flex items-center justify-between gap-4 mb-4 mt-8">
+    <div className="flex items-center justify-between gap-2 md:gap-4 mb-4 mt-8">
       <h3 className="text-xl md:text-2xl">
         {t("gridTitle", { defaultValue: "Weekly Schedule" })}
       </h3>
@@ -46,9 +46,11 @@ export default function ScheduleHeader() {
         title={t("copySection", { defaultValue: "Copy section numbers" })}
       >
         <MdOutlineCopyAll />
-        {copied
-          ? t("copied", { defaultValue: "Copied!" })
-          : t("copySection", { defaultValue: "Copy section numbers" })}
+        <p className="truncate w-24 md:w-full">
+          {copied
+            ? t("copied", { defaultValue: "Copied!" })
+            : t("copySection", { defaultValue: "Copy section numbers" })}
+        </p>
       </button>
     </div>
   );

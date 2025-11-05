@@ -79,7 +79,7 @@ export default function GenerateButton() {
   const disabled = selected.length === 0 || loading;
 
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex flex-col md:flex-row items-start md:items-center gap-3">
       <button
         onClick={onGenerate}
         disabled={disabled}
