@@ -13,9 +13,6 @@ export const useFilterStore = create(
       includeInstructors: [],
       excludeInstructors: [],
 
-      // studentGender: "",
-      // instructorsGender: "",
-
       setMajor: (major) => set({ major }),
       setOffDays: (days) => set({ offDays: days }),
       setTimeRange: (earliest, latest) =>
@@ -23,8 +20,6 @@ export const useFilterStore = create(
       setInstructor: (instructor) => set({ instructor }),
       setIncludeInstructors: (list) => set({ includeInstructors: list }),
       setExcludeInstructors: (list) => set({ excludeInstructors: list }),
-      // setStudentGender: (studentGender) => set({ studentGender }),
-      // setInstructorsGender: (instructorsGender) => set({ instructorsGender }),
     }),
     { name: "pslate-filters" }
   )
