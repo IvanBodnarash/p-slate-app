@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://p-slate-app.vercel.app/sitemap.xml

@@ -1,4 +1,18 @@
-#
+# P.Slate
+
+## Table of Contents
+
+1. [Tech Stack](#tech-stack)
+
+2. [Run Locally](#run-locally)
+
+3. [Backend Integration](#backend-integration)
+
+4. [Tuition Calculator](#tuition-calculator)
+
+5. [Compatibility Score](#compatibility-score)
+
+6. [SEO and Google Indexing Setup](#seo-and-google-indexing-setup)
 
 ## Tech Stack
 
@@ -64,7 +78,7 @@ npm run build
 npm run preview
 ```
 
-## Backend Integration (API-Ready Architecture)
+## Backend Integration
 
 The P.Slate front-end was intentionally designed to be API-ready — the data layer is fully separated from the UI logic, making it easy to plug in a real backend later without changing the application’s structure.
 
@@ -192,3 +206,78 @@ score = 100 - earlyMorningPenalty - gapPenalty - unevenDayPenalty
 ### Goal:
 
 To help students choose not only valid schedules, but also comfortable ones that minimize idle hours and improve daily balance.
+
+## SEO and Google Indexing Setup
+
+### Setting metatags
+
+```html
+<!-- index.html -->
+
+<!-- Basic SEO -->
+<title>P.Slate</title>
+<meta
+  name="description"
+  content="A modern web app for PSU students to plan, filter, and generate conflict-free class schedules."
+/>
+<meta
+  name="keywords"
+  content="PSU, Prince Sultan University, schedule planner, course scheduler, student portal, class planner"
+/>
+<meta name="author" content="John Doe" />
+
+<!-- Open Graph for social sharing -->
+<meta property="og:title" content="P.Slate" />
+<meta
+  property="og:description"
+  content="A modern web app for PSU students to plan, filter, and generate conflict-free class schedules."
+/>
+<meta property="og:image" content="/public/preview.png" />
+<meta property="og:url" content="https://p-slate-app.vercel.app" />
+<meta property="og:type" content="website" />
+
+<!-- Canonical (important for SEO) -->
+<link rel="canonical" href="https://p-slate-app.vercel.app" />
+
+<!-- Robots.txt (for visibility in browsers) -->
+<meta name="robots" content="index, follow" />
+
+<!-- Google Setup (from Google Search Console) -->
+<meta
+  name="google-site-verification"
+  content="jtJOLj4Af3Nk1UYCADLLT4azNVxEzGwjYDZtB2012MM"
+/>
+```
+
+Basic SEO meta tags, sitemap, and robots.txt are already included in the project.
+To make the website visible on Google, you can connect it to **Google Search Console**.
+
+### Google Indexing Setup
+
+For the demo (Vercel) I used the URL prefix method; for the production domain use the Domain method.
+
+1. Go to [Google Search Console](https://search.google.com/search-console/).
+
+2. Add the site URL (for example: `https://pslate.com`).
+3. Choose "**Domain**" or "**URL prefix**" as the property type.
+4. Verify ownership — easiest method is via the **HTML meta tag** option:
+
+   - Copy the verification `<meta>` tag provided by Google.
+
+   - Paste it into the `<head>` section of your site.
+   - Redeploy the site on Vercel.
+
+5. Once verified, click "**Request indexing**".
+
+> After this, Google will crawl and index your site.  
+> You can repeat the exact same process later for the **official domain** when it's live.
+
+### Removing or resetting the demo site
+
+If you want to remove the demo version from Google later:
+
+- Go to **Search Console -> Settings -> Remove property**, or
+- Add this meta tag to stop indexing:
+  ```html
+  <meta name="robots" content="noindex, nofollow" />
+  ```
