@@ -149,7 +149,7 @@ export default function CourseFilter() {
               {t("allMajors", { defaultValue: "All majors" })}
             </option>
             {majors.map((m) => (
-              <option key={m} value={m} className="bg-[#808ea1] cursor-pointer">
+              <option key={m} value={m} className="bg-[#F5F5F5] cursor-pointer">
                 {m}
               </option>
             ))}

@@ -14,13 +14,13 @@ export default function GenderSelect() {
         onChange={(e) => setStudentGender(e.target.value)}
         className="border rounded p-1 text-slate-800 outline-0 cursor-pointer"
       >
-        <option value="" className="bg-slate-500">
+        <option value="" className="bg-[#F5F5F5]">
           {t("allGenders", { defaultValue: "All genders" })}
         </option>
-        <option value="M" className="bg-slate-500">
+        <option value="M" className="bg-[#F5F5F5]">
           {t("male", { defaultValue: "Male" })}
         </option>
-        <option value="F" className="bg-slate-500">
+        <option value="F" className="bg-[#F5F5F5]">
           {t("female", { defaultValue: "Female" })}
         </option>
       </select>

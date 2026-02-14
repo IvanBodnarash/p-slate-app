@@ -15,7 +15,7 @@ export default function ScheduleHeader() {
 
   const onCopy = async () => {
     const text = Object.entries(current.map)
-      .map(([code, sec]) => `${code}:${sec}`)
+      .map(([_, sec]) => sec)
       .join(", ");
     try {
       await navigator.clipboard.writeText(text);
