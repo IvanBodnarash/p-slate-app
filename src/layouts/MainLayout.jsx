@@ -3,6 +3,7 @@ import { Outlet } from "react-router";
 import { useTranslation } from "react-i18next";
 import { useUserStore } from "../store/useUserStore";
 import Header from "../components/header/Header";
+import Footer from "../components/footer/Footer";
 
 export default function MainLayout() {
   const { i18n } = useTranslation();
@@ -22,6 +23,7 @@ export default function MainLayout() {
       >
         <Outlet />
       </main>
+      <Footer />
     </div>
   );
 }
