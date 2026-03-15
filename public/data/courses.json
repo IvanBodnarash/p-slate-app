@@ -1,6 +1,6 @@
 {
   "config": {
-    "pricePerCredit": 800,
+    "pricePerCredit": 0,
     "defaultScholarshipPct": 0
   },
   "courses": [
