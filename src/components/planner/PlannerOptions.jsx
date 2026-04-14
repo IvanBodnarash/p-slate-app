@@ -56,7 +56,7 @@ export default function PlannerOptions() {
         )}
       </div>
 
-      <div className="border-b border-slate-600 my-2 pb-2">
+      <div className="border-b border-slate-600 mt-2 pb-2">
         <button
           className="flex items-center gap-4 cursor-pointer"
           onClick={() => setTimeSection((prev) => !prev)}

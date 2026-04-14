@@ -31,8 +31,6 @@ export default function CourseFilter() {
   const [excludeInstrSection, setExcludeInstrSection] = useState(false);
   // const [genders, setGenders] = useState([]);
   const [loading, setLoading] = useState(false);
-
-  const [majorsSection, setMajorsSection] = useState(false);
   const [instructorsSection, setInstructorsSection] = useState(false);
 
   useEffect(() => {
@@ -129,34 +127,6 @@ export default function CourseFilter() {
 
   return (
     <section className="mb-4">
-      {/* Major */}
-      <div className="border-b border-slate-600 pb-2">
-        <button
-          className="flex items-center gap-4 cursor-pointer"
-          onClick={() => setMajorsSection((prev) => !prev)}
-        >
-          <h3>{t("filterMajor", { defaultValue: "Filter by major" })}</h3>
-          {majorsSection ? <IoIosArrowUp /> : <IoIosArrowDown />}
-        </button>
-
-        {majorsSection && (
-          <select
-            value={major}
-            onChange={(e) => setMajor(e.target.value)}
-            className="border rounded outline-0 p-1 my-2 border-slate-700 text-slate-800 cursor-pointer"
-          >
-            <option value="" className="bg-[#808ea1] cursor-pointer">
-              {t("allMajors", { defaultValue: "All majors" })}
-            </option>
-            {majors.map((m) => (
-              <option key={m} value={m} className="bg-[#F5F5F5] cursor-pointer">
-                {m}
-              </option>
-            ))}
-          </select>
-        )}
-      </div>
-
       {/* Instructors */}
       <div className="border-b py-2 border-slate-600">
         <button
