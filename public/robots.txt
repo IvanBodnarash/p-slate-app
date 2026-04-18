@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://p-slate-app.vercel.app/sitemap.xml
+
+Sitemap: https://pslate.app/sitemap.xml
