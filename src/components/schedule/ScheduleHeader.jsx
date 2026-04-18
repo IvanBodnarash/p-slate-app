@@ -14,9 +14,8 @@ export default function ScheduleHeader() {
   const current = schedules[idx];
 
   const onCopy = async () => {
-    const text = Object.entries(current.map)
-      .map(([_, sec]) => sec)
-      .join(", ");
+    const text = Object.values(current.map).join(", ");
+    
     try {
       await navigator.clipboard.writeText(text);
       setCopied(true);

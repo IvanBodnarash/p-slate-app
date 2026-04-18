@@ -2,8 +2,8 @@ import { useTranslation } from "react-i18next";
 import { useFilterStore } from "../../store/useFilterStore";
 import {
   getInstructors,
-  getInstructorsGender,
-  getMajors,
+  // getInstructorsGender,
+  // getMajors,
 } from "../../data/repo";
 import { useCallback, useEffect, useState } from "react";
 
@@ -14,7 +14,7 @@ import { useUserStore } from "../../store/useUserStore";
 export default function CourseFilter() {
   const {
     major,
-    setMajor,
+    // setMajor,
     includeInstructors,
     setIncludeInstructors,
     excludeInstructors,
@@ -25,7 +25,7 @@ export default function CourseFilter() {
 
   const { t } = useTranslation("planner");
 
-  const [majors, setMajors] = useState([]);
+  // const [majors, setMajors] = useState([]);
   const [instructors, setInstructors] = useState([]);
   const [includeInstrSection, setIncludeInstrSection] = useState(false);
   const [excludeInstrSection, setExcludeInstrSection] = useState(false);
@@ -33,52 +33,68 @@ export default function CourseFilter() {
   const [loading, setLoading] = useState(false);
   const [instructorsSection, setInstructorsSection] = useState(false);
 
+  const offDays = useFilterStore((state) => state.offDays);
+  const earliestTime = useFilterStore((state) => state.earliestTime);
+  const latestTime = useFilterStore((state) => state.latestTime);
+
+  const offDaysKey = offDays.join("|");
+
   useEffect(() => {
     let cancelled = false;
-    setLoading(true);
-    (async () => {
+
+    const loadInstructors = async () => {
+      setLoading(true);
+
       try {
         const params = {
-          major,
-          offDays: useFilterStore.getState().offDays,
-          earliestTime: useFilterStore.getState().earliestTime,
-          latestTime: useFilterStore.getState().latestTime,
+          // major,
+          offDays,
+          earliestTime,
+          latestTime,
           studentGender,
           includeInstructors,
           excludeInstructors,
         };
-        const [majorList, instructorList] = await Promise.all([
-          getMajors(),
-          getInstructors(params),
-          getInstructorsGender(),
-        ]);
-        if (cancelled) return;
-        setMajors(majorList);
-        setInstructors(instructorList);
-        // setGenders(gendersList);
 
-        const includeClean = includeInstructors.filter((n) =>
-          instructorList.includes(n)
+        const instructorList = await getInstructors(params);
+
+        if (cancelled) return;
+
+        setInstructors(instructorList);
+
+        const includeClean = includeInstructors.filter((name) =>
+          instructorList.includes(name)
         );
         if (includeClean.length !== includeInstructors.length) {
           setIncludeInstructors(includeClean);
         }
-        const excludeClean = excludeInstructors.filter((n) =>
-          instructorList.includes(n)
+        const excludeClean = excludeInstructors.filter((name) =>
+          instructorList.includes(name)
         );
         if (excludeClean.length !== excludeInstructors.length) {
           setExcludeInstructors(excludeClean);
         }
       } finally {
-        if (!cancelled) setLoading(false);
+        if (!cancelled) {
+          setLoading(false);
+        }
       }
-    })();
+    }
+
+    loadInstructors();
+
+    return () => {
+      cancelled = true;
+    };
   }, [
-    major,
     studentGender,
-    useFilterStore.getState().offDays.join("|"),
-    useFilterStore.getState().earliestTime,
-    useFilterStore.getState().latestTime,
+    offDaysKey,
+    earliestTime,
+    latestTime,
+    includeInstructors,
+    excludeInstructors,
+    setIncludeInstructors,
+    setExcludeInstructors,
   ]);
 
   const readMulti = (e) =>
@@ -130,6 +146,7 @@ export default function CourseFilter() {
       {/* Instructors */}
       <div className="border-b py-2 border-slate-600">
         <button
+          type="button"
           className="flex items-center gap-4 cursor-pointer"
           onClick={() => setInstructorsSection((prev) => !prev)}
         >
@@ -146,6 +163,7 @@ export default function CourseFilter() {
               <div className="md:w-2/4">
                 <div className="flex items-center justify-between gap-2 my-2">
                   <button
+                    type="button"
                     className="flex items-center gap-1 border rounded px-2 py-1 text-slate-800 cursor-pointer"
                     onClick={() => setIncludeInstrSection((prev) => !prev)}
                   >
@@ -202,6 +220,7 @@ export default function CourseFilter() {
               <div className="md:w-2/4">
                 <div className="flex items-center justify-between gap-2 my-2">
                   <button
+                    type="button"
                     className="flex items-center gap-1 border rounded px-2 py-1 text-slate-800 cursor-pointer"
                     onClick={() => setExcludeInstrSection((prev) => !prev)}
                   >
