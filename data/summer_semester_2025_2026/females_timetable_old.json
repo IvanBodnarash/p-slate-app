@@ -1,0 +1,2072 @@
+[
+    {
+        "section":34.0,
+        "course":"ARAB101",
+        "course name":"ﺍﻟﻜﺘﺎﺑﺔ ﺍﻟﻌﺮﺑﻴﺔ",
+        "days":"4 5",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"S104",
+        "instructor":"ﺩ. ﻓﺎﻃﻤﺔ ﺻﺎﻟﺢ ﺍﻟﺒﺮﺍﺩﻱ"
+    },
+    {
+        "section":36.0,
+        "course":"ARAB101",
+        "course name":"ﺍﻟﻜﺘﺎﺑﺔ ﺍﻟﻌﺮﺑﻴﺔ",
+        "days":"4 5",
+        "time start":"09:00",
+        "time end":"09:50",
+        "location":"ﻟﻢ ﺗﺤﺪﺩ ﻣﻦ ﺍﻟﻜﻠﻴﺔ",
+        "instructor":"ﻟﻢ ﻳﺤﺪﺩ ﻣﻦ ﺍﻟﻜﻠﻴﺔ"
+    },
+    {
+        "section":36.0,
+        "course":"ARAB101",
+        "course name":"ﺍﻟﻜﺘﺎﺑﺔ ﺍﻟﻌﺮﺑﻴﺔ",
+        "days":"4 5",
+        "time start":"08:00",
+        "time end":"08:50",
+        "location":"ﻟﻢ ﺗﺤﺪﺩ ﻣﻦ ﺍﻟﻜﻠﻴﺔ",
+        "instructor":"ﻟﻢ ﻳﺤﺪﺩ ﻣﻦ ﺍﻟﻜﻠﻴﺔ"
+    },
+    {
+        "section":33.0,
+        "course":"ARAB103",
+        "course name":"ﺍﻟﻜﺘﺎﺑﺔ ﺍﻟﻤﻬﻨﻴﺔ ﻭﺍﻷﺩﺑﻴﺔ",
+        "days":"4 5",
+        "time start":"09:00",
+        "time end":"09:50",
+        "location":"S104",
+        "instructor":"ﺩ. ﻓﺎﻃﻤﺔ ﺻﺎﻟﺢ ﺍﻟﺒﺮﺍﺩﻱ"
+    },
+    {
+        "section":33.0,
+        "course":"ARAB103",
+        "course name":"ﺍﻟﻜﺘﺎﺑﺔ ﺍﻟﻤﻬﻨﻴﺔ ﻭﺍﻷﺩﺑﻴﺔ",
+        "days":"4 5",
+        "time start":"08:00",
+        "time end":"08:50",
+        "location":"S104",
+        "instructor":"ﺩ. ﻓﺎﻃﻤﺔ ﺻﺎﻟﺢ ﺍﻟﺒﺮﺍﺩﻱ"
+    },
+    {
+        "section":35.0,
+        "course":"ARAB103",
+        "course name":"ﺍﻟﻜﺘﺎﺑﺔ ﺍﻟﻤﻬﻨﻴﺔ ﻭﺍﻷﺩﺑﻴﺔ",
+        "days":"4 5",
+        "time start":"13:00",
+        "time end":"13:50",
+        "location":"S104",
+        "instructor":"ﺩ. ﻓﺎﻃﻤﺔ ﺻﺎﻟﺢ ﺍﻟﺒﺮﺍﺩﻱ"
+    },
+    {
+        "section":35.0,
+        "course":"ARAB103",
+        "course name":"ﺍﻟﻜﺘﺎﺑﺔ ﺍﻟﻤﻬﻨﻴﺔ ﻭﺍﻷﺩﺑﻴﺔ",
+        "days":"4 5",
+        "time start":"14:00",
+        "time end":"14:50",
+        "location":"S104",
+        "instructor":"ﺩ. ﻓﺎﻃﻤﺔ ﺻﺎﻟﺢ ﺍﻟﺒﺮﺍﺩﻱ"
+    },
+    {
+        "section":37.0,
+        "course":"ARAB203",
+        "course name":"ﻗﻮﺍﻋﺪ ﺍﻟﻠﻐﺔ ﺍﻟﻌﺮﺑﻴﺔ",
+        "days":"4 5",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"S106",
+        "instructor":"ﺃ. ﻧﻮﺭﻩ ﻣﺤﻤﺪ ﺍﻟﺒﻜﺮ"
+    },
+    {
+        "section":37.0,
+        "course":"ARAB203",
+        "course name":"ﻗﻮﺍﻋﺪ ﺍﻟﻠﻐﺔ ﺍﻟﻌﺮﺑﻴﺔ",
+        "days":"4 5",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"S106",
+        "instructor":"ﺃ. ﻧﻮﺭﻩ ﻣﺤﻤﺪ ﺍﻟﺒﻜﺮ"
+    },
+    {
+        "section":38.0,
+        "course":"ARAB203",
+        "course name":"ﻗﻮﺍﻋﺪ ﺍﻟﻠﻐﺔ ﺍﻟﻌﺮﺑﻴﺔ",
+        "days":"4 5",
+        "time start":"13:00",
+        "time end":"13:50",
+        "location":"S106",
+        "instructor":"ﺃ. ﻧﻮﺭﻩ ﻣﺤﻤﺪ ﺍﻟﺒﻜﺮ"
+    },
+    {
+        "section":38.0,
+        "course":"ARAB203",
+        "course name":"ﻗﻮﺍﻋﺪ ﺍﻟﻠﻐﺔ ﺍﻟﻌﺮﺑﻴﺔ",
+        "days":"4 5",
+        "time start":"14:00",
+        "time end":"14:50",
+        "location":"S106",
+        "instructor":"ﺃ. ﻧﻮﺭﻩ ﻣﺤﻤﺪ ﺍﻟﺒﻜﺮ"
+    },
+    {
+        "section":94.0,
+        "course":"ARAB203",
+        "course name":"ﻗﻮﺍﻋﺪ ﺍﻟﻠﻐﺔ ﺍﻟﻌﺮﺑﻴﺔ",
+        "days":"4 5",
+        "time start":"16:00",
+        "time end":"16:50",
+        "location":"S106",
+        "instructor":"ﺃ. ﻧﻮﺭﻩ ﻣﺤﻤﺪ ﺍﻟﺒﻜﺮ"
+    },
+    {
+        "section":94.0,
+        "course":"ARAB203",
+        "course name":"ﻗﻮﺍﻋﺪ ﺍﻟﻠﻐﺔ ﺍﻟﻌﺮﺑﻴﺔ",
+        "days":"4 5",
+        "time start":"15:00",
+        "time end":"15:50",
+        "location":"S106",
+        "instructor":"ﺃ. ﻧﻮﺭﻩ ﻣﺤﻤﺪ ﺍﻟﺒﻜﺮ"
+    },
+    {
+        "section":98.0,
+        "course":"ART102",
+        "course name":"ﺍﻟﺘﺼﻮﻳﺮ ﺍﻟﺘﺸﻜﻴﻠﻲ",
+        "days":"4 5",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"N104Studio",
+        "instructor":"(PT) ﺩ. ﻣﻨﻰ ﺍﻟﻘﺮﻧﻲ"
+    },
+    {
+        "section":98.0,
+        "course":"ART102",
+        "course name":"ﺍﻟﺘﺼﻮﻳﺮ ﺍﻟﺘﺸﻜﻴﻠﻲ",
+        "days":"4 5",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"N104Studio",
+        "instructor":"(PT) ﺩ. ﻣﻨﻰ ﺍﻟﻘﺮﻧﻲ"
+    },
+    {
+        "section":47.0,
+        "course":"COM201",
+        "course name":"ﻣﻬﺎﺭﺍﺕ ﺍﻻﺗﺼﺎﻝ",
+        "days":"1 2 3",
+        "time start":"13:00",
+        "time end":"13:50",
+        "location":"S104",
+        "instructor":"ﺃ.ﺣﻨﺎﻥ ﺍﻟﺤﻤﺎﺩ"
+    },
+    {
+        "section":47.0,
+        "course":"COM201",
+        "course name":"ﻣﻬﺎﺭﺍﺕ ﺍﻻﺗﺼﺎﻝ",
+        "days":"1 2 3",
+        "time start":"14:00",
+        "time end":"14:50",
+        "location":"S104",
+        "instructor":"ﺃ.ﺣﻨﺎﻥ ﺍﻟﺤﻤﺎﺩ"
+    },
+    {
+        "section":48.0,
+        "course":"COM201",
+        "course name":"ﻣﻬﺎﺭﺍﺕ ﺍﻻﺗﺼﺎﻝ",
+        "days":"1 2 3",
+        "time start":"09:00",
+        "time end":"09:50",
+        "location":"S301MPR",
+        "instructor":"ﺃ. ﻓﺮﺍﺡ ﻋﺒﻴﺪ ﻋﺒﻴﺪ ﺍﺧﺘﺮ"
+    },
+    {
+        "section":48.0,
+        "course":"COM201",
+        "course name":"ﻣﻬﺎﺭﺍﺕ ﺍﻻﺗﺼﺎﻝ",
+        "days":"1 2 3",
+        "time start":"08:00",
+        "time end":"08:50",
+        "location":"S301MPR",
+        "instructor":"ﺃ. ﻓﺮﺍﺡ ﻋﺒﻴﺪ ﻋﺒﻴﺪ ﺍﺧﺘﺮ"
+    },
+    {
+        "section":49.0,
+        "course":"COM201",
+        "course name":"ﻣﻬﺎﺭﺍﺕ ﺍﻻﺗﺼﺎﻝ",
+        "days":"1 2 3",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"S301MPR",
+        "instructor":"ﺃ. ﻓﺮﺍﺡ ﻋﺒﻴﺪ ﻋﺒﻴﺪ ﺍﺧﺘﺮ"
+    },
+    {
+        "section":49.0,
+        "course":"COM201",
+        "course name":"ﻣﻬﺎﺭﺍﺕ ﺍﻻﺗﺼﺎﻝ",
+        "days":"1 2 3",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"S301MPR",
+        "instructor":"ﺃ. ﻓﺮﺍﺡ ﻋﺒﻴﺪ ﻋﺒﻴﺪ ﺍﺧﺘﺮ"
+    },
+    {
+        "section":97.0,
+        "course":"ELE103",
+        "course name":"ﺇﺩﺍﺭﺓ ﺍﻹﺟﻬﺎﺩ",
+        "days":"1 2",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"S108",
+        "instructor":"(PT) ﺩ. ﺍﻟﺒﻨﺪﺭﻱ ﺍﻟﺤﻤﺎﺩ"
+    },
+    {
+        "section":97.0,
+        "course":"ELE103",
+        "course name":"ﺇﺩﺍﺭﺓ ﺍﻹﺟﻬﺎﺩ",
+        "days":"1 2",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"S108",
+        "instructor":"(PT) ﺩ. ﺍﻟﺒﻨﺪﺭﻱ ﺍﻟﺤﻤﺎﺩ"
+    },
+    {
+        "section":97.0,
+        "course":"ELE103",
+        "course name":"ﺇﺩﺍﺭﺓ ﺍﻹﺟﻬﺎﺩ",
+        "days":"3",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"Online-10",
+        "instructor":"(PT) ﺩ. ﺍﻟﺒﻨﺪﺭﻱ ﺍﻟﺤﻤﺎﺩ"
+    },
+    {
+        "section":97.0,
+        "course":"ELE103",
+        "course name":"ﺇﺩﺍﺭﺓ ﺍﻹﺟﻬﺎﺩ",
+        "days":"3",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"Online-10",
+        "instructor":"(PT) ﺩ. ﺍﻟﺒﻨﺪﺭﻱ ﺍﻟﺤﻤﺎﺩ"
+    },
+    {
+        "section":39.0,
+        "course":"HPE101",
+        "course name":"ﺍﻟﺘﺮﺑﻴﺔ ﺍﻟﺼﺤﻴﺔ ﻭﺍﻟﺒﺪﻧﻴﺔ",
+        "days":"4 5",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"S301MPR",
+        "instructor":"ﺃ. ﺃﻣﻞ ﺣﻤﺪﻱ ﻣﺤﻤﻮﺩ ﻛﻨﺎﻧﻪ"
+    },
+    {
+        "section":39.0,
+        "course":"HPE101",
+        "course name":"ﺍﻟﺘﺮﺑﻴﺔ ﺍﻟﺼﺤﻴﺔ ﻭﺍﻟﺒﺪﻧﻴﺔ",
+        "days":"4 5",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"S301MPR",
+        "instructor":"ﺃ. ﺃﻣﻞ ﺣﻤﺪﻱ ﻣﺤﻤﻮﺩ ﻛﻨﺎﻧﻪ"
+    },
+    {
+        "section":40.0,
+        "course":"HPE102",
+        "course name":"ﺍﻟﺘﺮﺑﻴﺔ ﺍﻟﺼﺤﻴﺔ ﻭ ﺍﻟﺒﺪﻧﻴﺔ",
+        "days":"4 5",
+        "time start":"14:00",
+        "time end":"14:50",
+        "location":"S301MPR",
+        "instructor":"ﺃ. ﺃﻣﻞ ﺣﻤﺪﻱ ﻣﺤﻤﻮﺩ ﻛﻨﺎﻧﻪ"
+    },
+    {
+        "section":40.0,
+        "course":"HPE102",
+        "course name":"ﺍﻟﺘﺮﺑﻴﺔ ﺍﻟﺼﺤﻴﺔ ﻭ ﺍﻟﺒﺪﻧﻴﺔ",
+        "days":"4 5",
+        "time start":"13:00",
+        "time end":"13:50",
+        "location":"S301MPR",
+        "instructor":"ﺃ. ﺃﻣﻞ ﺣﻤﺪﻱ ﻣﺤﻤﻮﺩ ﻛﻨﺎﻧﻪ"
+    },
+    {
+        "section":42.0,
+        "course":"ISC101",
+        "course name":"ﺍﻟﺴﻠﻮﻙ ﺍﻷﺧﻼﻗﻲ ﻓﻲ ﺍﻹﺳﻼﻡ",
+        "days":"4 5",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"S105",
+        "instructor":"ﺩ. ﺟﻤﻴﻠﻪ ﻋﻴﺎﺩﻩ ﺍﻟﺸﻤﺮﻱ"
+    },
+    {
+        "section":42.0,
+        "course":"ISC101",
+        "course name":"ﺍﻟﺴﻠﻮﻙ ﺍﻷﺧﻼﻗﻲ ﻓﻲ ﺍﻹﺳﻼﻡ",
+        "days":"4 5",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"S105",
+        "instructor":"ﺩ. ﺟﻤﻴﻠﻪ ﻋﻴﺎﺩﻩ ﺍﻟﺸﻤﺮﻱ"
+    },
+    {
+        "section":41.0,
+        "course":"ISC103",
+        "course name":"ﺍﻟﻨﻈﺎﻡ ﺍﻻﻗﺘﺼﺎﺩﻱ ﻓﻲ ﺍﻹﺳﻼﻡ",
+        "days":"4 5",
+        "time start":"09:00",
+        "time end":"09:50",
+        "location":"S105",
+        "instructor":"ﺩ. ﺟﻤﻴﻠﻪ ﻋﻴﺎﺩﻩ ﺍﻟﺸﻤﺮﻱ"
+    },
+    {
+        "section":41.0,
+        "course":"ISC103",
+        "course name":"ﺍﻟﻨﻈﺎﻡ ﺍﻻﻗﺘﺼﺎﺩﻱ ﻓﻲ ﺍﻹﺳﻼﻡ",
+        "days":"4 5",
+        "time start":"08:00",
+        "time end":"08:50",
+        "location":"S105",
+        "instructor":"ﺩ. ﺟﻤﻴﻠﻪ ﻋﻴﺎﺩﻩ ﺍﻟﺸﻤﺮﻱ"
+    },
+    {
+        "section":43.0,
+        "course":"ISC103",
+        "course name":"ﺍﻟﻨﻈﺎﻡ ﺍﻻﻗﺘﺼﺎﺩﻱ ﻓﻲ ﺍﻹﺳﻼﻡ",
+        "days":"4 5",
+        "time start":"13:00",
+        "time end":"13:50",
+        "location":"S105",
+        "instructor":"ﺩ. ﺟﻤﻴﻠﻪ ﻋﻴﺎﺩﻩ ﺍﻟﺸﻤﺮﻱ"
+    },
+    {
+        "section":43.0,
+        "course":"ISC103",
+        "course name":"ﺍﻟﻨﻈﺎﻡ ﺍﻻﻗﺘﺼﺎﺩﻱ ﻓﻲ ﺍﻹﺳﻼﻡ",
+        "days":"4 5",
+        "time start":"14:00",
+        "time end":"14:50",
+        "location":"S105",
+        "instructor":"ﺩ. ﺟﻤﻴﻠﻪ ﻋﻴﺎﺩﻩ ﺍﻟﺸﻤﺮﻱ"
+    },
+    {
+        "section":45.0,
+        "course":"ISC105",
+        "course name":"ﺍﻟﻘﺮﺁﻥ ﺍﻟﻜﺮﻳﻢ ﻭ ﻋﻠﻮﻣﻪ",
+        "days":"4 5",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"S109",
+        "instructor":"ﺩ. ﺷﺎﺩﻳﻪ ﺧﺎﻟﺪ ﺷﻌﺒﺎﻥ ﺍﻟﻨﺎﺟﻲ"
+    },
+    {
+        "section":45.0,
+        "course":"ISC105",
+        "course name":"ﺍﻟﻘﺮﺁﻥ ﺍﻟﻜﺮﻳﻢ ﻭ ﻋﻠﻮﻣﻪ",
+        "days":"4 5",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"S109",
+        "instructor":"ﺩ. ﺷﺎﺩﻳﻪ ﺧﺎﻟﺪ ﺷﻌﺒﺎﻥ ﺍﻟﻨﺎﺟﻲ"
+    },
+    {
+        "section":44.0,
+        "course":"ISC203",
+        "course name":"ﺍﻟﻤﻌﺎﻣﻼﺕ ﺍﻟﻤﺎﻟﻴﺔ ﺍﻟﻤﻌﺎﺻﺮﺓ",
+        "days":"4 5",
+        "time start":"09:00",
+        "time end":"09:50",
+        "location":"S109",
+        "instructor":"ﺩ. ﺷﺎﺩﻳﻪ ﺧﺎﻟﺪ ﺷﻌﺒﺎﻥ ﺍﻟﻨﺎﺟﻲ"
+    },
+    {
+        "section":44.0,
+        "course":"ISC203",
+        "course name":"ﺍﻟﻤﻌﺎﻣﻼﺕ ﺍﻟﻤﺎﻟﻴﺔ ﺍﻟﻤﻌﺎﺻﺮﺓ",
+        "days":"4 5",
+        "time start":"08:00",
+        "time end":"08:50",
+        "location":"S109",
+        "instructor":"ﺩ. ﺷﺎﺩﻳﻪ ﺧﺎﻟﺪ ﺷﻌﺒﺎﻥ ﺍﻟﻨﺎﺟﻲ"
+    },
+    {
+        "section":46.0,
+        "course":"ISC203",
+        "course name":"ﺍﻟﻤﻌﺎﻣﻼﺕ ﺍﻟﻤﺎﻟﻴﺔ ﺍﻟﻤﻌﺎﺻﺮﺓ",
+        "days":"4 5",
+        "time start":"13:00",
+        "time end":"13:50",
+        "location":"S109",
+        "instructor":"ﺩ. ﺷﺎﺩﻳﻪ ﺧﺎﻟﺪ ﺷﻌﺒﺎﻥ ﺍﻟﻨﺎﺟﻲ"
+    },
+    {
+        "section":46.0,
+        "course":"ISC203",
+        "course name":"ﺍﻟﻤﻌﺎﻣﻼﺕ ﺍﻟﻤﺎﻟﻴﺔ ﺍﻟﻤﻌﺎﺻﺮﺓ",
+        "days":"4 5",
+        "time start":"14:00",
+        "time end":"14:50",
+        "location":"S109",
+        "instructor":"ﺩ. ﺷﺎﺩﻳﻪ ﺧﺎﻟﺪ ﺷﻌﺒﺎﻥ ﺍﻟﻨﺎﺟﻲ"
+    },
+    {
+        "section":50.0,
+        "course":"PSY101",
+        "course name":"ﻣﻘﺪﻣﺔ ﻓﻲ ﻋﻠﻢ ﺍﻟﻨﻔﺲ",
+        "days":"1 2 3",
+        "time start":"08:00",
+        "time end":"08:50",
+        "location":"S109",
+        "instructor":"ﺩ. ﻃﺎﻫﺮﻩ ﻫﻮﻛﻲ"
+    },
+    {
+        "section":50.0,
+        "course":"PSY101",
+        "course name":"ﻣﻘﺪﻣﺔ ﻓﻲ ﻋﻠﻢ ﺍﻟﻨﻔﺲ",
+        "days":"1 2 3",
+        "time start":"09:00",
+        "time end":"09:50",
+        "location":"S109",
+        "instructor":"ﺩ. ﻃﺎﻫﺮﻩ ﻫﻮﻛﻲ"
+    },
+    {
+        "section":52.0,
+        "course":"PSY101",
+        "course name":"ﻣﻘﺪﻣﺔ ﻓﻲ ﻋﻠﻢ ﺍﻟﻨﻔﺲ",
+        "days":"1 2 3",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"S106",
+        "instructor":"ﺃ. ﻧﻴﻠﻮﻓﺎﺭ ﻧﺪﻳﻢ ﺍﺳﺤﺎﻕ ﺷﻮﺩﺭﻱ"
+    },
+    {
+        "section":52.0,
+        "course":"PSY101",
+        "course name":"ﻣﻘﺪﻣﺔ ﻓﻲ ﻋﻠﻢ ﺍﻟﻨﻔﺲ",
+        "days":"1 2 3",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"S106",
+        "instructor":"ﺃ. ﻧﻴﻠﻮﻓﺎﺭ ﻧﺪﻳﻢ ﺍﺳﺤﺎﻕ ﺷﻮﺩﺭﻱ"
+    },
+    {
+        "section":51.0,
+        "course":"PSY101",
+        "course name":"ﻣﻘﺪﻣﺔ ﻓﻲ ﻋﻠﻢ ﺍﻟﻨﻔﺲ",
+        "days":"1 2 3",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"S109",
+        "instructor":"ﺩ. ﻃﺎﻫﺮﻩ ﻫﻮﻛﻲ"
+    },
+    {
+        "section":51.0,
+        "course":"PSY101",
+        "course name":"ﻣﻘﺪﻣﺔ ﻓﻲ ﻋﻠﻢ ﺍﻟﻨﻔﺲ",
+        "days":"1 2 3",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"S109",
+        "instructor":"ﺩ. ﻃﺎﻫﺮﻩ ﻫﻮﻛﻲ"
+    },
+    {
+        "section":53.0,
+        "course":"PSY101",
+        "course name":"ﻣﻘﺪﻣﺔ ﻓﻲ ﻋﻠﻢ ﺍﻟﻨﻔﺲ",
+        "days":"1 2 3",
+        "time start":"14:00",
+        "time end":"14:50",
+        "location":"S106",
+        "instructor":"ﺃ. ﻧﻴﻠﻮﻓﺎﺭ ﻧﺪﻳﻢ ﺍﺳﺤﺎﻕ ﺷﻮﺩﺭﻱ"
+    },
+    {
+        "section":53.0,
+        "course":"PSY101",
+        "course name":"ﻣﻘﺪﻣﺔ ﻓﻲ ﻋﻠﻢ ﺍﻟﻨﻔﺲ",
+        "days":"1 2 3",
+        "time start":"13:00",
+        "time end":"13:50",
+        "location":"S106",
+        "instructor":"ﺃ. ﻧﻴﻠﻮﻓﺎﺭ ﻧﺪﻳﻢ ﺍﺳﺤﺎﻕ ﺷﻮﺩﺭﻱ"
+    },
+    {
+        "section":12.0,
+        "course":"ENG010",
+        "course name":"ﺍﻹﻧﺠﻠﻴﺰﻳﺔ ﺍﻟﺘﺤﻀﻴﺮﻳﺔ 1 - ﺍﻟﻘﺮﺍﺀﺓ ﻭﺍﻟﻜﺘﺎﺑﺔ",
+        "days":"1 2 3 4 5",
+        "time start":"09:00",
+        "time end":"09:50",
+        "location":"N204",
+        "instructor":"ﺃ. ﺍﺭﻳﻦ ﺟﺎﻥ ﻛﻮﺭﻣﺎﻥ"
+    },
+    {
+        "section":12.0,
+        "course":"ENG010",
+        "course name":"ﺍﻹﻧﺠﻠﻴﺰﻳﺔ ﺍﻟﺘﺤﻀﻴﺮﻳﺔ 1 - ﺍﻟﻘﺮﺍﺀﺓ ﻭﺍﻟﻜﺘﺎﺑﺔ",
+        "days":"5",
+        "time start":"15:00",
+        "time end":"15:50",
+        "location":"N204",
+        "instructor":"ﺃ. ﺍﺭﻳﻦ ﺟﺎﻥ ﻛﻮﺭﻣﺎﻥ"
+    },
+    {
+        "section":12.0,
+        "course":"ENG010",
+        "course name":"ﺍﻹﻧﺠﻠﻴﺰﻳﺔ ﺍﻟﺘﺤﻀﻴﺮﻳﺔ 1 - ﺍﻟﻘﺮﺍﺀﺓ ﻭﺍﻟﻜﺘﺎﺑﺔ",
+        "days":"1 2 3 4",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"N204",
+        "instructor":"ﺃ. ﺍﺭﻳﻦ ﺟﺎﻥ ﻛﻮﺭﻣﺎﻥ"
+    },
+    {
+        "section":12.0,
+        "course":"ENG010",
+        "course name":"ﺍﻹﻧﺠﻠﻴﺰﻳﺔ ﺍﻟﺘﺤﻀﻴﺮﻳﺔ 1 - ﺍﻟﻘﺮﺍﺀﺓ ﻭﺍﻟﻜﺘﺎﺑﺔ",
+        "days":"1 2 3 4 5",
+        "time start":"08:00",
+        "time end":"08:50",
+        "location":"N204",
+        "instructor":"ﺃ. ﺍﺭﻳﻦ ﺟﺎﻥ ﻛﻮﺭﻣﺎﻥ"
+    },
+    {
+        "section":12.0,
+        "course":"ENG010",
+        "course name":"ﺍﻹﻧﺠﻠﻴﺰﻳﺔ ﺍﻟﺘﺤﻀﻴﺮﻳﺔ 1 - ﺍﻟﻘﺮﺍﺀﺓ ﻭﺍﻟﻜﺘﺎﺑﺔ",
+        "days":"1 2 3 4",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"N204",
+        "instructor":"ﺃ. ﺍﺭﻳﻦ ﺟﺎﻥ ﻛﻮﺭﻣﺎﻥ"
+    },
+    {
+        "section":12.0,
+        "course":"ENG010",
+        "course name":"ﺍﻹﻧﺠﻠﻴﺰﻳﺔ ﺍﻟﺘﺤﻀﻴﺮﻳﺔ 1 - ﺍﻟﻘﺮﺍﺀﺓ ﻭﺍﻟﻜﺘﺎﺑﺔ",
+        "days":"5",
+        "time start":"16:00",
+        "time end":"16:50",
+        "location":"N204",
+        "instructor":"ﺃ. ﺍﺭﻳﻦ ﺟﺎﻥ ﻛﻮﺭﻣﺎﻥ"
+    },
+    {
+        "section":11.0,
+        "course":"ENG020",
+        "course name":"ﺍﻹﻧﺠﻠﻴﺰﻳﺔ ﺍﻟﺘﺤﻀﻴﺮﻳﺔ 1 - ﺍﻻﺳﺘﻤﺎﻉ ﻭﺍﻟﺘﺤﺪﺙ",
+        "days":"1 2 3 4 5",
+        "time start":"15:00",
+        "time end":"15:50",
+        "location":"N209",
+        "instructor":"ﺃ. ﻣﺮﻳﻢ ﺍﻝ ﺧﻠﻒ"
+    },
+    {
+        "section":11.0,
+        "course":"ENG020",
+        "course name":"ﺍﻹﻧﺠﻠﻴﺰﻳﺔ ﺍﻟﺘﺤﻀﻴﺮﻳﺔ 1 - ﺍﻻﺳﺘﻤﺎﻉ ﻭﺍﻟﺘﺤﺪﺙ",
+        "days":"1 2 3 4 5",
+        "time start":"16:00",
+        "time end":"16:50",
+        "location":"N209",
+        "instructor":"ﺃ. ﻣﺮﻳﻢ ﺍﻝ ﺧﻠﻒ"
+    },
+    {
+        "section":11.0,
+        "course":"ENG020",
+        "course name":"ﺍﻹﻧﺠﻠﻴﺰﻳﺔ ﺍﻟﺘﺤﻀﻴﺮﻳﺔ 1 - ﺍﻻﺳﺘﻤﺎﻉ ﻭﺍﻟﺘﺤﺪﺙ",
+        "days":"1 2 3 4 5",
+        "time start":"14:00",
+        "time end":"14:50",
+        "location":"N209",
+        "instructor":"ﺃ. ﻣﺮﻳﻢ ﺍﻝ ﺧﻠﻒ"
+    },
+    {
+        "section":11.0,
+        "course":"ENG020",
+        "course name":"ﺍﻹﻧﺠﻠﻴﺰﻳﺔ ﺍﻟﺘﺤﻀﻴﺮﻳﺔ 1 - ﺍﻻﺳﺘﻤﺎﻉ ﻭﺍﻟﺘﺤﺪﺙ",
+        "days":"1 2 3 4 5",
+        "time start":"13:00",
+        "time end":"13:50",
+        "location":"N209",
+        "instructor":"ﺃ. ﻣﺮﻳﻢ ﺍﻝ ﺧﻠﻒ"
+    },
+    {
+        "section":9.0,
+        "course":"ENG030",
+        "course name":"ﺍﻹﻧﺠﻠﻴﺰﻳﺔ ﺍﻟﺘﺤﻀﻴﺮﻳﺔ 2 - ﺍﻟﻘﺮﺍﺀﺓ ﻭﺍﻟﻜﺘﺎﺑﺔ",
+        "days":"1 2 3 4 5",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"N205",
+        "instructor":"ﺃ. ﻫﺪﻯ ﻋﺒﺪﻱ ﺃﺣﻤﺪ"
+    },
+    {
+        "section":9.0,
+        "course":"ENG030",
+        "course name":"ﺍﻹﻧﺠﻠﻴﺰﻳﺔ ﺍﻟﺘﺤﻀﻴﺮﻳﺔ 2 - ﺍﻟﻘﺮﺍﺀﺓ ﻭﺍﻟﻜﺘﺎﺑﺔ",
+        "days":"1 2 3 4 5",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"N205",
+        "instructor":"ﺃ. ﻫﺪﻯ ﻋﺒﺪﻱ ﺃﺣﻤﺪ"
+    },
+    {
+        "section":9.0,
+        "course":"ENG030",
+        "course name":"ﺍﻹﻧﺠﻠﻴﺰﻳﺔ ﺍﻟﺘﺤﻀﻴﺮﻳﺔ 2 - ﺍﻟﻘﺮﺍﺀﺓ ﻭﺍﻟﻜﺘﺎﺑﺔ",
+        "days":"1 2 3 4 5",
+        "time start":"08:00",
+        "time end":"08:50",
+        "location":"N205",
+        "instructor":"ﺃ. ﻫﺪﻯ ﻋﺒﺪﻱ ﺃﺣﻤﺪ"
+    },
+    {
+        "section":9.0,
+        "course":"ENG030",
+        "course name":"ﺍﻹﻧﺠﻠﻴﺰﻳﺔ ﺍﻟﺘﺤﻀﻴﺮﻳﺔ 2 - ﺍﻟﻘﺮﺍﺀﺓ ﻭﺍﻟﻜﺘﺎﺑﺔ",
+        "days":"1 2 3 4 5",
+        "time start":"09:00",
+        "time end":"09:50",
+        "location":"N205",
+        "instructor":"ﺃ. ﻫﺪﻯ ﻋﺒﺪﻱ ﺃﺣﻤﺪ"
+    },
+    {
+        "section":10.0,
+        "course":"ENG040",
+        "course name":"ﺍﻹﻧﺠﻠﻴﺰﻳﺔ ﺍﻟﺘﺤﻀﻴﺮﻳﺔ 2 - ﺍﻻﺳﺘﻤﺎﻉ ﻭﺍﻟﺘﺤﺪﺙ",
+        "days":"1 2 3 4 5",
+        "time start":"14:00",
+        "time end":"14:50",
+        "location":"N207",
+        "instructor":"ﺃ. ﻣﺤﺴﻨﻪ ﻟﻄﻴﻔﻪ ﻣﺤﻤﺪ"
+    },
+    {
+        "section":10.0,
+        "course":"ENG040",
+        "course name":"ﺍﻹﻧﺠﻠﻴﺰﻳﺔ ﺍﻟﺘﺤﻀﻴﺮﻳﺔ 2 - ﺍﻻﺳﺘﻤﺎﻉ ﻭﺍﻟﺘﺤﺪﺙ",
+        "days":"1 2 3 4 5",
+        "time start":"16:00",
+        "time end":"16:50",
+        "location":"N207",
+        "instructor":"ﺃ. ﻣﺤﺴﻨﻪ ﻟﻄﻴﻔﻪ ﻣﺤﻤﺪ"
+    },
+    {
+        "section":10.0,
+        "course":"ENG040",
+        "course name":"ﺍﻹﻧﺠﻠﻴﺰﻳﺔ ﺍﻟﺘﺤﻀﻴﺮﻳﺔ 2 - ﺍﻻﺳﺘﻤﺎﻉ ﻭﺍﻟﺘﺤﺪﺙ",
+        "days":"1 2 3 4 5",
+        "time start":"15:00",
+        "time end":"15:50",
+        "location":"N207",
+        "instructor":"ﺃ. ﻣﺤﺴﻨﻪ ﻟﻄﻴﻔﻪ ﻣﺤﻤﺪ"
+    },
+    {
+        "section":10.0,
+        "course":"ENG040",
+        "course name":"ﺍﻹﻧﺠﻠﻴﺰﻳﺔ ﺍﻟﺘﺤﻀﻴﺮﻳﺔ 2 - ﺍﻻﺳﺘﻤﺎﻉ ﻭﺍﻟﺘﺤﺪﺙ",
+        "days":"1 2 3 4 5",
+        "time start":"13:00",
+        "time end":"13:50",
+        "location":"N207",
+        "instructor":"ﺃ. ﻣﺤﺴﻨﻪ ﻟﻄﻴﻔﻪ ﻣﺤﻤﺪ"
+    },
+    {
+        "section":69.0,
+        "course":"CMP011",
+        "course name":"ﺍﻟﺤﺎﺳﺐ ﺍﻟﺘﺤﻀﻴﺮﻱ - 1",
+        "days":"4 5",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"N301CMPLAB",
+        "instructor":"ﺃ. ﺳﺎﺭﻩ ﺟﻤﺎﻝ ﻋﺒﺪﺍﻟﺮﺣﻤﻦ ﺍﻟﺼﻐﻴﺮ"
+    },
+    {
+        "section":69.0,
+        "course":"CMP011",
+        "course name":"ﺍﻟﺤﺎﺳﺐ ﺍﻟﺘﺤﻀﻴﺮﻱ - 1",
+        "days":"4 5",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"N301CMPLAB",
+        "instructor":"ﺃ. ﺳﺎﺭﻩ ﺟﻤﺎﻝ ﻋﺒﺪﺍﻟﺮﺣﻤﻦ ﺍﻟﺼﻐﻴﺮ"
+    },
+    {
+        "section":91.0,
+        "course":"CMP011",
+        "course name":"ﺍﻟﺤﺎﺳﺐ ﺍﻟﺘﺤﻀﻴﺮﻱ - 1",
+        "days":"4 5",
+        "time start":"13:00",
+        "time end":"13:50",
+        "location":"N301CMPLAB",
+        "instructor":"ﺃ. ﺳﺎﺭﻩ ﺟﻤﺎﻝ ﻋﺒﺪﺍﻟﺮﺣﻤﻦ ﺍﻟﺼﻐﻴﺮ"
+    },
+    {
+        "section":91.0,
+        "course":"CMP011",
+        "course name":"ﺍﻟﺤﺎﺳﺐ ﺍﻟﺘﺤﻀﻴﺮﻱ - 1",
+        "days":"4 5",
+        "time start":"14:00",
+        "time end":"14:50",
+        "location":"N301CMPLAB",
+        "instructor":"ﺃ. ﺳﺎﺭﻩ ﺟﻤﺎﻝ ﻋﺒﺪﺍﻟﺮﺣﻤﻦ ﺍﻟﺼﻐﻴﺮ"
+    },
+    {
+        "section":13.0,
+        "course":"CMP012",
+        "course name":"ﺍﻟﺤﺎﺳﺐ ﺍﻟﺘﺤﻀﻴﺮﻱ - 2",
+        "days":"4 5",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"N302CMPLAB",
+        "instructor":"ﺃ. ﺍﻟﻌﻨﻮﺩ ﺣﻤﺪ ﻓﺎﻫﺪ ﺍﻟﻘﺤﻄﺎﻧﻲ"
+    },
+    {
+        "section":13.0,
+        "course":"CMP012",
+        "course name":"ﺍﻟﺤﺎﺳﺐ ﺍﻟﺘﺤﻀﻴﺮﻱ - 2",
+        "days":"4 5",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"N302CMPLAB",
+        "instructor":"ﺃ. ﺍﻟﻌﻨﻮﺩ ﺣﻤﺪ ﻓﺎﻫﺪ ﺍﻟﻘﺤﻄﺎﻧﻲ"
+    },
+    {
+        "section":14.0,
+        "course":"CMP012",
+        "course name":"ﺍﻟﺤﺎﺳﺐ ﺍﻟﺘﺤﻀﻴﺮﻱ - 2",
+        "days":"4 5",
+        "time start":"13:00",
+        "time end":"13:50",
+        "location":"N302CMPLAB",
+        "instructor":"ﺃ. ﺍﻟﻌﻨﻮﺩ ﺣﻤﺪ ﻓﺎﻫﺪ ﺍﻟﻘﺤﻄﺎﻧﻲ"
+    },
+    {
+        "section":14.0,
+        "course":"CMP012",
+        "course name":"ﺍﻟﺤﺎﺳﺐ ﺍﻟﺘﺤﻀﻴﺮﻱ - 2",
+        "days":"4 5",
+        "time start":"14:00",
+        "time end":"14:50",
+        "location":"N302CMPLAB",
+        "instructor":"ﺃ. ﺍﻟﻌﻨﻮﺩ ﺣﻤﺪ ﻓﺎﻫﺪ ﺍﻟﻘﺤﻄﺎﻧﻲ"
+    },
+    {
+        "section":15.0,
+        "course":"CMP012",
+        "course name":"ﺍﻟﺤﺎﺳﺐ ﺍﻟﺘﺤﻀﻴﺮﻱ - 2",
+        "days":"4 5",
+        "time start":"15:00",
+        "time end":"15:50",
+        "location":"N302CMPLAB",
+        "instructor":"ﺃ. ﺍﻟﻌﻨﻮﺩ ﺣﻤﺪ ﻓﺎﻫﺪ ﺍﻟﻘﺤﻄﺎﻧﻲ"
+    },
+    {
+        "section":15.0,
+        "course":"CMP012",
+        "course name":"ﺍﻟﺤﺎﺳﺐ ﺍﻟﺘﺤﻀﻴﺮﻱ - 2",
+        "days":"4 5",
+        "time start":"16:00",
+        "time end":"16:50",
+        "location":"N302CMPLAB",
+        "instructor":"ﺃ. ﺍﻟﻌﻨﻮﺩ ﺣﻤﺪ ﻓﺎﻫﺪ ﺍﻟﻘﺤﻄﺎﻧﻲ"
+    },
+    {
+        "section":17.0,
+        "course":"MATH001",
+        "course name":"ﺍﻟﺮﻳﺎﺿﻴﺎﺕ ﺍﻟﺘﺤﻀﻴﺮﻱ-1",
+        "days":"1 2 3 4",
+        "time start":"08:00",
+        "time end":"08:50",
+        "location":"N211",
+        "instructor":"ﺃ. ﺭﺅﻯ ﺧﻠﻴﻞ ﻣﺤﻤﺪ ﻋﻠﻲ ﻋﺎﺑﺪ"
+    },
+    {
+        "section":17.0,
+        "course":"MATH001",
+        "course name":"ﺍﻟﺮﻳﺎﺿﻴﺎﺕ ﺍﻟﺘﺤﻀﻴﺮﻱ-1",
+        "days":"1 2 3 4",
+        "time start":"09:00",
+        "time end":"09:50",
+        "location":"N211",
+        "instructor":"ﺃ. ﺭﺅﻯ ﺧﻠﻴﻞ ﻣﺤﻤﺪ ﻋﻠﻲ ﻋﺎﺑﺪ"
+    },
+    {
+        "section":18.0,
+        "course":"MATH002",
+        "course name":"ﺍﻟﺮﻳﺎﺿﻴﺎﺕ ﺍﻟﺘﺤﻀﻴﺮﻱ - 2",
+        "days":"1 2 3 4",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"N211",
+        "instructor":"ﺃ. ﺭﺅﻯ ﺧﻠﻴﻞ ﻣﺤﻤﺪ ﻋﻠﻲ ﻋﺎﺑﺪ"
+    },
+    {
+        "section":18.0,
+        "course":"MATH002",
+        "course name":"ﺍﻟﺮﻳﺎﺿﻴﺎﺕ ﺍﻟﺘﺤﻀﻴﺮﻱ - 2",
+        "days":"1 2 3 4",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"N211",
+        "instructor":"ﺃ. ﺭﺅﻯ ﺧﻠﻴﻞ ﻣﺤﻤﺪ ﻋﻠﻲ ﻋﺎﺑﺪ"
+    },
+    {
+        "section":19.0,
+        "course":"MATH002",
+        "course name":"ﺍﻟﺮﻳﺎﺿﻴﺎﺕ ﺍﻟﺘﺤﻀﻴﺮﻱ - 2",
+        "days":"1 2 3 4",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"N212",
+        "instructor":"ﺃ. ﺻﺎﺋﻤﻪ ﺭﺷﻴﺪﻩ ﺭﺷﻴﺪ ﺯﻣﻴﺮ"
+    },
+    {
+        "section":19.0,
+        "course":"MATH002",
+        "course name":"ﺍﻟﺮﻳﺎﺿﻴﺎﺕ ﺍﻟﺘﺤﻀﻴﺮﻱ - 2",
+        "days":"1 2 3 4",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"N212",
+        "instructor":"ﺃ. ﺻﺎﺋﻤﻪ ﺭﺷﻴﺪﻩ ﺭﺷﻴﺪ ﺯﻣﻴﺮ"
+    },
+    {
+        "section":20.0,
+        "course":"MATH002",
+        "course name":"ﺍﻟﺮﻳﺎﺿﻴﺎﺕ ﺍﻟﺘﺤﻀﻴﺮﻱ - 2",
+        "days":"1 2 3 4",
+        "time start":"13:00",
+        "time end":"13:50",
+        "location":"N213",
+        "instructor":"ﺃ. ﺑﻨﺎﻥ ﺍﻷﺣﻤﺪ"
+    },
+    {
+        "section":20.0,
+        "course":"MATH002",
+        "course name":"ﺍﻟﺮﻳﺎﺿﻴﺎﺕ ﺍﻟﺘﺤﻀﻴﺮﻱ - 2",
+        "days":"1 2 3 4",
+        "time start":"14:00",
+        "time end":"14:50",
+        "location":"N213",
+        "instructor":"ﺃ. ﺑﻨﺎﻥ ﺍﻷﺣﻤﺪ"
+    },
+    {
+        "section":21.0,
+        "course":"MATH002",
+        "course name":"ﺍﻟﺮﻳﺎﺿﻴﺎﺕ ﺍﻟﺘﺤﻀﻴﺮﻱ - 2",
+        "days":"1 2 3 4",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"N213",
+        "instructor":"ﺃ. ﺑﻨﺎﻥ ﺍﻷﺣﻤﺪ"
+    },
+    {
+        "section":21.0,
+        "course":"MATH002",
+        "course name":"ﺍﻟﺮﻳﺎﺿﻴﺎﺕ ﺍﻟﺘﺤﻀﻴﺮﻱ - 2",
+        "days":"1 2 3 4",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"N213",
+        "instructor":"ﺃ. ﺑﻨﺎﻥ ﺍﻷﺣﻤﺪ"
+    },
+    {
+        "section":22.0,
+        "course":"MATH002",
+        "course name":"ﺍﻟﺮﻳﺎﺿﻴﺎﺕ ﺍﻟﺘﺤﻀﻴﺮﻱ - 2",
+        "days":"1 2 3 4",
+        "time start":"09:00",
+        "time end":"09:50",
+        "location":"N212",
+        "instructor":"ﺃ. ﺻﺎﺋﻤﻪ ﺭﺷﻴﺪﻩ ﺭﺷﻴﺪ ﺯﻣﻴﺮ"
+    },
+    {
+        "section":22.0,
+        "course":"MATH002",
+        "course name":"ﺍﻟﺮﻳﺎﺿﻴﺎﺕ ﺍﻟﺘﺤﻀﻴﺮﻱ - 2",
+        "days":"1 2 3 4",
+        "time start":"08:00",
+        "time end":"08:50",
+        "location":"N212",
+        "instructor":"ﺃ. ﺻﺎﺋﻤﻪ ﺭﺷﻴﺪﻩ ﺭﺷﻴﺪ ﺯﻣﻴﺮ"
+    },
+    {
+        "section":54.0,
+        "course":"CHM101",
+        "course name":"ﺍﻟﻜﻴﻤﻴﺎﺀ ﺍﻟﻌﺎﻣﺔ",
+        "days":"1 2 4",
+        "time start":"13:00",
+        "time end":"13:50",
+        "location":"N307",
+        "instructor":"ﺩ. ﺳﻤﺤﻪ ﻣﺤﻤﺪ ﺯﻫﻴﺮ ﺍﻷﻳﻮﺑﻲ"
+    },
+    {
+        "section":54.0,
+        "course":"CHM101",
+        "course name":"ﺍﻟﻜﻴﻤﻴﺎﺀ ﺍﻟﻌﺎﻣﺔ",
+        "days":"1 2 4",
+        "time start":"14:00",
+        "time end":"14:50",
+        "location":"N307",
+        "instructor":"ﺩ. ﺳﻤﺤﻪ ﻣﺤﻤﺪ ﺯﻫﻴﺮ ﺍﻷﻳﻮﺑﻲ"
+    },
+    {
+        "section":56.0,
+        "course":"CHM101",
+        "course name":"ﺍﻟﻜﻴﻤﻴﺎﺀ ﺍﻟﻌﺎﻣﺔ",
+        "days":"1 4",
+        "time start":"17:00",
+        "time end":"17:50",
+        "location":"1-B02",
+        "instructor":"ﺩ. ﺳﻤﺤﻪ ﻣﺤﻤﺪ ﺯﻫﻴﺮ ﺍﻷﻳﻮﺑﻲ"
+    },
+    {
+        "section":56.0,
+        "course":"CHM101",
+        "course name":"ﺍﻟﻜﻴﻤﻴﺎﺀ ﺍﻟﻌﺎﻣﺔ",
+        "days":"1 4",
+        "time start":"16:00",
+        "time end":"16:50",
+        "location":"1-B02",
+        "instructor":"ﺩ. ﺳﻤﺤﻪ ﻣﺤﻤﺪ ﺯﻫﻴﺮ ﺍﻷﻳﻮﺑﻲ"
+    },
+    {
+        "section":56.0,
+        "course":"CHM101",
+        "course name":"ﺍﻟﻜﻴﻤﻴﺎﺀ ﺍﻟﻌﺎﻣﺔ",
+        "days":"1 4",
+        "time start":"15:00",
+        "time end":"15:50",
+        "location":"1-B02",
+        "instructor":"ﺩ. ﺳﻤﺤﻪ ﻣﺤﻤﺪ ﺯﻫﻴﺮ ﺍﻷﻳﻮﺑﻲ"
+    },
+    {
+        "section":55.0,
+        "course":"CHM101",
+        "course name":"ﺍﻟﻜﻴﻤﻴﺎﺀ ﺍﻟﻌﺎﻣﺔ",
+        "days":"1 4",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"1-B02",
+        "instructor":"ﺩ. ﺳﻤﺤﻪ ﻣﺤﻤﺪ ﺯﻫﻴﺮ ﺍﻷﻳﻮﺑﻲ"
+    },
+    {
+        "section":55.0,
+        "course":"CHM101",
+        "course name":"ﺍﻟﻜﻴﻤﻴﺎﺀ ﺍﻟﻌﺎﻣﺔ",
+        "days":"1 4",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"1-B02",
+        "instructor":"ﺩ. ﺳﻤﺤﻪ ﻣﺤﻤﺪ ﺯﻫﻴﺮ ﺍﻷﻳﻮﺑﻲ"
+    },
+    {
+        "section":55.0,
+        "course":"CHM101",
+        "course name":"ﺍﻟﻜﻴﻤﻴﺎﺀ ﺍﻟﻌﺎﻣﺔ",
+        "days":"1 4",
+        "time start":"09:00",
+        "time end":"09:50",
+        "location":"1-B02",
+        "instructor":"ﺩ. ﺳﻤﺤﻪ ﻣﺤﻤﺪ ﺯﻫﻴﺮ ﺍﻷﻳﻮﺑﻲ"
+    },
+    {
+        "section":59.0,
+        "course":"PHY105",
+        "course name":"ﻓﻴﺰﻳﺎﺀ - 1",
+        "days":"3 4 5",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"N210",
+        "instructor":"ﺩ. ﺭﺷﺎ ﺍﺑﻮ ﻣﻮﺳﻰ"
+    },
+    {
+        "section":59.0,
+        "course":"PHY105",
+        "course name":"ﻓﻴﺰﻳﺎﺀ - 1",
+        "days":"3 4 5",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"N210",
+        "instructor":"ﺩ. ﺭﺷﺎ ﺍﺑﻮ ﻣﻮﺳﻰ"
+    },
+    {
+        "section":66.0,
+        "course":"PHY105",
+        "course name":"ﻓﻴﺰﻳﺎﺀ - 1",
+        "days":"1 2",
+        "time start":"13:00",
+        "time end":"13:50",
+        "location":"1-B01",
+        "instructor":"ﺃ. ﺳﺎﺭﻩ ﺑﺸﻴﺮ"
+    },
+    {
+        "section":66.0,
+        "course":"PHY105",
+        "course name":"ﻓﻴﺰﻳﺎﺀ - 1",
+        "days":"1 2",
+        "time start":"14:00",
+        "time end":"14:50",
+        "location":"1-B01",
+        "instructor":"ﺃ. ﺳﺎﺭﻩ ﺑﺸﻴﺮ"
+    },
+    {
+        "section":68.0,
+        "course":"PHY105",
+        "course name":"ﻓﻴﺰﻳﺎﺀ - 1",
+        "days":"2 5",
+        "time start":"09:00",
+        "time end":"09:50",
+        "location":"1-B01",
+        "instructor":"(PT) ﺃ. ﺃﻣﻞ ﺍﻟﻌﻨﺰﻱ"
+    },
+    {
+        "section":68.0,
+        "course":"PHY105",
+        "course name":"ﻓﻴﺰﻳﺎﺀ - 1",
+        "days":"2 5",
+        "time start":"08:00",
+        "time end":"08:50",
+        "location":"1-B01",
+        "instructor":"(PT) ﺃ. ﺃﻣﻞ ﺍﻟﻌﻨﺰﻱ"
+    },
+    {
+        "section":65.0,
+        "course":"PHY105",
+        "course name":"ﻓﻴﺰﻳﺎﺀ - 1",
+        "days":"1 2",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"1-B01",
+        "instructor":"ﺃ. ﺳﺎﺭﻩ ﺑﺸﻴﺮ"
+    },
+    {
+        "section":65.0,
+        "course":"PHY105",
+        "course name":"ﻓﻴﺰﻳﺎﺀ - 1",
+        "days":"1 2",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"1-B01",
+        "instructor":"ﺃ. ﺳﺎﺭﻩ ﺑﺸﻴﺮ"
+    },
+    {
+        "section":60.0,
+        "course":"PHY105",
+        "course name":"ﻓﻴﺰﻳﺎﺀ - 1",
+        "days":"3 4 5",
+        "time start":"14:00",
+        "time end":"14:50",
+        "location":"N210",
+        "instructor":"ﺩ. ﺭﺷﺎ ﺍﺑﻮ ﻣﻮﺳﻰ"
+    },
+    {
+        "section":60.0,
+        "course":"PHY105",
+        "course name":"ﻓﻴﺰﻳﺎﺀ - 1",
+        "days":"3 4 5",
+        "time start":"13:00",
+        "time end":"13:50",
+        "location":"N210",
+        "instructor":"ﺩ. ﺭﺷﺎ ﺍﺑﻮ ﻣﻮﺳﻰ"
+    },
+    {
+        "section":67.0,
+        "course":"PHY105",
+        "course name":"ﻓﻴﺰﻳﺎﺀ - 1",
+        "days":"5",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"1-B01",
+        "instructor":"(PT) ﺃ. ﺃﻣﻞ ﺍﻟﻌﻨﺰﻱ"
+    },
+    {
+        "section":67.0,
+        "course":"PHY105",
+        "course name":"ﻓﻴﺰﻳﺎﺀ - 1",
+        "days":"4",
+        "time start":"09:00",
+        "time end":"09:50",
+        "location":"1-B01",
+        "instructor":"(PT) ﺃ. ﺃﻣﻞ ﺍﻟﻌﻨﺰﻱ"
+    },
+    {
+        "section":67.0,
+        "course":"PHY105",
+        "course name":"ﻓﻴﺰﻳﺎﺀ - 1",
+        "days":"5",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"1-B01",
+        "instructor":"(PT) ﺃ. ﺃﻣﻞ ﺍﻟﻌﻨﺰﻱ"
+    },
+    {
+        "section":67.0,
+        "course":"PHY105",
+        "course name":"ﻓﻴﺰﻳﺎﺀ - 1",
+        "days":"4",
+        "time start":"08:00",
+        "time end":"08:50",
+        "location":"1-B01",
+        "instructor":"(PT) ﺃ. ﺃﻣﻞ ﺍﻟﻌﻨﺰﻱ"
+    },
+    {
+        "section":57.0,
+        "course":"PHY205",
+        "course name":"ﻓﻴﺰﻳﺎﺀ - 2",
+        "days":"1 2 4",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"N310",
+        "instructor":"ﺩ. ﺍﻟﻬﺎﻡ ﻣﺤﻤﺪ ﻋﻠﻲ ﺩﻧﻮﻥ"
+    },
+    {
+        "section":57.0,
+        "course":"PHY205",
+        "course name":"ﻓﻴﺰﻳﺎﺀ - 2",
+        "days":"1 2 4",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"N310",
+        "instructor":"ﺩ. ﺍﻟﻬﺎﻡ ﻣﺤﻤﺪ ﻋﻠﻲ ﺩﻧﻮﻥ"
+    },
+    {
+        "section":63.0,
+        "course":"PHY205",
+        "course name":"ﻓﻴﺰﻳﺎﺀ - 2",
+        "days":"2 5",
+        "time start":"08:00",
+        "time end":"08:50",
+        "location":"1 - A03",
+        "instructor":"ﺃ. ﺳﺎﺭﻩ ﺑﺸﻴﺮ"
+    },
+    {
+        "section":63.0,
+        "course":"PHY205",
+        "course name":"ﻓﻴﺰﻳﺎﺀ - 2",
+        "days":"2 5",
+        "time start":"09:00",
+        "time end":"09:50",
+        "location":"1 - A03",
+        "instructor":"ﺃ. ﺳﺎﺭﻩ ﺑﺸﻴﺮ"
+    },
+    {
+        "section":62.0,
+        "course":"PHY205",
+        "course name":"ﻓﻴﺰﻳﺎﺀ - 2",
+        "days":"1 4",
+        "time start":"08:00",
+        "time end":"08:50",
+        "location":"1 - A03",
+        "instructor":"ﺃ. ﺳﺎﺭﻩ ﺑﺸﻴﺮ"
+    },
+    {
+        "section":62.0,
+        "course":"PHY205",
+        "course name":"ﻓﻴﺰﻳﺎﺀ - 2",
+        "days":"1 4",
+        "time start":"09:00",
+        "time end":"09:50",
+        "location":"1 - A03",
+        "instructor":"ﺃ. ﺳﺎﺭﻩ ﺑﺸﻴﺮ"
+    },
+    {
+        "section":61.0,
+        "course":"PHY205",
+        "course name":"ﻓﻴﺰﻳﺎﺀ - 2",
+        "days":"4 5",
+        "time start":"14:00",
+        "time end":"14:50",
+        "location":"1 - A03",
+        "instructor":"ﺃ. ﺳﺎﺭﻩ ﺑﺸﻴﺮ"
+    },
+    {
+        "section":61.0,
+        "course":"PHY205",
+        "course name":"ﻓﻴﺰﻳﺎﺀ - 2",
+        "days":"4 5",
+        "time start":"13:00",
+        "time end":"13:50",
+        "location":"1 - A03",
+        "instructor":"ﺃ. ﺳﺎﺭﻩ ﺑﺸﻴﺮ"
+    },
+    {
+        "section":58.0,
+        "course":"PHY205",
+        "course name":"ﻓﻴﺰﻳﺎﺀ - 2",
+        "days":"1 2 4",
+        "time start":"14:00",
+        "time end":"14:50",
+        "location":"N310",
+        "instructor":"ﺩ. ﺍﻟﻬﺎﻡ ﻣﺤﻤﺪ ﻋﻠﻲ ﺩﻧﻮﻥ"
+    },
+    {
+        "section":58.0,
+        "course":"PHY205",
+        "course name":"ﻓﻴﺰﻳﺎﺀ - 2",
+        "days":"1 2 4",
+        "time start":"13:00",
+        "time end":"13:50",
+        "location":"N310",
+        "instructor":"ﺩ. ﺍﻟﻬﺎﻡ ﻣﺤﻤﺪ ﻋﻠﻲ ﺩﻧﻮﻥ"
+    },
+    {
+        "section":64.0,
+        "course":"PHY205",
+        "course name":"ﻓﻴﺰﻳﺎﺀ - 2",
+        "days":"4 5",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"1 - A03",
+        "instructor":"ﺃ. ﺳﺎﺭﻩ ﺑﺸﻴﺮ"
+    },
+    {
+        "section":64.0,
+        "course":"PHY205",
+        "course name":"ﻓﻴﺰﻳﺎﺀ - 2",
+        "days":"4 5",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"1 - A03",
+        "instructor":"ﺃ. ﺳﺎﺭﻩ ﺑﺸﻴﺮ"
+    },
+    {
+        "section":70.0,
+        "course":"SCI101",
+        "course name":"ﻣﻘﺪﻣﺔ ﻓﻲ ﺍﻟﻌﻠﻮﻡ ﺍﻟﻔﻴﺰﻳﺎﺋﻴﺔ",
+        "days":"1 2 3",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"N313",
+        "instructor":"(PT) ﺩ. ﺳﻌﺎﺩ ﻋﻮﺩﻩ"
+    },
+    {
+        "section":70.0,
+        "course":"SCI101",
+        "course name":"ﻣﻘﺪﻣﺔ ﻓﻲ ﺍﻟﻌﻠﻮﻡ ﺍﻟﻔﻴﺰﻳﺎﺋﻴﺔ",
+        "days":"1 2 3",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"N313",
+        "instructor":"(PT) ﺩ. ﺳﻌﺎﺩ ﻋﻮﺩﻩ"
+    },
+    {
+        "section":71.0,
+        "course":"SCI101",
+        "course name":"ﻣﻘﺪﻣﺔ ﻓﻲ ﺍﻟﻌﻠﻮﻡ ﺍﻟﻔﻴﺰﻳﺎﺋﻴﺔ",
+        "days":"1 2 3",
+        "time start":"13:00",
+        "time end":"13:50",
+        "location":"N313",
+        "instructor":"(PT) ﺩ. ﺳﻌﺎﺩ ﻋﻮﺩﻩ"
+    },
+    {
+        "section":71.0,
+        "course":"SCI101",
+        "course name":"ﻣﻘﺪﻣﺔ ﻓﻲ ﺍﻟﻌﻠﻮﻡ ﺍﻟﻔﻴﺰﻳﺎﺋﻴﺔ",
+        "days":"1 2 3",
+        "time start":"14:00",
+        "time end":"14:50",
+        "location":"N313",
+        "instructor":"(PT) ﺩ. ﺳﻌﺎﺩ ﻋﻮﺩﻩ"
+    },
+    {
+        "section":73.0,
+        "course":"STAT101",
+        "course name":"ﻣﻘﺪﻣﺔ ﻓﻲ ﺍﻹﺣﺼﺎﺀ ﻭﻧﻈﺮﻳﺔ ﺍﻻﺣﺘﻤﺎﻻﺕ",
+        "days":"4",
+        "time start":"09:00",
+        "time end":"09:50",
+        "location":"N307",
+        "instructor":"(PT) ﺩ. ﺳﻴﺄ ﻋﻠﻮﺍﻥ"
+    },
+    {
+        "section":73.0,
+        "course":"STAT101",
+        "course name":"ﻣﻘﺪﻣﺔ ﻓﻲ ﺍﻹﺣﺼﺎﺀ ﻭﻧﻈﺮﻳﺔ ﺍﻻﺣﺘﻤﺎﻻﺕ",
+        "days":"4",
+        "time start":"08:00",
+        "time end":"08:50",
+        "location":"N307",
+        "instructor":"(PT) ﺩ. ﺳﻴﺄ ﻋﻠﻮﺍﻥ"
+    },
+    {
+        "section":72.0,
+        "course":"STAT101",
+        "course name":"ﻣﻘﺪﻣﺔ ﻓﻲ ﺍﻹﺣﺼﺎﺀ ﻭﻧﻈﺮﻳﺔ ﺍﻻﺣﺘﻤﺎﻻﺕ",
+        "days":"1 2 3",
+        "time start":"08:00",
+        "time end":"08:50",
+        "location":"N307",
+        "instructor":"(PT) ﺩ. ﺳﻴﺄ ﻋﻠﻮﺍﻥ"
+    },
+    {
+        "section":72.0,
+        "course":"STAT101",
+        "course name":"ﻣﻘﺪﻣﺔ ﻓﻲ ﺍﻹﺣﺼﺎﺀ ﻭﻧﻈﺮﻳﺔ ﺍﻻﺣﺘﻤﺎﻻﺕ",
+        "days":"1 2 3",
+        "time start":"09:00",
+        "time end":"09:50",
+        "location":"N307",
+        "instructor":"(PT) ﺩ. ﺳﻴﺄ ﻋﻠﻮﺍﻥ"
+    },
+    {
+        "section":75.0,
+        "course":"STAT101",
+        "course name":"ﻣﻘﺪﻣﺔ ﻓﻲ ﺍﻹﺣﺼﺎﺀ ﻭﻧﻈﺮﻳﺔ ﺍﻻﺣﺘﻤﺎﻻﺕ",
+        "days":"4",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"N307",
+        "instructor":"(PT) ﺩ. ﺳﻴﺄ ﻋﻠﻮﺍﻥ"
+    },
+    {
+        "section":75.0,
+        "course":"STAT101",
+        "course name":"ﻣﻘﺪﻣﺔ ﻓﻲ ﺍﻹﺣﺼﺎﺀ ﻭﻧﻈﺮﻳﺔ ﺍﻻﺣﺘﻤﺎﻻﺕ",
+        "days":"4",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"N307",
+        "instructor":"(PT) ﺩ. ﺳﻴﺄ ﻋﻠﻮﺍﻥ"
+    },
+    {
+        "section":74.0,
+        "course":"STAT101",
+        "course name":"ﻣﻘﺪﻣﺔ ﻓﻲ ﺍﻹﺣﺼﺎﺀ ﻭﻧﻈﺮﻳﺔ ﺍﻻﺣﺘﻤﺎﻻﺕ",
+        "days":"1 2 3",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"N307",
+        "instructor":"(PT) ﺩ. ﺳﻴﺄ ﻋﻠﻮﺍﻥ"
+    },
+    {
+        "section":74.0,
+        "course":"STAT101",
+        "course name":"ﻣﻘﺪﻣﺔ ﻓﻲ ﺍﻹﺣﺼﺎﺀ ﻭﻧﻈﺮﻳﺔ ﺍﻻﺣﺘﻤﺎﻻﺕ",
+        "days":"1 2 3",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"N307",
+        "instructor":"(PT) ﺩ. ﺳﻴﺄ ﻋﻠﻮﺍﻥ"
+    },
+    {
+        "section":76.0,
+        "course":"STAT271",
+        "course name":"ﺍﻟﺘﺤﻠﻴﻞ ﺍﻹﺣﺼﺎﺋﻲ",
+        "days":"1 2 3",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"N311",
+        "instructor":"ﺩ. ﻓﻀﻪ ﻋﺎﻣﺮ ﺣﻤﺪ ﺍﻟﻌﻨﺰﻱ"
+    },
+    {
+        "section":76.0,
+        "course":"STAT271",
+        "course name":"ﺍﻟﺘﺤﻠﻴﻞ ﺍﻹﺣﺼﺎﺋﻲ",
+        "days":"1 2 3",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"N311",
+        "instructor":"ﺩ. ﻓﻀﻪ ﻋﺎﻣﺮ ﺣﻤﺪ ﺍﻟﻌﻨﺰﻱ"
+    },
+    {
+        "section":77.0,
+        "course":"STAT271",
+        "course name":"ﺍﻟﺘﺤﻠﻴﻞ ﺍﻹﺣﺼﺎﺋﻲ",
+        "days":"1 2 3",
+        "time start":"14:00",
+        "time end":"14:50",
+        "location":"N311",
+        "instructor":"ﺩ. ﻓﻀﻪ ﻋﺎﻣﺮ ﺣﻤﺪ ﺍﻟﻌﻨﺰﻱ"
+    },
+    {
+        "section":77.0,
+        "course":"STAT271",
+        "course name":"ﺍﻟﺘﺤﻠﻴﻞ ﺍﻹﺣﺼﺎﺋﻲ",
+        "days":"1 2 3",
+        "time start":"13:00",
+        "time end":"13:50",
+        "location":"N311",
+        "instructor":"ﺩ. ﻓﻀﻪ ﻋﺎﻣﺮ ﺣﻤﺪ ﺍﻟﻌﻨﺰﻱ"
+    },
+    {
+        "section":81.0,
+        "course":"ETHC303",
+        "course name":"ﺍﻟﺠﻮﺍﻧﺐ ﺍﻷﺧﻼﻗﻴﺔ ﻭﺍﻻﺟﺘﻤﺎﻋﻴﺔ ﻟﻠﺤﻮﺳﺒﺔ",
+        "days":"1 2 3",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"S107",
+        "instructor":"ﺩ. ﻧﺠﻼﺀ ﻣﺤﻤﺪ ﻋﺒﺪﺍﻟﺮﺣﻤﻦ ﺍﻟﺜﻨﻴﺎﻥ"
+    },
+    {
+        "section":81.0,
+        "course":"ETHC303",
+        "course name":"ﺍﻟﺠﻮﺍﻧﺐ ﺍﻷﺧﻼﻗﻴﺔ ﻭﺍﻻﺟﺘﻤﺎﻋﻴﺔ ﻟﻠﺤﻮﺳﺒﺔ",
+        "days":"1 2 3",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"S107",
+        "instructor":"ﺩ. ﻧﺠﻼﺀ ﻣﺤﻤﺪ ﻋﺒﺪﺍﻟﺮﺣﻤﻦ ﺍﻟﺜﻨﻴﺎﻥ"
+    },
+    {
+        "section":82.0,
+        "course":"ETHC303",
+        "course name":"ﺍﻟﺠﻮﺍﻧﺐ ﺍﻷﺧﻼﻗﻴﺔ ﻭﺍﻻﺟﺘﻤﺎﻋﻴﺔ ﻟﻠﺤﻮﺳﺒﺔ",
+        "days":"1 2 3",
+        "time start":"14:00",
+        "time end":"14:50",
+        "location":"S107",
+        "instructor":"ﺩ. ﻧﺠﻼﺀ ﻣﺤﻤﺪ ﻋﺒﺪﺍﻟﺮﺣﻤﻦ ﺍﻟﺜﻨﻴﺎﻥ"
+    },
+    {
+        "section":82.0,
+        "course":"ETHC303",
+        "course name":"ﺍﻟﺠﻮﺍﻧﺐ ﺍﻷﺧﻼﻗﻴﺔ ﻭﺍﻻﺟﺘﻤﺎﻋﻴﺔ ﻟﻠﺤﻮﺳﺒﺔ",
+        "days":"1 2 3",
+        "time start":"13:00",
+        "time end":"13:50",
+        "location":"S107",
+        "instructor":"ﺩ. ﻧﺠﻼﺀ ﻣﺤﻤﺪ ﻋﺒﺪﺍﻟﺮﺣﻤﻦ ﺍﻟﺜﻨﻴﺎﻥ"
+    },
+    {
+        "section":92.0,
+        "course":"BUS101",
+        "course name":"ﻣﻘﺪﻣﺔ ﻓﻲ ﺇﺩﺍﺭﺓ ﺍﻷﻋﻤﺎﻝ",
+        "days":"1 2 3",
+        "time start":"08:00",
+        "time end":"08:50",
+        "location":"N206",
+        "instructor":"ﺩ. ﺃﻓﻴﺎﺀ ﻋﻴﺴﻰ ﺍﻟﻌﻴﺴﻰ"
+    },
+    {
+        "section":92.0,
+        "course":"BUS101",
+        "course name":"ﻣﻘﺪﻣﺔ ﻓﻲ ﺇﺩﺍﺭﺓ ﺍﻷﻋﻤﺎﻝ",
+        "days":"1 2 3",
+        "time start":"09:00",
+        "time end":"09:50",
+        "location":"N206",
+        "instructor":"ﺩ. ﺃﻓﻴﺎﺀ ﻋﻴﺴﻰ ﺍﻟﻌﻴﺴﻰ"
+    },
+    {
+        "section":93.0,
+        "course":"BUS101",
+        "course name":"ﻣﻘﺪﻣﺔ ﻓﻲ ﺇﺩﺍﺭﺓ ﺍﻷﻋﻤﺎﻝ",
+        "days":"1 2 3",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"N206",
+        "instructor":"ﺩ. ﺃﻓﻴﺎﺀ ﻋﻴﺴﻰ ﺍﻟﻌﻴﺴﻰ"
+    },
+    {
+        "section":93.0,
+        "course":"BUS101",
+        "course name":"ﻣﻘﺪﻣﺔ ﻓﻲ ﺇﺩﺍﺭﺓ ﺍﻷﻋﻤﺎﻝ",
+        "days":"1 2 3",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"N206",
+        "instructor":"ﺩ. ﺃﻓﻴﺎﺀ ﻋﻴﺴﻰ ﺍﻟﻌﻴﺴﻰ"
+    },
+    {
+        "section":6.0,
+        "course":"ACC111",
+        "course name":"ﺃﺳﺎﺳﻴﺎﺕ ﺍﻟﻤﺤﺎﺳﺒﺔ ﺍﻟﻤﺎﻟﻴﺔ",
+        "days":"4",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"N306",
+        "instructor":"ﺩ. ﻋﺒﻴﺮ ﻋﺒﺪﺍﻟﻠﻪ ﺍﺣﻤﺪ ﺯﻳﻠﻌﻲ"
+    },
+    {
+        "section":6.0,
+        "course":"ACC111",
+        "course name":"ﺃﺳﺎﺳﻴﺎﺕ ﺍﻟﻤﺤﺎﺳﺒﺔ ﺍﻟﻤﺎﻟﻴﺔ",
+        "days":"4",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"N306",
+        "instructor":"ﺩ. ﻋﺒﻴﺮ ﻋﺒﺪﺍﻟﻠﻪ ﺍﺣﻤﺪ ﺯﻳﻠﻌﻲ"
+    },
+    {
+        "section":5.0,
+        "course":"ACC111",
+        "course name":"ﺃﺳﺎﺳﻴﺎﺕ ﺍﻟﻤﺤﺎﺳﺒﺔ ﺍﻟﻤﺎﻟﻴﺔ",
+        "days":"1 2 3",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"N306",
+        "instructor":"ﺩ. ﻋﺒﻴﺮ ﻋﺒﺪﺍﻟﻠﻪ ﺍﺣﻤﺪ ﺯﻳﻠﻌﻲ"
+    },
+    {
+        "section":5.0,
+        "course":"ACC111",
+        "course name":"ﺃﺳﺎﺳﻴﺎﺕ ﺍﻟﻤﺤﺎﺳﺒﺔ ﺍﻟﻤﺎﻟﻴﺔ",
+        "days":"1 2 3",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"N306",
+        "instructor":"ﺩ. ﻋﺒﻴﺮ ﻋﺒﺪﺍﻟﻠﻪ ﺍﺣﻤﺪ ﺯﻳﻠﻌﻲ"
+    },
+    {
+        "section":8.0,
+        "course":"ACC111",
+        "course name":"ﺃﺳﺎﺳﻴﺎﺕ ﺍﻟﻤﺤﺎﺳﺒﺔ ﺍﻟﻤﺎﻟﻴﺔ",
+        "days":"4",
+        "time start":"14:00",
+        "time end":"14:50",
+        "location":"N306",
+        "instructor":"ﺩ. ﻋﺒﻴﺮ ﻋﺒﺪﺍﻟﻠﻪ ﺍﺣﻤﺪ ﺯﻳﻠﻌﻲ"
+    },
+    {
+        "section":8.0,
+        "course":"ACC111",
+        "course name":"ﺃﺳﺎﺳﻴﺎﺕ ﺍﻟﻤﺤﺎﺳﺒﺔ ﺍﻟﻤﺎﻟﻴﺔ",
+        "days":"4",
+        "time start":"13:00",
+        "time end":"13:50",
+        "location":"N306",
+        "instructor":"ﺩ. ﻋﺒﻴﺮ ﻋﺒﺪﺍﻟﻠﻪ ﺍﺣﻤﺪ ﺯﻳﻠﻌﻲ"
+    },
+    {
+        "section":7.0,
+        "course":"ACC111",
+        "course name":"ﺃﺳﺎﺳﻴﺎﺕ ﺍﻟﻤﺤﺎﺳﺒﺔ ﺍﻟﻤﺎﻟﻴﺔ",
+        "days":"1 2 3",
+        "time start":"14:00",
+        "time end":"14:50",
+        "location":"N306",
+        "instructor":"ﺩ. ﻋﺒﻴﺮ ﻋﺒﺪﺍﻟﻠﻪ ﺍﺣﻤﺪ ﺯﻳﻠﻌﻲ"
+    },
+    {
+        "section":7.0,
+        "course":"ACC111",
+        "course name":"ﺃﺳﺎﺳﻴﺎﺕ ﺍﻟﻤﺤﺎﺳﺒﺔ ﺍﻟﻤﺎﻟﻴﺔ",
+        "days":"1 2 3",
+        "time start":"13:00",
+        "time end":"13:50",
+        "location":"N306",
+        "instructor":"ﺩ. ﻋﺒﻴﺮ ﻋﺒﺪﺍﻟﻠﻪ ﺍﺣﻤﺪ ﺯﻳﻠﻌﻲ"
+    },
+    {
+        "section":32.0,
+        "course":"ELE110",
+        "course name":"ﺭﻳﺎﺩﺓ ﺍﻷﻋﻤﺎﻝ",
+        "days":"1 2 3",
+        "time start":"14:00",
+        "time end":"14:50",
+        "location":"N304",
+        "instructor":"ﺩ. ﺳﻮﺯﺍﻧﻲ ﺩﻳﻨﺎ ﻣﺎﺕ ﺳﺎﺕ"
+    },
+    {
+        "section":32.0,
+        "course":"ELE110",
+        "course name":"ﺭﻳﺎﺩﺓ ﺍﻷﻋﻤﺎﻝ",
+        "days":"1 2 3",
+        "time start":"13:00",
+        "time end":"13:50",
+        "location":"N304",
+        "instructor":"ﺩ. ﺳﻮﺯﺍﻧﻲ ﺩﻳﻨﺎ ﻣﺎﺕ ﺳﺎﺕ"
+    },
+    {
+        "section":31.0,
+        "course":"MKT301",
+        "course name":"ﻣﺒﺎﺩﺉ ﺍﻟﺘﺴﻮﻳﻖ",
+        "days":"1 2 3",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"N304",
+        "instructor":"ﺩ. ﺳﻮﺯﺍﻧﻲ ﺩﻳﻨﺎ ﻣﺎﺕ ﺳﺎﺕ"
+    },
+    {
+        "section":31.0,
+        "course":"MKT301",
+        "course name":"ﻣﺒﺎﺩﺉ ﺍﻟﺘﺴﻮﻳﻖ",
+        "days":"1 2 3",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"N304",
+        "instructor":"ﺩ. ﺳﻮﺯﺍﻧﻲ ﺩﻳﻨﺎ ﻣﺎﺕ ﺳﺎﺕ"
+    },
+    {
+        "section":84.0,
+        "course":"HIST151",
+        "course name":"ﺗﺎﺭﻳﺦ ﺍﻟﻨﻈﻢ ﺍﻟﻘﺎﻧﻮﻧﻴﺔ",
+        "days":"1 2 3",
+        "time start":"13:00",
+        "time end":"13:50",
+        "location":"N312",
+        "instructor":"ﺩ. ﺃﻭﻟﻐﺎ ﻓﻮﻟﻴﻨﺴﻜﺎﻳﺎ"
+    },
+    {
+        "section":84.0,
+        "course":"HIST151",
+        "course name":"ﺗﺎﺭﻳﺦ ﺍﻟﻨﻈﻢ ﺍﻟﻘﺎﻧﻮﻧﻴﺔ",
+        "days":"1 2 3",
+        "time start":"14:00",
+        "time end":"14:50",
+        "location":"N312",
+        "instructor":"ﺩ. ﺃﻭﻟﻐﺎ ﻓﻮﻟﻴﻨﺴﻜﺎﻳﺎ"
+    },
+    {
+        "section":88.0,
+        "course":"LAW111",
+        "course name":"ﻣﺼﺎﺩﺭ ﺍﻹﻟﺘﺰﺍﻡ",
+        "days":"1 2 3",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"N305",
+        "instructor":"ﺩ. ﺍﻟﻬﺎﻡ ﺟﻬﺎﺩ ﺳﻠﻴﻤﺎﻥ ﺻﺎﻟﺢ"
+    },
+    {
+        "section":88.0,
+        "course":"LAW111",
+        "course name":"ﻣﺼﺎﺩﺭ ﺍﻹﻟﺘﺰﺍﻡ",
+        "days":"1 2 3",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"N305",
+        "instructor":"ﺩ. ﺍﻟﻬﺎﻡ ﺟﻬﺎﺩ ﺳﻠﻴﻤﺎﻥ ﺻﺎﻟﺢ"
+    },
+    {
+        "section":89.0,
+        "course":"LAW213",
+        "course name":"ﺃﺣﻜﺎﻡ ﺍﻹﻟﺘﺰﺍﻡ",
+        "days":"1 2 3",
+        "time start":"13:00",
+        "time end":"13:50",
+        "location":"N305",
+        "instructor":"ﺩ. ﺍﻟﻬﺎﻡ ﺟﻬﺎﺩ ﺳﻠﻴﻤﺎﻥ ﺻﺎﻟﺢ"
+    },
+    {
+        "section":89.0,
+        "course":"LAW213",
+        "course name":"ﺃﺣﻜﺎﻡ ﺍﻹﻟﺘﺰﺍﻡ",
+        "days":"1 2 3",
+        "time start":"14:00",
+        "time end":"14:50",
+        "location":"N305",
+        "instructor":"ﺩ. ﺍﻟﻬﺎﻡ ﺟﻬﺎﺩ ﺳﻠﻴﻤﺎﻥ ﺻﺎﻟﺢ"
+    },
+    {
+        "section":83.0,
+        "course":"LAW255",
+        "course name":"ﺍﻟﻘﺎﻧﻮﻥ ﺍﻟﺪﻭﻟﻲ ﺍﻟﻌﺎﻡ",
+        "days":"1 2 3",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"N312",
+        "instructor":"ﺩ. ﺃﻭﻟﻐﺎ ﻓﻮﻟﻴﻨﺴﻜﺎﻳﺎ"
+    },
+    {
+        "section":83.0,
+        "course":"LAW255",
+        "course name":"ﺍﻟﻘﺎﻧﻮﻥ ﺍﻟﺪﻭﻟﻲ ﺍﻟﻌﺎﻡ",
+        "days":"1 2 3",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"N312",
+        "instructor":"ﺩ. ﺃﻭﻟﻐﺎ ﻓﻮﻟﻴﻨﺴﻜﺎﻳﺎ"
+    },
+    {
+        "section":85.0,
+        "course":"LAW357",
+        "course name":"ﻧﻈﺎﻡ ﺍﻟﺰﻛﺎﺓ ﻭﺍﻟﻀﺮﺍﺋﺐ",
+        "days":"1 2 3",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"N309",
+        "instructor":"ﺃ. ﺗﻴﺴﻴﺮ ﺣﺴﻦ ﻳﺤﻴﻰ ﻋﺜﻤﺎﻥ"
+    },
+    {
+        "section":85.0,
+        "course":"LAW357",
+        "course name":"ﻧﻈﺎﻡ ﺍﻟﺰﻛﺎﺓ ﻭﺍﻟﻀﺮﺍﺋﺐ",
+        "days":"1 2 3",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"N309",
+        "instructor":"ﺃ. ﺗﻴﺴﻴﺮ ﺣﺴﻦ ﻳﺤﻴﻰ ﻋﺜﻤﺎﻥ"
+    },
+    {
+        "section":86.0,
+        "course":"LAW374",
+        "course name":"ﺍﻟﻤﻮﺍﺭﻳﺚ ﻭﺍﻟﻮﺻﺎﻳﺎ ﻭﺍﻟﻮﻗﻒ",
+        "days":"1 2 3",
+        "time start":"09:00",
+        "time end":"09:50",
+        "location":"N309",
+        "instructor":"ﺃ. ﺗﻴﺴﻴﺮ ﺣﺴﻦ ﻳﺤﻴﻰ ﻋﺜﻤﺎﻥ"
+    },
+    {
+        "section":86.0,
+        "course":"LAW374",
+        "course name":"ﺍﻟﻤﻮﺍﺭﻳﺚ ﻭﺍﻟﻮﺻﺎﻳﺎ ﻭﺍﻟﻮﻗﻒ",
+        "days":"1 2 3",
+        "time start":"08:00",
+        "time end":"08:50",
+        "location":"N309",
+        "instructor":"ﺃ. ﺗﻴﺴﻴﺮ ﺣﺴﻦ ﻳﺤﻴﻰ ﻋﺜﻤﺎﻥ"
+    },
+    {
+        "section":1.0,
+        "course":"ENG101",
+        "course name":"ﺍﻟﻜﺘﺎﺑﺔ ﺍﻟﻤﻜﺜﻔﺔ",
+        "days":"1 2 3",
+        "time start":"09:00",
+        "time end":"09:50",
+        "location":"S104",
+        "instructor":"ﺩ. ﻫﺎﻟﻪ ﺍﺳﻤﺎﻋﻴﻞ ﺣﺴﻦ ﺍﺳﻤﺎﻋﻴﻞ"
+    },
+    {
+        "section":1.0,
+        "course":"ENG101",
+        "course name":"ﺍﻟﻜﺘﺎﺑﺔ ﺍﻟﻤﻜﺜﻔﺔ",
+        "days":"1 2 3",
+        "time start":"08:00",
+        "time end":"08:50",
+        "location":"S104",
+        "instructor":"ﺩ. ﻫﺎﻟﻪ ﺍﺳﻤﺎﻋﻴﻞ ﺣﺴﻦ ﺍﺳﻤﺎﻋﻴﻞ"
+    },
+    {
+        "section":3.0,
+        "course":"ENG103",
+        "course name":"ﺗﻘﻨﻴﺎﺕ ﻛﺘﺎﺑﺔ ﺍﻷﺑﺤﺎﺙ",
+        "days":"1 2 3",
+        "time start":"08:00",
+        "time end":"08:50",
+        "location":"S105",
+        "instructor":"ﺩ. ﻧﻮﺭﻩ ﻣﻨﺼﻮﺭ ﻋﺒﺪﺍﻟﻠﻪ ﺍﻟﻤﺸﺮﻑ"
+    },
+    {
+        "section":3.0,
+        "course":"ENG103",
+        "course name":"ﺗﻘﻨﻴﺎﺕ ﻛﺘﺎﺑﺔ ﺍﻷﺑﺤﺎﺙ",
+        "days":"1 2 3",
+        "time start":"09:00",
+        "time end":"09:50",
+        "location":"S105",
+        "instructor":"ﺩ. ﻧﻮﺭﻩ ﻣﻨﺼﻮﺭ ﻋﺒﺪﺍﻟﻠﻪ ﺍﻟﻤﺸﺮﻑ"
+    },
+    {
+        "section":2.0,
+        "course":"ENG301",
+        "course name":"ﺍﻟﻜﺘﺎﺑﺔ ﺍﻟﻔﻨﻴﺔ ﻭﺍﻟﺘﺮﺟﻤﺔ",
+        "days":"1 2 3",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"S104",
+        "instructor":"ﺩ. ﻫﺎﻟﻪ ﺍﺳﻤﺎﻋﻴﻞ ﺣﺴﻦ ﺍﺳﻤﺎﻋﻴﻞ"
+    },
+    {
+        "section":2.0,
+        "course":"ENG301",
+        "course name":"ﺍﻟﻜﺘﺎﺑﺔ ﺍﻟﻔﻨﻴﺔ ﻭﺍﻟﺘﺮﺟﻤﺔ",
+        "days":"1 2 3",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"S104",
+        "instructor":"ﺩ. ﻫﺎﻟﻪ ﺍﺳﻤﺎﻋﻴﻞ ﺣﺴﻦ ﺍﺳﻤﺎﻋﻴﻞ"
+    },
+    {
+        "section":4.0,
+        "course":"IR101",
+        "course name":"ﻣﺼﺎﺩﺭ ﺍﻟﻤﻌﻠﻮﻣﺎﺕ",
+        "days":"1 2 3",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"S105",
+        "instructor":"ﺩ. ﻧﻮﺭﻩ ﻣﻨﺼﻮﺭ ﻋﺒﺪﺍﻟﻠﻪ ﺍﻟﻤﺸﺮﻑ"
+    },
+    {
+        "section":4.0,
+        "course":"IR101",
+        "course name":"ﻣﺼﺎﺩﺭ ﺍﻟﻤﻌﻠﻮﻣﺎﺕ",
+        "days":"1 2 3",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"S105",
+        "instructor":"ﺩ. ﻧﻮﺭﻩ ﻣﻨﺼﻮﺭ ﻋﺒﺪﺍﻟﻠﻪ ﺍﻟﻤﺸﺮﻑ"
+    },
+    {
+        "section":80.0,
+        "course":"ARCH401",
+        "course name":"ﻣﻮﺿﻮﻋﺎﺕ ﺧﺎﺻﺔ ﻓﻲ ﺍﻟﻌﻤﺎﺭﺓ",
+        "days":"1 2 3",
+        "time start":"13:00",
+        "time end":"13:50",
+        "location":"N101CADLAB",
+        "instructor":"ﺃ. ﻭﻓﺎﺀ ﻋﺒﺪﺍﻟﺮﺣﻴﻢ ﻋﻠﻲ ﺍﻟﻐﺎﻣﺪﻱ"
+    },
+    {
+        "section":80.0,
+        "course":"ARCH401",
+        "course name":"ﻣﻮﺿﻮﻋﺎﺕ ﺧﺎﺻﺔ ﻓﻲ ﺍﻟﻌﻤﺎﺭﺓ",
+        "days":"1 2 3",
+        "time start":"14:00",
+        "time end":"14:50",
+        "location":"N101CADLAB",
+        "instructor":"ﺃ. ﻭﻓﺎﺀ ﻋﺒﺪﺍﻟﺮﺣﻴﻢ ﻋﻠﻲ ﺍﻟﻐﺎﻣﺪﻱ"
+    },
+    {
+        "section":90.0,
+        "course":"ID223",
+        "course name":"ﺗﺎﺭﻳﺦ ﺍﻟﻌﻤﺎﺭﺓ ﻭﺍﻟﺘﺼﻤﻴﻢ ﺍﻟﺪﺍﺧﻠﻲ",
+        "days":"4 5",
+        "time start":"08:00",
+        "time end":"08:50",
+        "location":"202",
+        "instructor":"ﺃ. ﺍﺑﺘﻬﺎﻝ ﻋﺒﺪﺍﻟﻠﻄﻴﻒ ﻋﺒﺪﺍﻟﻌﺰﻳﺰ ﺍﻝ ﻣﻌﻴﺬ"
+    },
+    {
+        "section":90.0,
+        "course":"ID223",
+        "course name":"ﺗﺎﺭﻳﺦ ﺍﻟﻌﻤﺎﺭﺓ ﻭﺍﻟﺘﺼﻤﻴﻢ ﺍﻟﺪﺍﺧﻠﻲ",
+        "days":"4 5",
+        "time start":"09:00",
+        "time end":"09:50",
+        "location":"202",
+        "instructor":"ﺃ. ﺍﺑﺘﻬﺎﻝ ﻋﺒﺪﺍﻟﻠﻄﻴﻒ ﻋﺒﺪﺍﻟﻌﺰﻳﺰ ﺍﻝ ﻣﻌﻴﺬ"
+    },
+    {
+        "section":23.0,
+        "course":"ID355",
+        "course name":"ﺗﻘﻨﻴﺎﺕ ﺗﺼﻤﻴﻢ ﺍﻹﺿﺎﺀﺓ",
+        "days":"1 2 3",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"N104Studio",
+        "instructor":"ﺃ. ﺍﺑﺘﻬﺎﻝ ﻋﺒﺪﺍﻟﻠﻄﻴﻒ ﻋﺒﺪﺍﻟﻌﺰﻳﺰ ﺍﻝ ﻣﻌﻴﺬ"
+    },
+    {
+        "section":23.0,
+        "course":"ID355",
+        "course name":"ﺗﻘﻨﻴﺎﺕ ﺗﺼﻤﻴﻢ ﺍﻹﺿﺎﺀﺓ",
+        "days":"1 2 3",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"N104Studio",
+        "instructor":"ﺃ. ﺍﺑﺘﻬﺎﻝ ﻋﺒﺪﺍﻟﻠﻄﻴﻒ ﻋﺒﺪﺍﻟﻌﺰﻳﺰ ﺍﻝ ﻣﻌﻴﺬ"
+    },
+    {
+        "section":28.0,
+        "course":"ID435",
+        "course name":"ﺗﺼﻤﻴﻢ ﺍﻟﻤﻠﻒ ﺍﻟﻤﻬﻨﻲ",
+        "days":"1 2 3",
+        "time start":"09:00",
+        "time end":"09:50",
+        "location":"N111",
+        "instructor":"ﺩ. ﻏﺎﺩﻩ ﻋﺒﺪﺍﻟﺮﺣﻤﻦ ﻋﺒﺪﺍﻟﻠﻪ ﻧﺠﺎﺭ"
+    },
+    {
+        "section":28.0,
+        "course":"ID435",
+        "course name":"ﺗﺼﻤﻴﻢ ﺍﻟﻤﻠﻒ ﺍﻟﻤﻬﻨﻲ",
+        "days":"1 2 3",
+        "time start":"08:00",
+        "time end":"08:50",
+        "location":"N111",
+        "instructor":"ﺩ. ﻏﺎﺩﻩ ﻋﺒﺪﺍﻟﺮﺣﻤﻦ ﻋﺒﺪﺍﻟﻠﻪ ﻧﺠﺎﺭ"
+    },
+    {
+        "section":24.0,
+        "course":"MMGD211",
+        "course name":"ﺍﻟﺮﺳﻮﻣﺎﺕ ﺍﻟﺮﻗﻤﻴﺔ 1",
+        "days":"1 2",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"N102CADLAB",
+        "instructor":"ﺃ. ﺭﺟﺎﺀ ﻋﺒﺪﺍﻟﻌﺰﻳﺰ ﻋﺒﺪﺍﻟﺮﺣﻤﻦ ﺍﻟﻨﺼﺮﺍﻟﻠ"
+    },
+    {
+        "section":24.0,
+        "course":"MMGD211",
+        "course name":"ﺍﻟﺮﺳﻮﻣﺎﺕ ﺍﻟﺮﻗﻤﻴﺔ 1",
+        "days":"1 2",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"N102CADLAB",
+        "instructor":"ﺃ. ﺭﺟﺎﺀ ﻋﺒﺪﺍﻟﻌﺰﻳﺰ ﻋﺒﺪﺍﻟﺮﺣﻤﻦ ﺍﻟﻨﺼﺮﺍﻟﻠ"
+    },
+    {
+        "section":25.0,
+        "course":"MMGD211",
+        "course name":"ﺍﻟﺮﺳﻮﻣﺎﺕ ﺍﻟﺮﻗﻤﻴﺔ 1",
+        "days":"3 4",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"N102CADLAB",
+        "instructor":"ﺃ. ﺭﺟﺎﺀ ﻋﺒﺪﺍﻟﻌﺰﻳﺰ ﻋﺒﺪﺍﻟﺮﺣﻤﻦ ﺍﻟﻨﺼﺮﺍﻟﻠ"
+    },
+    {
+        "section":25.0,
+        "course":"MMGD211",
+        "course name":"ﺍﻟﺮﺳﻮﻣﺎﺕ ﺍﻟﺮﻗﻤﻴﺔ 1",
+        "days":"3 4",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"N102CADLAB",
+        "instructor":"ﺃ. ﺭﺟﺎﺀ ﻋﺒﺪﺍﻟﻌﺰﻳﺰ ﻋﺒﺪﺍﻟﺮﺣﻤﻦ ﺍﻟﻨﺼﺮﺍﻟﻠ"
+    },
+    {
+        "section":26.0,
+        "course":"MMGD231",
+        "course name":"ﺍﻟﺘﺼﻤﻴﻢ ﺑﺎﻟﺤﺎﺳﻮﺏ 1",
+        "days":"1",
+        "time start":"14:00",
+        "time end":"14:50",
+        "location":"N102CADLAB",
+        "instructor":"ﺃ. ﺭﺟﺎﺀ ﻋﺒﺪﺍﻟﻌﺰﻳﺰ ﻋﺒﺪﺍﻟﺮﺣﻤﻦ ﺍﻟﻨﺼﺮﺍﻟﻠ"
+    },
+    {
+        "section":26.0,
+        "course":"MMGD231",
+        "course name":"ﺍﻟﺘﺼﻤﻴﻢ ﺑﺎﻟﺤﺎﺳﻮﺏ 1",
+        "days":"1",
+        "time start":"13:00",
+        "time end":"13:50",
+        "location":"N102CADLAB",
+        "instructor":"ﺃ. ﺭﺟﺎﺀ ﻋﺒﺪﺍﻟﻌﺰﻳﺰ ﻋﺒﺪﺍﻟﺮﺣﻤﻦ ﺍﻟﻨﺼﺮﺍﻟﻠ"
+    },
+    {
+        "section":27.0,
+        "course":"MMGD231",
+        "course name":"ﺍﻟﺘﺼﻤﻴﻢ ﺑﺎﻟﺤﺎﺳﻮﺏ 1",
+        "days":"1 2 3 4",
+        "time start":"15:00",
+        "time end":"15:50",
+        "location":"N102CADLAB",
+        "instructor":"ﺃ. ﺭﺟﺎﺀ ﻋﺒﺪﺍﻟﻌﺰﻳﺰ ﻋﺒﺪﺍﻟﺮﺣﻤﻦ ﺍﻟﻨﺼﺮﺍﻟﻠ"
+    },
+    {
+        "section":27.0,
+        "course":"MMGD231",
+        "course name":"ﺍﻟﺘﺼﻤﻴﻢ ﺑﺎﻟﺤﺎﺳﻮﺏ 1",
+        "days":"2 3 4",
+        "time start":"13:00",
+        "time end":"13:50",
+        "location":"N102CADLAB",
+        "instructor":"ﺃ. ﺭﺟﺎﺀ ﻋﺒﺪﺍﻟﻌﺰﻳﺰ ﻋﺒﺪﺍﻟﺮﺣﻤﻦ ﺍﻟﻨﺼﺮﺍﻟﻠ"
+    },
+    {
+        "section":27.0,
+        "course":"MMGD231",
+        "course name":"ﺍﻟﺘﺼﻤﻴﻢ ﺑﺎﻟﺤﺎﺳﻮﺏ 1",
+        "days":"2 3 4",
+        "time start":"14:00",
+        "time end":"14:50",
+        "location":"N102CADLAB",
+        "instructor":"ﺃ. ﺭﺟﺎﺀ ﻋﺒﺪﺍﻟﻌﺰﻳﺰ ﻋﺒﺪﺍﻟﺮﺣﻤﻦ ﺍﻟﻨﺼﺮﺍﻟﻠ"
+    },
+    {
+        "section":95.0,
+        "course":"MMGD232",
+        "course name":"ﺍﻟﻤﺤﺎﻛﺎﺓ ﻭﺍﻟﺘﺼﻤﻴﻢ ﺑﺎﻟﺤﺎﺳﻮﺏ",
+        "days":"1",
+        "time start":"09:00",
+        "time end":"09:50",
+        "location":"N101CADLAB",
+        "instructor":"ﺃ. ﻭﻓﺎﺀ ﻋﺒﺪﺍﻟﺮﺣﻴﻢ ﻋﻠﻲ ﺍﻟﻐﺎﻣﺪﻱ"
+    },
+    {
+        "section":95.0,
+        "course":"MMGD232",
+        "course name":"ﺍﻟﻤﺤﺎﻛﺎﺓ ﻭﺍﻟﺘﺼﻤﻴﻢ ﺑﺎﻟﺤﺎﺳﻮﺏ",
+        "days":"1",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"N101CADLAB",
+        "instructor":"ﺃ. ﻭﻓﺎﺀ ﻋﺒﺪﺍﻟﺮﺣﻴﻢ ﻋﻠﻲ ﺍﻟﻐﺎﻣﺪﻱ"
+    },
+    {
+        "section":96.0,
+        "course":"MMGD232",
+        "course name":"ﺍﻟﻤﺤﺎﻛﺎﺓ ﻭﺍﻟﺘﺼﻤﻴﻢ ﺑﺎﻟﺤﺎﺳﻮﺏ",
+        "days":"2 3 4",
+        "time start":"09:00",
+        "time end":"09:50",
+        "location":"N101CADLAB",
+        "instructor":"ﺃ. ﻭﻓﺎﺀ ﻋﺒﺪﺍﻟﺮﺣﻴﻢ ﻋﻠﻲ ﺍﻟﻐﺎﻣﺪﻱ"
+    },
+    {
+        "section":96.0,
+        "course":"MMGD232",
+        "course name":"ﺍﻟﻤﺤﺎﻛﺎﺓ ﻭﺍﻟﺘﺼﻤﻴﻢ ﺑﺎﻟﺤﺎﺳﻮﺏ",
+        "days":"2 3 4",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"N101CADLAB",
+        "instructor":"ﺃ. ﻭﻓﺎﺀ ﻋﺒﺪﺍﻟﺮﺣﻴﻢ ﻋﻠﻲ ﺍﻟﻐﺎﻣﺪﻱ"
+    },
+    {
+        "section":96.0,
+        "course":"MMGD232",
+        "course name":"ﺍﻟﻤﺤﺎﻛﺎﺓ ﻭﺍﻟﺘﺼﻤﻴﻢ ﺑﺎﻟﺤﺎﺳﻮﺏ",
+        "days":"1 2 3 4",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"N101CADLAB",
+        "instructor":"ﺃ. ﻭﻓﺎﺀ ﻋﺒﺪﺍﻟﺮﺣﻴﻢ ﻋﻠﻲ ﺍﻟﻐﺎﻣﺪﻱ"
+    },
+    {
+        "section":29.0,
+        "course":"MMGD334",
+        "course name":"ﺍﻟﺘﺼﻮﻳﺮ ﺍﻟﻔﻮﺗﻮﻏﺮﺍﻓﻲ",
+        "days":"1 2",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"N111",
+        "instructor":"ﺩ. ﻏﺎﺩﻩ ﻋﺒﺪﺍﻟﺮﺣﻤﻦ ﻋﺒﺪﺍﻟﻠﻪ ﻧﺠﺎﺭ"
+    },
+    {
+        "section":29.0,
+        "course":"MMGD334",
+        "course name":"ﺍﻟﺘﺼﻮﻳﺮ ﺍﻟﻔﻮﺗﻮﻏﺮﺍﻓﻲ",
+        "days":"1 2",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"N111",
+        "instructor":"ﺩ. ﻏﺎﺩﻩ ﻋﺒﺪﺍﻟﺮﺣﻤﻦ ﻋﺒﺪﺍﻟﻠﻪ ﻧﺠﺎﺭ"
+    },
+    {
+        "section":30.0,
+        "course":"MMGD334",
+        "course name":"ﺍﻟﺘﺼﻮﻳﺮ ﺍﻟﻔﻮﺗﻮﻏﺮﺍﻓﻲ",
+        "days":"3",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"N111",
+        "instructor":"ﺩ. ﻏﺎﺩﻩ ﻋﺒﺪﺍﻟﺮﺣﻤﻦ ﻋﺒﺪﺍﻟﻠﻪ ﻧﺠﺎﺭ"
+    },
+    {
+        "section":30.0,
+        "course":"MMGD334",
+        "course name":"ﺍﻟﺘﺼﻮﻳﺮ ﺍﻟﻔﻮﺗﻮﻏﺮﺍﻓﻲ",
+        "days":"3",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"N111",
+        "instructor":"ﺩ. ﻏﺎﺩﻩ ﻋﺒﺪﺍﻟﺮﺣﻤﻦ ﻋﺒﺪﺍﻟﻠﻪ ﻧﺠﺎﺭ"
+    },
+    {
+        "section":30.0,
+        "course":"MMGD334",
+        "course name":"ﺍﻟﺘﺼﻮﻳﺮ ﺍﻟﻔﻮﺗﻮﻏﺮﺍﻓﻲ",
+        "days":"4",
+        "time start":"10:00",
+        "time end":"10:50",
+        "location":"ﻟﻢ ﺗﺤﺪﺩ ﻣﻦ ﺍﻟﻜﻠﻴﺔ",
+        "instructor":"ﺩ. ﻏﺎﺩﻩ ﻋﺒﺪﺍﻟﺮﺣﻤﻦ ﻋﺒﺪﺍﻟﻠﻪ ﻧﺠﺎﺭ"
+    },
+    {
+        "section":30.0,
+        "course":"MMGD334",
+        "course name":"ﺍﻟﺘﺼﻮﻳﺮ ﺍﻟﻔﻮﺗﻮﻏﺮﺍﻓﻲ",
+        "days":"4",
+        "time start":"11:00",
+        "time end":"11:50",
+        "location":"ﻟﻢ ﺗﺤﺪﺩ ﻣﻦ ﺍﻟﻜﻠﻴﺔ",
+        "instructor":"ﺩ. ﻏﺎﺩﻩ ﻋﺒﺪﺍﻟﺮﺣﻤﻦ ﻋﺒﺪﺍﻟﻠﻪ ﻧﺠﺎﺭ"
+    }
+]
