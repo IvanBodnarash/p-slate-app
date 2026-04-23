@@ -17,41 +17,21 @@ import { useUserStore } from "../../store/useUserStore";
 export default function CourseSearch() {
   const [q, setQ] = useState("");
 
-  const {
-    major,
-    offDays,
-    earliestTime,
-    latestTime,
-    instructor,
-    includeInstructors,
-    excludeInstructors,
-  } = useFilterStore();
+  const { offDays, earliestTime, latestTime, includeInstructors, excludeInstructors } = useFilterStore();
 
   const { studentGender } = useUserStore();
 
   const filters = useMemo(
     () => ({
       q,
-      major,
       offDays,
       earliestTime,
       latestTime,
-      instructor,
       includeInstructors,
       excludeInstructors,
       studentGender,
     }),
-    [
-      q,
-      major,
-      offDays,
-      earliestTime,
-      latestTime,
-      instructor,
-      includeInstructors,
-      excludeInstructors,
-      studentGender,
-    ]
+    [q, offDays, earliestTime, latestTime, includeInstructors, excludeInstructors, studentGender],
   );
 
   const { results, loading } = useCoursesSearch(filters);
@@ -79,6 +59,7 @@ export default function CourseSearch() {
           />
         </div>
         <button
+          type="button"
           className="px-3 py-1 mt-4 border flex items-center gap-2 rounded text-slate-800 hover:opacity-80 border-slate-700 cursor-pointer"
           onClick={() => setIsOpenFilterSection((prev) => !prev)}
         >
@@ -94,16 +75,10 @@ export default function CourseSearch() {
         )}
       </label>
 
-      {loading && (
-        <div className="text-sm opacity-70">
-          {t("searching", { defaultValue: "Searching…" })}
-        </div>
-      )}
+      {loading && <div className="text-sm opacity-70">{t("searching", { defaultValue: "Searching…" })}</div>}
 
       {!loading && results.length === 0 && q.trim() ? (
-        <div className="text-sm opacity-70">
-          {t("noResults", { defaultValue: "No results" })}
-        </div>
+        <div className="text-sm opacity-70">{t("noResults", { defaultValue: "No results" })}</div>
       ) : (
         <ul className="space-y-2 rounded max-h-74 md:max-h-full overflow-auto">
           {results.map((c) => (

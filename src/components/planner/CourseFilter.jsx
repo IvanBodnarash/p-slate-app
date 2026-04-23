@@ -1,10 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { useFilterStore } from "../../store/useFilterStore";
-import {
-  getInstructors,
-  // getInstructorsGender,
-  // getMajors,
-} from "../../data/repo";
+import { getInstructors } from "../../data/repo";
 import { useCallback, useEffect, useState } from "react";
 
 import { IoIosArrowDown } from "react-icons/io";
@@ -12,24 +8,15 @@ import { IoIosArrowUp } from "react-icons/io";
 import { useUserStore } from "../../store/useUserStore";
 
 export default function CourseFilter() {
-  const {
-    major,
-    // setMajor,
-    includeInstructors,
-    setIncludeInstructors,
-    excludeInstructors,
-    setExcludeInstructors,
-  } = useFilterStore();
-  
+  const { includeInstructors, setIncludeInstructors, excludeInstructors, setExcludeInstructors } = useFilterStore();
+
   const { studentGender } = useUserStore();
 
   const { t } = useTranslation("planner");
 
-  // const [majors, setMajors] = useState([]);
   const [instructors, setInstructors] = useState([]);
   const [includeInstrSection, setIncludeInstrSection] = useState(false);
   const [excludeInstrSection, setExcludeInstrSection] = useState(false);
-  // const [genders, setGenders] = useState([]);
   const [loading, setLoading] = useState(false);
   const [instructorsSection, setInstructorsSection] = useState(false);
 
@@ -38,6 +25,8 @@ export default function CourseFilter() {
   const latestTime = useFilterStore((state) => state.latestTime);
 
   const offDaysKey = offDays.join("|");
+  const includeKey = includeInstructors.join("|");
+  const excludeKey = excludeInstructors.join("|");
 
   useEffect(() => {
     let cancelled = false;
@@ -47,13 +36,10 @@ export default function CourseFilter() {
 
       try {
         const params = {
-          // major,
           offDays,
           earliestTime,
           latestTime,
           studentGender,
-          includeInstructors,
-          excludeInstructors,
         };
 
         const instructorList = await getInstructors(params);
@@ -61,44 +47,21 @@ export default function CourseFilter() {
         if (cancelled) return;
 
         setInstructors(instructorList);
-
-        const includeClean = includeInstructors.filter((name) =>
-          instructorList.includes(name)
-        );
-        if (includeClean.length !== includeInstructors.length) {
-          setIncludeInstructors(includeClean);
-        }
-        const excludeClean = excludeInstructors.filter((name) =>
-          instructorList.includes(name)
-        );
-        if (excludeClean.length !== excludeInstructors.length) {
-          setExcludeInstructors(excludeClean);
-        }
       } finally {
         if (!cancelled) {
           setLoading(false);
         }
       }
-    }
+    };
 
     loadInstructors();
 
     return () => {
       cancelled = true;
     };
-  }, [
-    studentGender,
-    offDaysKey,
-    earliestTime,
-    latestTime,
-    includeInstructors,
-    excludeInstructors,
-    setIncludeInstructors,
-    setExcludeInstructors,
-  ]);
+  }, [studentGender, offDaysKey, earliestTime, latestTime]);
 
-  const readMulti = (e) =>
-    Array.from(e.target.selectedOptions).map((o) => o.value);
+  const readMulti = (e) => Array.from(e.target.selectedOptions).map((o) => o.value);
 
   // When include change — automaticaly remove same names from exclude
   const onIncludeChange = useCallback(
@@ -112,7 +75,7 @@ export default function CourseFilter() {
         }
       }
     },
-    [excludeInstructors, setIncludeInstructors, setExcludeInstructors]
+    [excludeInstructors, setIncludeInstructors, setExcludeInstructors],
   );
 
   // When change exclude — remove names from include
@@ -127,18 +90,14 @@ export default function CourseFilter() {
         }
       }
     },
-    [includeInstructors, setIncludeInstructors, setExcludeInstructors]
+    [includeInstructors, setIncludeInstructors, setExcludeInstructors],
   );
 
   const clearInclude = () => setIncludeInstructors([]);
   const clearExclude = () => setExcludeInstructors([]);
 
   if (loading) {
-    return (
-      <div className="text-sm opacity-70">
-        {t("loading", { defaultValue: "Loading…" })}
-      </div>
-    );
+    return <div className="text-sm opacity-70">{t("loading", { defaultValue: "Loading…" })}</div>;
   }
 
   return (
@@ -150,9 +109,7 @@ export default function CourseFilter() {
           className="flex items-center gap-4 cursor-pointer"
           onClick={() => setInstructorsSection((prev) => !prev)}
         >
-          <h3>
-            {t("filterInstructors", { defaultValue: "Filter by instructors" })}
-          </h3>
+          <h3>{t("filterInstructors", { defaultValue: "Filter by instructors" })}</h3>
           {instructorsSection ? <IoIosArrowUp /> : <IoIosArrowDown />}
         </button>
 
@@ -172,11 +129,7 @@ export default function CourseFilter() {
                         defaultValue: "Include instructors",
                       })}
                     </div>
-                    {includeInstrSection ? (
-                      <IoIosArrowUp />
-                    ) : (
-                      <IoIosArrowDown />
-                    )}
+                    {includeInstrSection ? <IoIosArrowUp /> : <IoIosArrowDown />}
                   </button>
                   {includeInstrSection && instructors.length !== 0 && (
                     <button
@@ -229,11 +182,7 @@ export default function CourseFilter() {
                         defaultValue: "Exclude instructors",
                       })}
                     </div>
-                    {excludeInstrSection ? (
-                      <IoIosArrowUp />
-                    ) : (
-                      <IoIosArrowDown />
-                    )}
+                    {excludeInstrSection ? <IoIosArrowUp /> : <IoIosArrowDown />}
                   </button>
                   {excludeInstrSection && instructors.length !== 0 && (
                     <button
