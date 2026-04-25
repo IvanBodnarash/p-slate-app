@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pslate.app/sitemap.xml
+Sitemap: https://www.pslate.app/sitemap.xml
