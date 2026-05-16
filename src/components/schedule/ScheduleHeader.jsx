@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { usePlannerStore } from "../../store/usePlannerStore";
 
 import { MdOutlineCopyAll } from "react-icons/md";
+import { trackEvent } from "../../services/analytics";
 
 export default function ScheduleHeader() {
   const { t } = useTranslation("planner");
@@ -15,9 +16,16 @@ export default function ScheduleHeader() {
 
   const onCopy = async () => {
     const text = Object.values(current.map).join(", ");
-    
+
     try {
       await navigator.clipboard.writeText(text);
+
+      trackEvent("section_numbers_copied", {
+        sections_count: Object.values(current.map).length,
+        schedule_index: idx,
+        schedule_score: current.score ?? null,
+      });
+
       setCopied(true);
       setTimeout(() => setCopied(false), 1200);
     } catch {
@@ -28,6 +36,14 @@ export default function ScheduleHeader() {
       ta.select();
       document.execCommand("copy");
       ta.remove();
+
+      trackEvent("section_numbers_copied", {
+        sections_count: Object.values(current.map).length,
+        schedule_index: idx,
+        schedule_score: current.score ?? null,
+        fallback_used: true,
+      });
+
       setCopied(true);
       setTimeout(() => setCopied(false), 1200);
     }
@@ -35,9 +51,7 @@ export default function ScheduleHeader() {
 
   return (
     <div className="flex items-center justify-between gap-2 md:gap-4 mb-4 mt-8">
-      <h3 className="text-xl md:text-2xl">
-        {t("gridTitle", { defaultValue: "Weekly Schedule" })}
-      </h3>
+      <h3 className="text-xl md:text-2xl">{t("gridTitle", { defaultValue: "Weekly Schedule" })}</h3>
 
       <button
         onClick={onCopy}

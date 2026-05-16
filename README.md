@@ -10,6 +10,7 @@
 6. [Tuition Calculator](#tuition-calculator)
 7. [Compatibility Score](#compatibility-score)
 8. [SEO and Google Indexing Setup](#seo-and-google-indexing-setup)
+9. [Analytics and Cookie Consent](#analytics-and-cookie-consent)
 
 ## Tech Stack
 
@@ -36,11 +37,13 @@
 ## Environments
 
 ### Production
+
 `https://www.pslate.app/`
 
 This is the main public version intended for real usage and final indexing.
 
 ### Development
+
 `https://p-slate-app-git-development-pslate.vercel.app/`
 
 This environment is used for testing changes before merging into production.
@@ -103,8 +106,8 @@ A separate config file is also used:
 
 - `public/data/config.json`
 
-
 ### How it works
+
 1. Place **one timetable PDF file** inside the `raw_pdf/` folder.
 2. Run the parsing script:
 
@@ -113,13 +116,15 @@ npm run parse:timetable
 ```
 
 3. The script:
+
 - detects whether each page belongs to male or female students
 - extracts timetable rows using `pdfplumber`
 - normalizes Arabic text
 - generates `males_timetable.json` and `females_timetable.json`
 - keeps `config.json` separate
 
-*Notes*
+_Notes_
+
 - The PDF filename can be anything.
 - The `raw_pdf/` folder must contain exactly **one PDF at a time**.
 - The app does not read the PDF directly in the browser. It works only with the generated JSON files.
@@ -247,6 +252,7 @@ Basic SEO setup is included in the project.
 - Google Search Console verification support
 
 ### Current domains
+
 - Production: https://www.pslate.app/
 - Development: https://p-slate-app-git-development-pslate.vercel.app/
 
@@ -295,3 +301,88 @@ The development deployment is useful for testing, but it should not be treated a
 ### Important note
 
 The same SEO setup can be reused later if the project moves from demo/testing to the official production domain, but the canonical URL, Search Console property, and sitemap should always point to the final public domain.
+
+## Analytics and Cookie Consent
+
+The project includes Google Analytics 4 integration with cookie consent support.
+
+Analytics tracking is only enabled after the user accepts analytics cookies. If the user rejects cookies, Google Analytics events are not sent.
+
+### Current setup
+
+The analytics logic is separated into a dedicated service:
+
+- `src/services/analytics.js`
+
+The app also includes:
+
+- `CookieBanner` – displays the cookie consent banner
+- `AnalyticsTracker` – tracks page views on route changes
+
+### Environment variable
+
+Google Analytics requires a GA4 Measurement ID.
+
+Create a `.env` file locally:
+
+```bash
+VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+```
+
+For Vercel deployment, add the same variable in:
+`Vercel → Project Settings → Environment Variables`
+
+Required variable:
+
+```bash
+VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+```
+
+After adding or changing this variable in Vercel, redeploy the project because Vite reads environment variables during build time.
+
+### Cookie consent behavior
+
+The selected cookie preference is stored in local storage:
+
+```bash
+cookie_consent
+```
+
+Possible values:
+
+```bash
+accepted
+rejected
+```
+
+### Tracked data
+
+The app tracks basic page views after consent is accepted.
+
+Custom events can also be tracked for important user actions, for example:
+
+- course search
+- course added
+- schedule generation
+- section numbers copied
+- filters opened
+
+### Example custom events
+```js
+trackEvent("course_added", {
+  course_code: c.code,
+  course_name: c.name,
+});
+
+trackEvent("schedule_generated", {
+  selected_courses_count: selected.length,
+  generated_schedules_count: schedules.length,
+});
+
+trackEvent("section_numbers_copied", {
+  sections_count: Object.values(current.map).length,
+});
+```
+
+After accepting cookies, Google Analytics can be checked in:
+`Google Analytics → Reports → Realtime`
