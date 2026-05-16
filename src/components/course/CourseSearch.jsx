@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useCoursesSearch } from "../../hooks/useCoursesSearch";
 import { usePlannerStore } from "../../store/usePlannerStore";
@@ -13,13 +13,18 @@ import { IoIosArrowUp } from "react-icons/io";
 import PlannerOptions from "../planner/PlannerOptions";
 import CourseFilter from "../planner/CourseFilter";
 import { useUserStore } from "../../store/useUserStore";
+import { trackEvent } from "../../services/analytics";
 
 export default function CourseSearch() {
   const [q, setQ] = useState("");
+  const [isOpenFilterSection, setIsOpenFilterSection] = useState(false);
 
   const { offDays, earliestTime, latestTime, includeInstructors, excludeInstructors } = useFilterStore();
 
   const { studentGender } = useUserStore();
+
+  const addCourse = usePlannerStore((s) => s.addCourse);
+  const selectedCourses = usePlannerStore((s) => s.selectedCourses);
 
   const filters = useMemo(
     () => ({
@@ -36,9 +41,51 @@ export default function CourseSearch() {
 
   const { results, loading } = useCoursesSearch(filters);
 
-  const addCourse = usePlannerStore((s) => s.addCourse);
+  useEffect(() => {
+    const search = q.trim();
+
+    if (search.length < 2) return;
+
+    const timeoutId = setTimeout(() => {
+      trackEvent("course_search", {
+        search_query: search,
+        search_length: search.length,
+        results_count: results.length,
+      });
+    }, 800);
+
+    return () => clearTimeout(timeoutId);
+  }, [q, results.length]);
+
   const { t } = useTranslation("planner");
-  const [isOpenFilterSection, setIsOpenFilterSection] = useState(false);
+
+  const addCourseHandler = (c) => {
+    const alreadySelected = selectedCourses.includes(c.code);
+
+    addCourse(c.code);
+
+    trackEvent("course_added", {
+      course_code: c.code,
+      course_name: c.name,
+      search_query: q.trim() || null,
+      already_selected: alreadySelected,
+      selected_courses_count: alreadySelected
+        ? selectedCourses.length
+        : selectedCourses.length + 1,
+    });
+  };
+
+  const handleOpenFilterSection = () => {
+    setIsOpenFilterSection((prev) => {
+      const next = !prev;
+
+      if (next) {
+        trackEvent("filters_opened");
+      }
+
+      return next;
+    });
+  };
 
   return (
     <section className="space-y-3">
@@ -61,7 +108,7 @@ export default function CourseSearch() {
         <button
           type="button"
           className="px-3 py-1 mt-4 border flex items-center gap-2 rounded text-slate-800 hover:opacity-80 border-slate-700 cursor-pointer"
-          onClick={() => setIsOpenFilterSection((prev) => !prev)}
+          onClick={handleOpenFilterSection}
         >
           <FiFilter />
           <p>{t("filter", { defaultValue: "Filter" })}</p>
@@ -92,7 +139,7 @@ export default function CourseSearch() {
               </div>
               <button
                 className="px-2 md:px-3 md:py-1 rounded text-slate-700 hover:opacity-70 cursor-pointer"
-                onClick={() => addCourse(c.code)}
+                onClick={() => addCourseHandler(c)}
                 title={t("addCourse", { defaultValue: "Add course" })}
               >
                 <IoAdd className="size-6" />

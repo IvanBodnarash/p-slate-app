@@ -1,9 +1,4 @@
-import {
-  Routes,
-  Route,
-  useParams,
-  Navigate,
-} from "react-router";
+import { Routes, Route, useParams, Navigate } from "react-router";
 import { useEffect } from "react";
 
 import { SUPPORTED_LANGS, useUserStore } from "../store/useUserStore.js";
@@ -11,6 +6,8 @@ import { SUPPORTED_LANGS, useUserStore } from "../store/useUserStore.js";
 import MainLayout from "../layouts/MainLayout.jsx";
 import HomePage from "../pages/HomePage.jsx";
 import PlannerPage from "../pages/PlannerPage.jsx";
+import CookieBanner from "../components/cookies/CookieBanner.jsx";
+import AnalyticsTracker from "../components/analyticsTracker/AnalyticsTracker.jsx";
 
 function WithLocale() {
   const { lang } = useParams();
@@ -33,10 +30,14 @@ function WithLocale() {
 
 export default function AppRoutes() {
   return (
-    <Routes>
-      <Route path="/" element={<Navigate to="/en" replace />} />
-      <Route path="/:lang/*" element={<WithLocale />} />
-      <Route path="*" element={<Navigate to="/en" replace />} />
-    </Routes>
+    <>
+      <AnalyticsTracker />
+      <Routes>
+        <Route path="/" element={<Navigate to="/en" replace />} />
+        <Route path="/:lang/*" element={<WithLocale />} />
+        <Route path="*" element={<Navigate to="/en" replace />} />
+      </Routes>
+      <CookieBanner />
+    </>
   );
 }
