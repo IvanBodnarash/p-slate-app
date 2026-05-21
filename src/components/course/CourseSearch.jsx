@@ -14,6 +14,8 @@ import PlannerOptions from "../planner/PlannerOptions";
 import CourseFilter from "../planner/CourseFilter";
 import { useUserStore } from "../../store/useUserStore";
 import { trackEvent } from "../../services/analytics";
+import SemesterSelector from "../planner/SemesterSelector";
+import { useSemesterStore } from "../../store/useSemesterStore";
 
 export default function CourseSearch() {
   const [q, setQ] = useState("");
@@ -26,6 +28,8 @@ export default function CourseSearch() {
   const addCourse = usePlannerStore((s) => s.addCourse);
   const selectedCourses = usePlannerStore((s) => s.selectedCourses);
 
+  const selectedSemester = useSemesterStore((s) => s.selectedSemester);
+
   const filters = useMemo(
     () => ({
       q,
@@ -35,13 +39,18 @@ export default function CourseSearch() {
       includeInstructors,
       excludeInstructors,
       studentGender,
+      semesterId: selectedSemester,
     }),
-    [q, offDays, earliestTime, latestTime, includeInstructors, excludeInstructors, studentGender],
+    [q, offDays, earliestTime, latestTime, includeInstructors, excludeInstructors, studentGender, selectedSemester],
   );
 
   const { results, loading } = useCoursesSearch(filters);
 
+  const { t } = useTranslation("planner");
+
   useEffect(() => {
+    if (!selectedSemester) return;
+
     const search = q.trim();
 
     if (search.length < 2) return;
@@ -51,13 +60,12 @@ export default function CourseSearch() {
         search_query: search,
         search_length: search.length,
         results_count: results.length,
+        semester_id: selectedSemester,
       });
     }, 800);
 
     return () => clearTimeout(timeoutId);
-  }, [q, results.length]);
-
-  const { t } = useTranslation("planner");
+  }, [q, results.length, selectedSemester]);
 
   const addCourseHandler = (c) => {
     const alreadySelected = selectedCourses.includes(c.code);
@@ -69,9 +77,7 @@ export default function CourseSearch() {
       course_name: c.name,
       search_query: q.trim() || null,
       already_selected: alreadySelected,
-      selected_courses_count: alreadySelected
-        ? selectedCourses.length
-        : selectedCourses.length + 1,
+      selected_courses_count: alreadySelected ? selectedCourses.length : selectedCourses.length + 1,
     });
   };
 
@@ -80,7 +86,9 @@ export default function CourseSearch() {
       const next = !prev;
 
       if (next) {
-        trackEvent("filters_opened");
+        trackEvent("filters_opened", {
+          semester_id: selectedSemester || null,
+        });
       }
 
       return next;
@@ -93,6 +101,7 @@ export default function CourseSearch() {
         <span className="block text-xl md:text-2xl mb-2">
           {t("searchLabel", { defaultValue: "Search for courses" })}
         </span>
+
         <div className="flex flex-row items-center gap-2">
           <BsSearch className="size-6" />
           <input
@@ -103,18 +112,26 @@ export default function CourseSearch() {
             })}
             className="w-full border-b-2 outline-0 py-1 text-slate-800"
             autoFocus={false}
+            disabled={!selectedSemester}
           />
         </div>
-        <button
-          type="button"
-          className="px-3 py-1 mt-4 border flex items-center gap-2 rounded text-slate-800 hover:opacity-80 border-slate-700 cursor-pointer"
-          onClick={handleOpenFilterSection}
-        >
-          <FiFilter />
-          <p>{t("filter", { defaultValue: "Filter" })}</p>
-          {isOpenFilterSection ? <IoIosArrowUp /> : <IoIosArrowDown />}
-        </button>
-        {isOpenFilterSection && (
+
+        <div className="mt-4 flex flex-wrap items-center justify-between gap-2">
+          <button
+            type="button"
+            className="px-3 py-1 text-sm border flex items-center gap-2 rounded text-slate-800 hover:opacity-80 border-slate-700 cursor-pointer"
+            onClick={handleOpenFilterSection}
+            disabled={!selectedSemester}
+          >
+            <FiFilter />
+            <p>{t("filter", { defaultValue: "Filter" })}</p>
+            {isOpenFilterSection ? <IoIosArrowUp /> : <IoIosArrowDown />}
+          </button>
+
+          <SemesterSelector />
+        </div>
+
+        {isOpenFilterSection && selectedSemester && (
           <>
             <PlannerOptions />
             <CourseFilter />
@@ -122,11 +139,23 @@ export default function CourseSearch() {
         )}
       </label>
 
-      {loading && <div className="text-sm opacity-70">{t("searching", { defaultValue: "Searching…" })}</div>}
+      {!selectedSemester && (
+        <div className="text-sm text-slate-700">
+          {t("selectSemesterMessage", {
+            defaultValue: "Please select a semester to view courses.",
+          })}
+        </div>
+      )}
 
-      {!loading && results.length === 0 && q.trim() ? (
+      {selectedSemester && loading && (
+        <div className="text-sm opacity-70">{t("searching", { defaultValue: "Searching…" })}</div>
+      )}
+
+      {selectedSemester && !loading && results.length === 0 && q.trim() ? (
         <div className="text-sm opacity-70">{t("noResults", { defaultValue: "No results" })}</div>
-      ) : (
+      ) : null}
+
+      {selectedSemester && !loading && results.length > 0 && (
         <ul className="space-y-2 rounded max-h-74 md:max-h-full overflow-auto">
           {results.map((c) => (
             <li
@@ -137,13 +166,14 @@ export default function CourseSearch() {
                 <div className="font-semibold">{c.code}</div>
                 <div className="text-sm opacity-80">{c.name}</div>
               </div>
+
               <button
+                type="button"
                 className="px-2 md:px-3 md:py-1 rounded text-slate-700 hover:opacity-70 cursor-pointer"
                 onClick={() => addCourseHandler(c)}
                 title={t("addCourse", { defaultValue: "Add course" })}
               >
                 <IoAdd className="size-6" />
-                {/* {t("add", { defaultValue: "Add" })} */}
               </button>
             </li>
           ))}

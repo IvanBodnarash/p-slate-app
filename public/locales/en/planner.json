@@ -50,5 +50,8 @@
   "male": "Male",
   "female": "Female",
   "allGenders": "All genders",
-  "timeFilter": "Filter by time"
+  "timeFilter": "Filter by time",
+  "summerSemester2026": "Summer Semester 2026",
+  "firstSemester2026_2027": "First Semester 2026-2027",
+  "selectSemesterMessage": "Please select a semester to view courses."
 }

@@ -1,4 +1,10 @@
-let cache = null;
+const cacheBySemester = {};
+
+const DEFAULT_SEMESTER_ID = "summer_2026";
+
+function getSemesterId(params = {}) {
+  return params.semesterId || DEFAULT_SEMESTER_ID;
+}
 
 const DAY_MAP = {
   "1": "Sun",
@@ -105,13 +111,19 @@ function mergeCourses(...courseLists) {
   return Array.from(merged.values());
 }
 
-export async function ensureLoaded() {
-  if (!cache) {
+export async function ensureLoaded(semesterId = DEFAULT_SEMESTER_ID) {
+  if (!cacheBySemester[semesterId]) {
+    const basePath = `/data/semesters/${semesterId}`;
+
     const [malesRes, femalesRes, configRes] = await Promise.all([
-      fetch("/data/males_timetable.json"),
-      fetch("/data/females_timetable.json"),
+      fetch(`${basePath}/males_timetable.json`),
+      fetch(`${basePath}/females_timetable.json`),
       fetch("/data/config.json"),
     ]);
+
+    if (!malesRes.ok || !femalesRes.ok) {
+      throw new Error(`Failed to load timetable data for ${semesterId}`);
+    }
 
     const [maleRows, femaleRows, config] = await Promise.all([
       malesRes.json(),
@@ -124,7 +136,7 @@ export async function ensureLoaded() {
 
     const courses = mergeCourses(maleCourses, femaleCourses);
 
-    cache = {
+    cacheBySemester[semesterId] = {
       courses,
       config: {
         pricePerCredit: Number(config?.price_per_credit || 0),
@@ -132,6 +144,8 @@ export async function ensureLoaded() {
       },
     };
   }
+
+  return cacheBySemester[semesterId];
 }
 
 function makeSectionPasses(params = {}) {
@@ -184,7 +198,12 @@ function makeSectionPasses(params = {}) {
 }
 
 export async function searchCourses(queryOrParams) {
-  await ensureLoaded();
+  const semesterId =
+    typeof queryOrParams === "object"
+      ? getSemesterId(queryOrParams)
+      : DEFAULT_SEMESTER_ID;
+
+  const cache = await ensureLoaded(semesterId);
 
   let q = "";
   const pass = makeSectionPasses(
@@ -217,7 +236,8 @@ export async function searchCourses(queryOrParams) {
 }
 
 export async function getCourseByCodeFiltered(code, params = {}) {
-  await ensureLoaded();
+  const semesterId = getSemesterId(params);
+  const cache = await ensureLoaded(semesterId);
 
   const course =
     cache.courses.find(
@@ -234,14 +254,17 @@ export async function getCourseByCodeFiltered(code, params = {}) {
   return { ...course, sections: filtered };
 }
 
-export async function getCourseByCode(code) {
-  await ensureLoaded();
+export async function getCourseByCode(code, params = {}) {
+  const semesterId = getSemesterId(params);
+  const cache = await ensureLoaded(semesterId);
+
   const q = (code || "").toLowerCase().trim();
   return cache.courses.find((c) => c.code.toLowerCase() === q) || null;
 }
 
 export async function getInstructors(params = {}) {
-  await ensureLoaded();
+  const semesterId = getSemesterId(params);
+  const cache = await ensureLoaded(semesterId);
 
   const pass = makeSectionPasses(params);
 
@@ -270,7 +293,9 @@ export async function getInstructorsGender() {
   ).sort((a, b) => a.localeCompare(b));
 }
 
-export async function getConfig() {
-  await ensureLoaded();
+export async function getConfig(params = {}) {
+  const semesterId = getSemesterId(params);
+  const cache = await ensureLoaded(semesterId);
+
   return cache.config || { pricePerCredit: 0, defaultScholarshipPct: 0 };
 }

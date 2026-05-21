@@ -6,27 +6,29 @@ import { generateConflictFreeSchedules } from "../../engine/scheduler";
 import { scoreSchedule } from "../../engine/scoring";
 import { useFilterStore } from "../../store/useFilterStore";
 import { useUserStore } from "../../store/useUserStore";
+import { useSemesterStore } from "../../store/useSemesterStore";
 import { trackEvent } from "../../services/analytics";
 
 export default function GenerateButton() {
   const { t } = useTranslation("planner");
 
   const selected = usePlannerStore((s) => s.selectedCourses);
-  // const hardSelected = usePlannerStore((s) => s.sectionsByCourse);
-  const hardSelected = {};
   const excludedByCourse = usePlannerStore((s) => s.excludedByCourse);
   const setGenerated = usePlannerStore((s) => s.setGenerated);
   const clearGenerated = usePlannerStore((s) => s.clearGenerated);
 
+  const selectedSemester = useSemesterStore((s) => s.selectedSemester);
+
+  const hardSelected = {};
+
   const [loading, setLoading] = useState(false);
   const [lastCount, setLastCount] = useState(null);
 
-  // We only clear the results when the list has actually changed
   const selectedKey = useMemo(() => selected.slice().sort().join("|"), [selected]);
+
   const prevKeyRef = useRef(selectedKey);
 
   useEffect(() => {
-    // When the course set changes — we clear old results
     if (prevKeyRef.current !== selectedKey) {
       prevKeyRef.current = selectedKey;
       clearGenerated();
@@ -35,14 +37,17 @@ export default function GenerateButton() {
   }, [selectedKey, clearGenerated]);
 
   const onGenerate = async () => {
+    if (!selectedSemester) return;
+
     setLoading(true);
+
     try {
-      // we get the freshest filters right here
       const { offDays, earliestTime, latestTime, includeInstructors, excludeInstructors } = useFilterStore.getState();
 
       const { studentGender } = useUserStore.getState();
 
       trackEvent("schedule_generate_clicked", {
+        semester_id: selectedSemester,
         selected_courses_count: selected.length,
         excluded_courses_count: Object.keys(excludedByCourse).length,
         off_days_count: offDays?.length || 0,
@@ -53,7 +58,18 @@ export default function GenerateButton() {
         student_gender_selected: Boolean(studentGender),
       });
 
-      const full = (await Promise.all(selected.map(getCourseByCodeFiltered))).filter(Boolean);
+      const filters = {
+        semesterId: selectedSemester,
+        offDays,
+        earliestTime,
+        latestTime,
+        includeInstructors,
+        excludeInstructors,
+        studentGender,
+      };
+
+      const full = (await Promise.all(selected.map((code) => getCourseByCodeFiltered(code, filters)))).filter(Boolean);
+
       const schedules = generateConflictFreeSchedules(full, {
         hardSelected,
         excludedByCourse,
@@ -66,12 +82,13 @@ export default function GenerateButton() {
         studentGender,
       })
         .map((s) => ({ ...s, score: scoreSchedule(s) }))
-        .sort((a, b) => b.score - a.score); // bests on the top
+        .sort((a, b) => b.score - a.score);
 
       setGenerated(schedules);
       setLastCount(schedules.length);
 
       trackEvent("schedule_generated", {
+        semester_id: selectedSemester,
         selected_courses_count: selected.length,
         generated_schedules_count: schedules.length,
         best_score: schedules[0]?.score ?? null,
@@ -81,6 +98,7 @@ export default function GenerateButton() {
       console.error("Generate failed:", e);
 
       trackEvent("schedule_generate_failed", {
+        semester_id: selectedSemester || null,
         selected_courses_count: selected.length,
       });
     } finally {
@@ -88,11 +106,12 @@ export default function GenerateButton() {
     }
   };
 
-  const disabled = selected.length === 0 || loading;
+  const disabled = !selectedSemester || selected.length === 0 || loading;
 
   return (
     <div className="flex flex-col md:flex-row items-start md:items-center gap-3">
       <button
+        type="button"
         onClick={onGenerate}
         disabled={disabled}
         className={`px-2 md:px-3 py-1 border rounded border-slate-600 ${

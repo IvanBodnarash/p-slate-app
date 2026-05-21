@@ -20,9 +20,7 @@ export const usePlannerStore = create(
       removeCourse: (code) =>
         set((s) => ({
           selectedCourses: s.selectedCourses.filter((c) => c !== code),
-          excludedByCourse: Object.fromEntries(
-            Object.entries(s.excludedByCourse).filter(([k]) => k !== code)
-          ),
+          excludedByCourse: Object.fromEntries(Object.entries(s.excludedByCourse).filter(([k]) => k !== code)),
           generatedSchedules: [],
           generatedAt: null,
           currentScheduleIndex: 0,
@@ -32,9 +30,7 @@ export const usePlannerStore = create(
         set((s) => {
           const prev = s.excludedByCourse[courseCode] || [];
           const exists = prev.includes(sectionNumber);
-          const nextForCourse = exists
-            ? prev.filter((x) => x !== sectionNumber)
-            : [...prev, sectionNumber];
+          const nextForCourse = exists ? prev.filter((x) => x !== sectionNumber) : [...prev, sectionNumber];
           return {
             excludedByCourse: {
               ...s.excludedByCourse,
@@ -66,20 +62,25 @@ export const usePlannerStore = create(
         const { currentScheduleIndex, generatedSchedules } = get();
         if (generatedSchedules.length === 0) return;
         set({
-          currentScheduleIndex:
-            (currentScheduleIndex + 1) % generatedSchedules.length,
+          currentScheduleIndex: (currentScheduleIndex + 1) % generatedSchedules.length,
         });
       },
       prevSchedule: () => {
         const { currentScheduleIndex, generatedSchedules } = get();
         if (generatedSchedules.length === 0) return;
         set({
-          currentScheduleIndex:
-            (currentScheduleIndex - 1 + generatedSchedules.length) %
-            generatedSchedules.length,
+          currentScheduleIndex: (currentScheduleIndex - 1 + generatedSchedules.length) % generatedSchedules.length,
         });
       },
+      resetPlanner: () =>
+        set({
+          selectedCourses: [],
+          excludedByCourse: {},
+          generatedSchedules: [],
+          generatedAt: null,
+          currentScheduleIndex: 0,
+        }),
     }),
-    { name: "pslate-planner" }
-  )
+    { name: "pslate-planner" },
+  ),
 );
