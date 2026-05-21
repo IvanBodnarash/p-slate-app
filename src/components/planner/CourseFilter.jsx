@@ -28,8 +28,6 @@ export default function CourseFilter() {
   const selectedSemester = useSemesterStore((s) => s.selectedSemester);
 
   const offDaysKey = offDays.join("|");
-  const includeKey = includeInstructors.join("|");
-  const excludeKey = excludeInstructors.join("|");
 
   useEffect(() => {
     let cancelled = false;
@@ -63,7 +61,7 @@ export default function CourseFilter() {
     return () => {
       cancelled = true;
     };
-  }, [studentGender, offDaysKey, earliestTime, latestTime, selectedSemester]);
+  }, [studentGender, offDaysKey, earliestTime, offDays, latestTime, selectedSemester]);
 
   const readMulti = (e) => Array.from(e.target.selectedOptions).map((o) => o.value);
 

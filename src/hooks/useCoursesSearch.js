@@ -53,6 +53,9 @@ export function useCoursesSearch(filters) {
       try {
         const list = await searchCourses(params);
         if (!cancelled) setResults(list);
+      } catch (error) {
+        console.error("Course search failed:", error);
+        if (!cancelled) setResults([]);
       } finally {
         if (!cancelled) setLoading(false);
       }

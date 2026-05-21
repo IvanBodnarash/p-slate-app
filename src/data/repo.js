@@ -281,18 +281,6 @@ export async function getInstructors(params = {}) {
   return instructors;
 }
 
-export async function getInstructorsGender() {
-  await ensureLoaded();
-
-  return Array.from(
-    new Set(
-      (cache.courses || [])
-        .flatMap((c) => (c.sections || []).map((s) => s.gender))
-        .filter(Boolean)
-    )
-  ).sort((a, b) => a.localeCompare(b));
-}
-
 export async function getConfig(params = {}) {
   const semesterId = getSemesterId(params);
   const cache = await ensureLoaded(semesterId);
