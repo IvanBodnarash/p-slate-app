@@ -6,6 +6,7 @@ import { useCallback, useEffect, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 import { useUserStore } from "../../store/useUserStore";
+import { useSemesterStore } from "../../store/useSemesterStore";
 
 export default function CourseFilter() {
   const { includeInstructors, setIncludeInstructors, excludeInstructors, setExcludeInstructors } = useFilterStore();
@@ -24,9 +25,9 @@ export default function CourseFilter() {
   const earliestTime = useFilterStore((state) => state.earliestTime);
   const latestTime = useFilterStore((state) => state.latestTime);
 
+  const selectedSemester = useSemesterStore((s) => s.selectedSemester);
+
   const offDaysKey = offDays.join("|");
-  const includeKey = includeInstructors.join("|");
-  const excludeKey = excludeInstructors.join("|");
 
   useEffect(() => {
     let cancelled = false;
@@ -40,6 +41,7 @@ export default function CourseFilter() {
           earliestTime,
           latestTime,
           studentGender,
+          semesterId: selectedSemester,
         };
 
         const instructorList = await getInstructors(params);
@@ -59,7 +61,7 @@ export default function CourseFilter() {
     return () => {
       cancelled = true;
     };
-  }, [studentGender, offDaysKey, earliestTime, latestTime]);
+  }, [studentGender, offDaysKey, earliestTime, offDays, latestTime, selectedSemester]);
 
   const readMulti = (e) => Array.from(e.target.selectedOptions).map((o) => o.value);
 

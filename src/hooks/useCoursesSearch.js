@@ -15,6 +15,7 @@ export function useCoursesSearch(filters) {
       includeInstructors = [],
       excludeInstructors = [],
       studentGender = "",
+      semesterId = "",
     } = filters || {};
     return {
       q: debouncedQ,
@@ -24,6 +25,7 @@ export function useCoursesSearch(filters) {
       includeInstructors,
       excludeInstructors,
       studentGender,
+      semesterId,
     };
   }, [
     debouncedQ,
@@ -33,19 +35,32 @@ export function useCoursesSearch(filters) {
     filters?.includeInstructors,
     filters?.excludeInstructors,
     filters?.studentGender,
+    filters?.semesterId,
   ]);
 
   useEffect(() => {
     let cancelled = false;
+
+    if (!params.semesterId) {
+      setResults([]);
+      setLoading(false);
+      return;
+    }
+
     (async () => {
       setLoading(true);
+
       try {
         const list = await searchCourses(params);
         if (!cancelled) setResults(list);
+      } catch (error) {
+        console.error("Course search failed:", error);
+        if (!cancelled) setResults([]);
       } finally {
         if (!cancelled) setLoading(false);
       }
     })();
+
     return () => {
       cancelled = true;
     };
@@ -56,7 +71,7 @@ export function useCoursesSearch(filters) {
 
 function useDebouncedValue(value, delay = 200) {
   const [v, setV] = useState(value);
-  
+
   useEffect(() => {
     const id = setTimeout(() => setV(value), delay);
     return () => clearTimeout(id);

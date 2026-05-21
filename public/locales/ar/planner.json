@@ -50,5 +50,8 @@
   "male": "ذكر",
   "female": "أنثى",
   "allGenders": "جميع الأجناس",
-  "timeFilter": "تصفية حسب الوقت"
+  "timeFilter": "تصفية حسب الوقت",
+  "summerSemester2026": "الفصل الصيفي 2026",
+  "firstSemester2026_2027": "الفصل الدراسي الأول 2026-2027",
+  "selectSemesterMessage": "يرجى اختيار الفصل الدراسي لعرض المقررات."
 }

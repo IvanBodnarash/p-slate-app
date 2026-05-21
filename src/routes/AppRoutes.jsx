@@ -6,7 +6,6 @@ import { SUPPORTED_LANGS, useUserStore } from "../store/useUserStore.js";
 import MainLayout from "../layouts/MainLayout.jsx";
 import HomePage from "../pages/HomePage.jsx";
 import PlannerPage from "../pages/PlannerPage.jsx";
-import CookieBanner from "../components/cookies/CookieBanner.jsx";
 import AnalyticsTracker from "../components/analyticsTracker/AnalyticsTracker.jsx";
 
 function WithLocale() {
@@ -37,7 +36,6 @@ export default function AppRoutes() {
         <Route path="/:lang/*" element={<WithLocale />} />
         <Route path="*" element={<Navigate to="/en" replace />} />
       </Routes>
-      <CookieBanner />
     </>
   );
 }

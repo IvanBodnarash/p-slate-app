@@ -6,12 +6,15 @@ import { getCourseByCodeFiltered } from "../../data/repo";
 import { RxCross1 } from "react-icons/rx";
 import { useFilterStore } from "../../store/useFilterStore";
 import { useUserStore } from "../../store/useUserStore";
+import { useSemesterStore } from "../../store/useSemesterStore";
 
 export default function SelectedCoursesPanel() {
   const selected = usePlannerStore((s) => s.selectedCourses);
   const removeCourse = usePlannerStore((s) => s.removeCourse);
   const toggleExclude = usePlannerStore((s) => s.toggleExcludeSection);
   const excluded = usePlannerStore((s) => s.excludedByCourse);
+
+  const selectedSemester = useSemesterStore((s) => s.selectedSemester);
 
   const {
     offDays,
@@ -36,6 +39,7 @@ export default function SelectedCoursesPanel() {
         includeInstructors,
         excludeInstructors,
         studentGender,
+        semesterId: selectedSemester,
       };
       const full = await Promise.all(
         selected.map((code) => getCourseByCodeFiltered(code, filters))
@@ -53,6 +57,7 @@ export default function SelectedCoursesPanel() {
     includeInstructors,
     excludeInstructors,
     studentGender,
+    selectedSemester,
   ]);
 
   if (selected.length === 0) {

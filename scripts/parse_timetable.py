@@ -4,8 +4,18 @@ import re
 import unicodedata
 import pdfplumber
 
-RAW_DIR = Path("raw_pdf")
-OUT_DIR = Path("public/data")
+SEMESTERS = {
+    "summer_2026": {
+        "input_dir": Path("raw_pdf/summer_2026"),
+        "output_dir": Path("public/data/semesters/summer_2026"),
+    },
+    "first_2026_2027": {
+        "input_dir": Path("raw_pdf/first_2026_2027"),
+        "output_dir": Path("public/data/semesters/first_2026_2027"),
+    },
+}
+
+CONFIG_OUT = Path("public/data/config.json")
 
 # These strings are used only as helper markers.
 # In extracted Arabic PDF text, glyph forms may differ,
@@ -73,6 +83,33 @@ def normalize_arabic_text(value):
     text = text.replace("( ", "(").replace(" )", ")")
 
     return text
+
+def parse_pdf(pdf_path: Path):
+    male_records = []
+    female_records = []
+    skipped_pages = []
+
+    with pdfplumber.open(pdf_path) as pdf:
+        for page_index, page in enumerate(pdf.pages, start=1):
+            page_text = page.extract_text() or ""
+            gender = detect_gender_from_text(page_text)
+
+            if gender is None:
+                skipped_pages.append(page_index)
+                continue
+
+            page_records = extract_tables_from_page(page)
+
+            if gender == "M":
+                male_records.extend(page_records)
+            elif gender == "F":
+                female_records.extend(page_records)
+
+            print(
+                f"Page {page_index}: gender={gender}, extracted_rows={len(page_records)}"
+            )
+
+    return male_records, female_records, skipped_pages
 
 def find_single_pdf(raw_dir: Path) -> Path:
     """
@@ -297,48 +334,44 @@ def extract_tables_from_page(page):
 
 def main():
     """Main entry point."""
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    for semester_id, paths in SEMESTERS.items():
+        input_dir = paths["input_dir"]
+        output_dir = paths["output_dir"]
 
-    pdf_path = find_single_pdf(RAW_DIR)
-    print(f"Using PDF: {pdf_path.name}")
+        output_dir.mkdir(parents=True, exist_ok=True)
 
-    male_records = []
-    female_records = []
-    skipped_pages = []
+        pdf_path = find_single_pdf(input_dir)
 
-    with pdfplumber.open(pdf_path) as pdf:
-        for page_index, page in enumerate(pdf.pages, start=1):
-            page_text = page.extract_text() or ""
-            gender = detect_gender_from_text(page_text)
+        print(f"\nParsing semester: {semester_id}")
+        print(f"Using PDF: {pdf_path.name}")
 
-            if gender is None:
-                skipped_pages.append(page_index)
-                continue
+        male_records, female_records, skipped_pages = parse_pdf(pdf_path)
 
-            page_records = extract_tables_from_page(page)
+        males_out = output_dir / "males_timetable.json"
+        females_out = output_dir / "females_timetable.json"
 
-            if gender == "M":
-                male_records.extend(page_records)
-            elif gender == "F":
-                female_records.extend(page_records)
+        with males_out.open("w", encoding="utf-8") as f:
+            json.dump(male_records, f, ensure_ascii=False, indent=2)
 
+        with females_out.open("w", encoding="utf-8") as f:
+            json.dump(female_records, f, ensure_ascii=False, indent=2)
+
+        print(f"\nDone: {semester_id}")
+        print(f"Male rows: {len(male_records)}")
+        print(f"Female rows: {len(female_records)}")
+        print(f"Saved: {males_out}")
+        print(f"Saved: {females_out}")
+
+        if skipped_pages:
             print(
-                f"Page {page_index}: gender={gender}, extracted_rows={len(page_records)}"
+                "Warning: skipped pages without gender header: "
+                + ", ".join(map(str, skipped_pages))
             )
 
-    males_out = OUT_DIR / "males_timetable.json"
-    females_out = OUT_DIR / "females_timetable.json"
-    config_out = OUT_DIR / "config.json"
+    CONFIG_OUT.parent.mkdir(parents=True, exist_ok=True)
 
-    with males_out.open("w", encoding="utf-8") as f:
-        json.dump(male_records, f, ensure_ascii=False, indent=2)
-
-    with females_out.open("w", encoding="utf-8") as f:
-        json.dump(female_records, f, ensure_ascii=False, indent=2)
-
-    # Create config only if it does not exist yet.
-    if not config_out.exists():
-        with config_out.open("w", encoding="utf-8") as f:
+    if not CONFIG_OUT.exists():
+        with CONFIG_OUT.open("w", encoding="utf-8") as f:
             json.dump(
                 {
                     "price_per_credit": 0,
@@ -349,18 +382,7 @@ def main():
                 indent=2,
             )
 
-    print("\nDone.")
-    print(f"Male rows: {len(male_records)}")
-    print(f"Female rows: {len(female_records)}")
-    print(f"Saved: {males_out}")
-    print(f"Saved: {females_out}")
-    print(f"Saved: {config_out}")
-
-    if skipped_pages:
-        print(
-            "Warning: skipped pages without gender header: "
-            + ", ".join(map(str, skipped_pages))
-        )
+    print(f"\nConfig saved: {CONFIG_OUT}")
 
 if __name__ == "__main__":
     main()
