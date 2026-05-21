@@ -5,13 +5,10 @@ import "./i18n.js";
 
 import AppRoutes from "./routes/AppRoutes.jsx";
 import "./styles/index.css";
-import { enableAnalytics, hasAcceptedCookies, initConsentMode } from "./services/analytics.js";
 
-initConsentMode();
+import { initAnalytics } from "./services/analytics.js";
 
-if (hasAcceptedCookies()) {
-  enableAnalytics();
-}
+initAnalytics ();
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

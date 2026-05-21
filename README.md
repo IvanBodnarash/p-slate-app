@@ -304,9 +304,9 @@ The same SEO setup can be reused later if the project moves from demo/testing to
 
 ## Analytics and Cookie Consent
 
-The project includes Google Analytics 4 integration with cookie consent support.
+The project includes Google Analytics 4 integration.
 
-Analytics tracking is only enabled after the user accepts analytics cookies. If the user rejects cookies, Google Analytics events are not sent.
+Analytics tracking is enabled initially.
 
 ### Current setup
 
@@ -316,7 +316,6 @@ The analytics logic is separated into a dedicated service:
 
 The app also includes:
 
-- `CookieBanner` – displays the cookie consent banner
 - `AnalyticsTracker` – tracks page views on route changes
 
 ### Environment variable
@@ -339,21 +338,6 @@ VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
 ```
 
 After adding or changing this variable in Vercel, redeploy the project because Vite reads environment variables during build time.
-
-### Cookie consent behavior
-
-The selected cookie preference is stored in local storage:
-
-```bash
-cookie_consent
-```
-
-Possible values:
-
-```bash
-accepted
-rejected
-```
 
 ### Tracked data
 
