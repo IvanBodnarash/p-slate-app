@@ -8,7 +8,9 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "parse:timetable": "python scripts/parse_timetable.py"
+    "parse:summer": "python scripts/parse_summer_timetable.py",
+    "parse:first": "python scripts/parse_first_semester_timetable.py",
+    "parse:timetable": "npm run parse:summer && npm run parse:first"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.16",
