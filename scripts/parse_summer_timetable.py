@@ -4,17 +4,8 @@ import re
 import unicodedata
 import pdfplumber
 
-SEMESTERS = {
-    "summer_2026": {
-        "input_dir": Path("raw_pdf/summer_2026"),
-        "output_dir": Path("public/data/semesters/summer_2026"),
-    },
-    "first_2026_2027": {
-        "input_dir": Path("raw_pdf/first_2026_2027"),
-        "output_dir": Path("public/data/semesters/first_2026_2027"),
-    },
-}
-
+RAW_DIR = Path("raw_pdf/summer_2026")
+OUT_DIR = Path("public/data/semesters/summer_2026")
 CONFIG_OUT = Path("public/data/config.json")
 
 # These strings are used only as helper markers.
@@ -118,10 +109,10 @@ def find_single_pdf(raw_dir: Path) -> Path:
     """
     pdf_files = list(raw_dir.glob("*.pdf"))
     if not pdf_files:
-        raise FileNotFoundError("No PDF file found in raw_pdf/")
+        raise FileNotFoundError(f"No PDF file found in {raw_dir}/")
     if len(pdf_files) > 1:
         raise RuntimeError(
-            f"Expected exactly one PDF in raw_pdf/, found {len(pdf_files)} files: "
+            f"Expected exactly one PDF in {raw_dir}/, found {len(pdf_files)} files: "
             + ", ".join(p.name for p in pdf_files)
         )
     return pdf_files[0]
@@ -333,40 +324,24 @@ def extract_tables_from_page(page):
 
 
 def main():
-    """Main entry point."""
-    for semester_id, paths in SEMESTERS.items():
-        input_dir = paths["input_dir"]
-        output_dir = paths["output_dir"]
+    """Main entry point for summer semester parser."""
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-        output_dir.mkdir(parents=True, exist_ok=True)
+    pdf_path = find_single_pdf(RAW_DIR)
 
-        pdf_path = find_single_pdf(input_dir)
+    print("\nParsing semester: summer_2026")
+    print(f"Using PDF: {pdf_path.name}")
 
-        print(f"\nParsing semester: {semester_id}")
-        print(f"Using PDF: {pdf_path.name}")
+    male_records, female_records, skipped_pages = parse_pdf(pdf_path)
 
-        male_records, female_records, skipped_pages = parse_pdf(pdf_path)
+    males_out = OUT_DIR / "males_timetable.json"
+    females_out = OUT_DIR / "females_timetable.json"
 
-        males_out = output_dir / "males_timetable.json"
-        females_out = output_dir / "females_timetable.json"
+    with males_out.open("w", encoding="utf-8") as f:
+        json.dump(male_records, f, ensure_ascii=False, indent=2)
 
-        with males_out.open("w", encoding="utf-8") as f:
-            json.dump(male_records, f, ensure_ascii=False, indent=2)
-
-        with females_out.open("w", encoding="utf-8") as f:
-            json.dump(female_records, f, ensure_ascii=False, indent=2)
-
-        print(f"\nDone: {semester_id}")
-        print(f"Male rows: {len(male_records)}")
-        print(f"Female rows: {len(female_records)}")
-        print(f"Saved: {males_out}")
-        print(f"Saved: {females_out}")
-
-        if skipped_pages:
-            print(
-                "Warning: skipped pages without gender header: "
-                + ", ".join(map(str, skipped_pages))
-            )
+    with females_out.open("w", encoding="utf-8") as f:
+        json.dump(female_records, f, ensure_ascii=False, indent=2)
 
     CONFIG_OUT.parent.mkdir(parents=True, exist_ok=True)
 
@@ -382,7 +357,18 @@ def main():
                 indent=2,
             )
 
-    print(f"\nConfig saved: {CONFIG_OUT}")
+    print("\nDone: summer_2026")
+    print(f"Male rows: {len(male_records)}")
+    print(f"Female rows: {len(female_records)}")
+    print(f"Saved: {males_out}")
+    print(f"Saved: {females_out}")
+    print(f"Config: {CONFIG_OUT}")
+
+    if skipped_pages:
+        print(
+            "Warning: skipped pages without gender header: "
+            + ", ".join(map(str, skipped_pages))
+        )
 
 if __name__ == "__main__":
     main()
