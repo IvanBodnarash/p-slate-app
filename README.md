@@ -10,7 +10,7 @@
 6. [Tuition Calculator](#tuition-calculator)
 7. [Compatibility Score](#compatibility-score)
 8. [SEO and Google Indexing Setup](#seo-and-google-indexing-setup)
-9. [Analytics and Cookie Consent](#analytics-and-cookie-consent)
+9. [Analytics](#analytics)
 
 ## Tech Stack
 
@@ -128,6 +128,14 @@ _Notes_
 - The PDF filename can be anything.
 - The `raw_pdf/` folder must contain exactly **one PDF at a time**.
 - The app does not read the PDF directly in the browser. It works only with the generated JSON files.
+
+### How to update data
+
+Timetable data is generated from PDF files using parser scripts.
+
+For detailed instructions on how to add, update, remove, and regenerate timetable data, see:
+
+[Data Management Guide](./HOW_TO_UPDATE_DATA.md)
 
 ## Backend Integration
 
@@ -302,7 +310,7 @@ The development deployment is useful for testing, but it should not be treated a
 
 The same SEO setup can be reused later if the project moves from demo/testing to the official production domain, but the canonical URL, Search Console property, and sitemap should always point to the final public domain.
 
-## Analytics and Cookie Consent
+## Analytics
 
 The project includes Google Analytics 4 integration.
 
