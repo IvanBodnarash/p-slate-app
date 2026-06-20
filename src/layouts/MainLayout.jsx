@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Outlet } from "react-router";
 import { useTranslation } from "react-i18next";
+import { Analytics } from "@vercel/analytics/react";
 import { useUserStore } from "../store/useUserStore";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
@@ -24,6 +25,7 @@ export default function MainLayout() {
         <Outlet />
       </main>
       <Footer />
+      <Analytics />
     </div>
   );
 }
