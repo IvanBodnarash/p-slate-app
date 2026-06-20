@@ -1,6 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router";
+import { Analytics } from "@vercel/analytics/react";
 import "./i18n.js";
 
 import AppRoutes from "./routes/AppRoutes.jsx";
@@ -14,6 +15,7 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
       <AppRoutes />
+      <Analytics />
     </BrowserRouter>
   </StrictMode>
 );
